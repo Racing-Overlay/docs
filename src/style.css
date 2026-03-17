@@ -9,8 +9,8 @@
   --accent: #ffcc00;
   --accent-dim: rgba(255, 204, 0, 0.15);
   --border: #444;
-  --pro: #c084fc;
-  --pro-dim: rgba(192, 132, 252, 0.12);
+  --pro: #ffcc00;
+  --pro-dim: rgba(255, 204, 0, 0.15);
   --radius: 3px;
 }
 
@@ -59,7 +59,7 @@ nav {
   padding: 0.3rem 0.9rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
   border: 1px solid var(--border);
 }
-.badge-free { background: var(--accent-dim); border-color: var(--accent); color: var(--accent); }
+.badge-free { background: var(--bg-raised); border-color: var(--text); color: var(--text); }
 .badge-pro { background: var(--pro-dim); border-color: var(--pro); color: var(--pro); }
 
 /* ── Sections ── */

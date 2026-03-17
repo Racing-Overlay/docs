@@ -10,7 +10,8 @@
       <a href="#hotkeys">Hotkeys</a>
       <a href="#widgets">Widgets</a>
       <a href="#abbreviations">Abbreviations</a>
-      <a href="https://ko-fi.com/racingoverlay" style="color: var(--pro); font-weight:600;">Get Pro</a>
+      <a href="https://forum.kw-studios.com/index.php?threads/racing-overlay-0-9-6.20874/" target="_blank" rel="noopener noreferrer">Forum</a>
+      <a href="https://ko-fi.com/racingoverlay" target="_blank" rel="noopener noreferrer" style="color: var(--pro); font-weight:600;">Get Pro</a>
     </div>
   </nav>
 
@@ -28,16 +29,15 @@
     <!-- Features -->
     <section id="features" class="section">
       <h2 class="section-title">Features</h2>
-      <p>Supreme performance</p>
-      <p>Supports fullscreen</p>
       <p>No webhud, no extra window</p>
+      <p>Supports fullscreen</p>
       <p>Native triple screen support</p>
+      <p>Supreme performance, runs at your game fps</p>
     </section>
 
     <!-- Usage -->
     <section id="usage" class="section">
       <h2 class="section-title">Getting Started</h2>
-      <p>Start by using one of the desktop shortcuts:</p>
       <p>"RRO+RR_DX9" launches RRO and Raceroom (DX9)</p>
       <p>"RRO+RR_DXVK" launches RRO and Raceroom (DXVK)</p>
       <p>"RRO" starts the RRO launcher, you have to start Raceroom yourself</p>
