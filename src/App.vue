@@ -10,24 +10,37 @@
       <a href="#hotkeys">Hotkeys</a>
       <a href="#widgets">Widgets</a>
       <a href="#abbreviations">Abbreviations</a>
+      <a href="https://ko-fi.com/racingoverlay" style="color: var(--pro); font-weight:600;">Get Pro</a>
     </div>
   </nav>
 
   <div class="page">
     <!-- Hero -->
     <section class="hero">
-      <h1>RRO</h1>
-      <p class="tagline">Raceroom Racing Overlay — clean, minimalistic and highly customisable</p>
+      <h1>Raceroom Racing Overlay</h1>
+      <p class="tagline">clean, stylish, highly customisable</p>
       <div class="badges">
         <span class="badge badge-free">Free</span>
         <span class="badge badge-pro">Pro</span>
       </div>
     </section>
 
+    <!-- Features -->
+    <section id="features" class="section">
+      <h2 class="section-title">Features</h2>
+      <p>Supreme performance</p>
+      <p>Supports fullscreen</p>
+      <p>No webhud, no extra window</p>
+      <p>Native triple screen support</p>
+    </section>
+
     <!-- Usage -->
     <section id="usage" class="section">
       <h2 class="section-title">Getting Started</h2>
-      <p>Start RRO via its desktop shortcut, then launch RaceRoom with RRO running in the background.</p>
+      <p>Start by using one of the desktop shortcuts:</p>
+      <p>"RRO+RR_DX9" launches RRO and Raceroom (DX9)</p>
+      <p>"RRO+RR_DXVK" launches RRO and Raceroom (DXVK)</p>
+      <p>"RRO" starts the RRO launcher, you have to start Raceroom yourself</p>
     </section>
 
     <!-- Hotkeys -->
