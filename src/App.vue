@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 // No logic needed — purely static content
 </script>
 
@@ -19,7 +19,7 @@
     <!-- Hero -->
     <section class="hero">
       <h1>Raceroom Racing Overlay</h1>
-      <p class="tagline">clean, stylish, highly customisable</p>
+      <p class="tagline">clean, modern, lightweight, highly customisable</p>
       <div class="badges">
         <span class="badge badge-free">Free</span>
         <span class="badge badge-pro">Pro</span>
@@ -30,8 +30,7 @@
     <section id="features" class="section">
       <h2 class="section-title">Features</h2>
       <p>No webhud, no extra window</p>
-      <p>Supports fullscreen</p>
-      <p>Native triple screen support</p>
+      <p>Supports fullscreen and triple screen</p>
       <p>Supreme performance, runs at your game fps</p>
     </section>
 
