@@ -15,12 +15,12 @@ interface Widget {
 const baseUrl = import.meta.env.BASE_URL
 
 const widgets: Widget[] = [
-  { id: 'abs-tc', name: 'ABS / TC Activity', preview: '/images/widgets/abs_tc.png', bullets: [
+  { id: 'abs-tc', name: 'ABS / TC Activity', video: '/images/widgets/abs_tc.webm', preview: '/images/widgets/abs_tc.png', bullets: [
     'Dark grey font when assist is disabled',
     'Selected level shown as a number',
     'Activity highlighted in <strong>yellow</strong>',
   ]},
-  { id: 'battery', name: 'Battery', preview: '/images/widgets/battery.png', bullets: [
+  { id: 'battery', name: 'Battery', video: '/images/widgets/battery.webm', preview: '/images/widgets/battery.png', bullets: [
     'Current battery state of charge',
     '<strong>Blue</strong> = discharging, <strong>green</strong> = recharging, <strong>yellow</strong> = low',
     'Shows discharge / regen rate when it changes',
