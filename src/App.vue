@@ -30,17 +30,17 @@ const widgets: Widget[] = [
     'Units: °C or °F',
     'Layout: left front — left rear — right rear — right front',
   ]},
-  { id: 'car-settings', name: 'Car Settings', preview: '/images/widgets/car_settings.png', bullets: [
+  { id: 'car-settings', name: 'Car Settings', video: '/images/widgets/car_settings.webm', preview: '/images/widgets/car_settings.png', bullets: [
     'Brake Balance',
     'Traction Control percentage',
     'Engine Map',
     'Engine Brake',
   ]},
-  { id: 'car-temps', name: 'Car Temperatures', preview: '/images/widgets/car_temps.png', bullets: [
+  { id: 'car-temps', name: 'Car Temperatures', video: '/images/widgets/car_temps.webm', preview: '/images/widgets/car_temps.png', bullets: [
     'Engine (e) and oil (o) temperature, numeric and colour-coded',
     'Units: °C or °F',
   ]},
-  { id: 'current-lap', name: 'Current Lap Time', preview: '/images/widgets/current_lap.png', bullets: [
+  { id: 'current-lap', name: 'Current Lap Time', video: '/images/widgets/current_lap.webm', preview: '/images/widgets/current_lap.png', bullets: [
     '<strong>this:</strong> current lap time',
     '<strong>last:</strong> previous lap time',
     'Time struck through in red if the lap was invalid',
@@ -52,7 +52,7 @@ const widgets: Widget[] = [
   { id: 'damage', name: 'Damage', preview: '/images/widgets/damage.png', bullets: [
     'White bar per component group: Aero, Springs, Engine, Gears',
   ]},
-  { id: 'delta-bar', name: 'Delta Bar', preview: '/images/widgets/delta_bar.png', bullets: [
+  { id: 'delta-bar', name: 'Delta Bar', video: '/images/widgets/delta_bar.webm', preview: '/images/widgets/delta_bar.png', bullets: [
     'Delta to session best lap, numeric and as a colour-coded bar',
   ]},
   { id: 'drs', name: 'DRS', preview: '/images/widgets/drs.png', bullets: [
