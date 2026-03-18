@@ -7,7 +7,8 @@ interface Widget {
   id: string
   name: string
   pro?: boolean
-  preview?: string
+  preview?: string   // image fallback (.png / .jpg)
+  video?: string     // animated preview (.webm)
   bullets?: string[]
 }
 
@@ -179,7 +180,7 @@ const widgets: Widget[] = [
     '(Pro) Class standings with class colour and SoF',
     '(Pro) Virtual Energy per driver',
   ]},
-  { id: 'start-lights', name: 'Start Lights', preview: '/images/widgets/start_lights.png', bullets: []},
+  { id: 'start-lights', name: 'Start Lights', video: '/images/widgets/start_lights.webm', preview: '/images/widgets/start_lights.png', bullets: []},
   { id: 'steering', name: 'Steering Wheel', preview: '/images/widgets/steering.png', bullets: [
     'Visualisation of steering inputs',
     '(Pro) Load your own texture: place <code>st_wheel.png</code> in <code>Documents/My Games/RRO/Wheels/</code> (square PNG with transparency)',
@@ -278,8 +279,14 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
           <p v-else style="color: var(--text-muted); font-size: 0.88rem;">No additional information.</p>
         </div>
         <div class="widget-preview-pane">
+          <video
+            v-if="activeWidget.video"
+            :src="baseUrl + activeWidget.video.replace(/^\//, '')"
+            class="widget-preview-img"
+            autoplay loop muted playsinline
+          />
           <img
-            v-if="activeWidget.preview"
+            v-else-if="activeWidget.preview"
             :src="baseUrl + activeWidget.preview.replace(/^\//, '')"
             :alt="activeWidget.name + ' preview'"
             class="widget-preview-img"
