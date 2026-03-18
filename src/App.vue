@@ -202,9 +202,19 @@ const widgets: Widget[] = [
     '(Pro) Yellow indicator for wheel spin',
     '(Pro) Blue indicator for wheel lock',
   ]},
+  { id: 'settings-menu', name: 'Settings Menu', preview: '/images/widgets/settings_menu.png', bullets: [
+    'Enable proximity beep:<br>Turn the audible radar beep on/off',
+    'Beep frequency:<br>Set the pitch of the radar beep',
+    'Show tyre temperature text:<br>Turn temps being shown as numbers on/off',
+    'Units:<br>Switch between metric and imperial US units',
+    'Radar range:<br>How far away the radar detects opponents',
+    'Pedal graph interval:<br>How many seconds the input graph will project',
+    'Enable debug logging:<br>What it says, usually not required',
+  ]},
 ]
 
 const activeWidget = computed(() => widgets.find(w => w.id === activeWidgetId.value)!)
+const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu')!)
 </script>
 
 <template>
@@ -214,6 +224,7 @@ const activeWidget = computed(() => widgets.find(w => w.id === activeWidgetId.va
       <a href="#widgets">Widgets</a>
       <a href="#usage">Usage</a>
       <a href="#hotkeys">Hotkeys</a>
+      <a href="#settings">Settings</a>
       <a href="#abbreviations">Abbreviations</a>
       <a href="https://forum.kw-studios.com/index.php?threads/racing-overlay-0-9-6.20874/" target="_blank" rel="noopener noreferrer">Forum</a>
       <a href="https://ko-fi.com/racingoverlay" target="_blank" rel="noopener noreferrer" class="nav-pro">Get Pro</a>
@@ -234,9 +245,9 @@ const activeWidget = computed(() => widgets.find(w => w.id === activeWidgetId.va
     <!-- Features -->
     <section id="features" class="section">
       <h2 class="section-title">Features</h2>
-      <p>No webhud, no extra window</p>
-      <p>Supports fullscreen and triple screen</p>
       <p>Supreme performance, runs at your game fps</p>
+      <p>Supports fullscreen and triple screen</p>
+      <p>No webhud, no fiddling, just install and run</p>
     </section>
 
     <!-- Widgets -->
@@ -282,8 +293,8 @@ const activeWidget = computed(() => widgets.find(w => w.id === activeWidgetId.va
     <!-- Usage -->
     <section id="usage" class="section">
       <h2 class="section-title">Getting Started</h2>
-      <p>"RRO+RR_DX9" launches RRO and Raceroom (DX9)</p>
-      <p>"RRO+RR_DXVK" launches RRO and Raceroom (DXVK)</p>
+      <p>"RRO+RR_DX9" launches RRO and Raceroom in DX9 mode</p>
+      <p>"RRO+RR_DXVK" launches RRO and Raceroom in DXVK mode</p>
       <p>"RRO" starts the RRO launcher, you have to start Raceroom yourself</p>
     </section>
 
@@ -308,6 +319,44 @@ const activeWidget = computed(() => widgets.find(w => w.id === activeWidgetId.va
         <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">X</kbd>
         for quickest access.
       </p>
+    </section>
+
+    <!-- Settings -->
+    <section id="settings" class="section">
+      <h2 class="section-title">Settings menu</h2>
+
+        <p style="margin-bottom:1rem; color: var(--text-muted); font-size:0.88rem;">
+          Press
+          <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Ctrl</kbd>
+          +
+          <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Shift</kbd>
+          +
+          <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">S</kbd>
+          anywhere to open the settings menu, also in the main menu.
+        </p>
+
+        <!-- Single active card -->
+        <div class="widget-display">
+          <div class="widget-card">
+            <div class="widget-header">
+              <h3>{{ settingsWidget.name }}</h3>
+              <span v-if="settingsWidget.pro" class="tag-pro">PRO</span>
+            </div>
+            <ul v-if="settingsWidget.bullets && settingsWidget.bullets.length">
+              <li v-for="(b, i) in settingsWidget.bullets" :key="i" v-html="b" />
+            </ul>
+            <p v-else style="color: var(--text-muted); font-size: 0.88rem;">No additional information.</p>
+          </div>
+          <div class="widget-preview-pane">
+            <img
+              v-if="settingsWidget.preview"
+              :src="baseUrl + settingsWidget.preview.replace(/^\//, '')"
+              :alt="settingsWidget.name + ' preview'"
+              class="widget-preview-img"
+            />
+            <div v-else class="widget-preview-empty">No preview available</div>
+          </div>
+        </div>
     </section>
 
     <!-- Abbreviations -->
