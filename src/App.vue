@@ -10,6 +10,7 @@ interface Widget {
   preview?: string   // image fallback (.png / .jpg)
   video?: string     // animated preview (.webm)
   bullets?: string[]
+  tallPreview?: boolean
 }
 
 const baseUrl = import.meta.env.BASE_URL
@@ -45,7 +46,7 @@ const widgets: Widget[] = [
     '<strong>last:</strong> previous lap time',
     'Time struck through in red if the lap was invalid',
   ]},
-  { id: 'custom-logo', name: 'Custom Logo', pro: true, bullets: [
+  { id: 'custom-logo', name: 'Custom Logo', preview: '/images/widgets/custom_logo.png', pro: true, bullets: [
     'Load your own logo: place <code>logo_1.png</code> in <code>Documents/My Games/RRO/Logos/</code>',
     'PNG format, square aspect ratio recommended',
   ]},
@@ -60,7 +61,11 @@ const widgets: Widget[] = [
     'Number of activations remaining shown in brackets',
     'Activity indicated via colour code',
   ]},
-  { id: 'flags', name: 'Flags', preview: '/images/widgets/flags.png', bullets: [
+  { id: 'ffb', name: 'FFB Bar', pro: true, preview: '/images/widgets/ffb_bar.png', bullets: [
+    'Visualises the FFB magnitude',
+    'Tracks cuts above the upper threshold',
+  ]},
+  { id: 'flags', name: 'Flags', video: '/images/widgets/flags.webm', preview: '/images/widgets/flags.png', bullets: [
     'DigiFlag-style display of the currently shown flag',
   ]},
   { id: 'flat-map', name: 'Flat Map', pro: true, preview: '/images/widgets/flat_map.png', bullets: [
@@ -173,7 +178,7 @@ const widgets: Widget[] = [
     'Current speed in km/h or mph',
     '(Pro) Average speed',
   ]},
-  { id: 'standings', name: 'Standings', preview: '/images/widgets/standings.png', bullets: [
+  { id: 'standings', name: 'Standings', tallPreview: true, preview: '/images/widgets/standings.png', bullets: [
     'Position, car number, manufacturer logo, driver name, tyre compound',
     'Practice/Qualifying: session best lap time per driver',
     'Race: gap to leader, last lap, pit stop status',
@@ -203,7 +208,7 @@ const widgets: Widget[] = [
     '(Pro) Yellow indicator for wheel spin',
     '(Pro) Blue indicator for wheel lock',
   ]},
-  { id: 'settings-menu', name: 'Settings Menu', preview: '/images/widgets/settings_menu.png', bullets: [
+  { id: 'settings-menu', name: 'Settings Menu', tallPreview: true, preview: '/images/widgets/settings_menu.png', bullets: [
     'Enable proximity beep:<br>Turn the audible radar beep on/off',
     'Beep frequency:<br>Set the pitch of the radar beep',
     'Show tyre temperature text:<br>Turn temps being shown as numbers on/off',
@@ -238,8 +243,9 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
       <h1>Raceroom Racing Overlay</h1>
       <p class="tagline">clean, lightweight, highly customisable</p>
       <div class="badges">
-        <span class="badge badge-free">Free</span>
-        <span class="badge badge-pro">Pro</span>
+        <span class="badges-label">Download:</span>
+        <a href="https://forum.kw-studios.com/index.php?threads/racing-overlay-0-9-6.20874/" target="_blank" rel="noopener noreferrer" class="badge badge-free">Free</a>
+        <a href="https://ko-fi.com/racingoverlay" target="_blank" rel="noopener noreferrer" class="badge badge-pro">Pro</a>
       </div>
     </section>
 
@@ -278,14 +284,16 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
           </ul>
           <p v-else style="color: var(--text-muted); font-size: 0.88rem;">No additional information.</p>
         </div>
-        <div class="widget-preview-pane">
+        <div :class="['widget-preview-pane', { 'widget-preview-pane--tall': activeWidget.tallPreview }]">
           <video
+            :class="['widget-preview-img', { 'widget-preview-tall-img': activeWidget.tallPreview }]"
             v-if="activeWidget.video"
             :src="baseUrl + activeWidget.video.replace(/^\//, '')"
             class="widget-preview-img"
             autoplay loop muted playsinline
           />
           <img
+            :class="['widget-preview-img', { 'widget-preview-tall-img': activeWidget.tallPreview }]"
             v-else-if="activeWidget.preview"
             :src="baseUrl + activeWidget.preview.replace(/^\//, '')"
             :alt="activeWidget.name + ' preview'"
@@ -342,7 +350,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
           anywhere to open the settings menu, also in the main menu.
         </p>
 
-        <!-- Single active card -->
+        <!-- Single card for settings menu -->
         <div class="widget-display">
           <div class="widget-card">
             <div class="widget-header">
@@ -354,8 +362,9 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
             </ul>
             <p v-else style="color: var(--text-muted); font-size: 0.88rem;">No additional information.</p>
           </div>
-          <div class="widget-preview-pane">
+          <div :class="['widget-preview-pane', { 'widget-preview-pane--tall': settingsWidget.tallPreview }]">
             <img
+              :class="['widget-preview-img', { 'widget-preview-tall-img': settingsWidget.tallPreview }]"
               v-if="settingsWidget.preview"
               :src="baseUrl + settingsWidget.preview.replace(/^\//, '')"
               :alt="settingsWidget.name + ' preview'"
