@@ -158,64 +158,67 @@ const widgets: Widget[] = [
   ]},
   { id: 'relative', name: 'Relative', preview: '/images/widgets/relative.png', bullets: [
     'Gaps to P1 and the seven drivers closest to you',
-    '(Pro) Ranked multiplayer rating and reputation',
-    '(Pro) Class colour per driver',
+    '<span class="hl-pro">(Pro)</span> Ranked multiplayer rating and reputation',
+    '<span class="hl-pro">(Pro)</span> Class colour per driver',
   ]},
   { id: 'rpm', name: 'RPM', preview: '/images/widgets/rpm.png', bullets: [
     'RPM bar with colour code for critical revolutions',
   ]},
   { id: 'sectors', name: 'Sector Times', preview: '/images/widgets/sectors.png', bullets: [
     'Own current times for Sectors 1, 2 and 3',
-    '<strong>White</strong> = normal, <strong>green</strong> = own best, <strong>pink</strong> = session best, <strong>dark</strong> = invalid',
+    '<strong>white</strong> = normal<br><strong>green</strong> = own best<br><strong>pink</strong> = session best<br><strong>black</strong> = invalid',
   ]},
   { id: 'session-info', name: 'Session Info', preview: '/images/widgets/session_info.png', bullets: [
-    'Time of day, session type, time remaining',
-    'Current lap and projected total laps',
-    'Overall position (Pro: position in class)',
-    'Session best lap time',
+    'time of day',
+    'session type, time remaining in session',
+    'current lap and projected total laps',
+    'overall position, <span class="hl-pro">(Pro)</span> (position in class)',
+    'session best lap time',
   ]},
-  { id: 'speed', name: 'Speed', preview: '/images/widgets/speed.png', bullets: [
-    'Current speed in km/h or mph',
-    '(Pro) Average speed',
+  { id: 'speed', name: 'Speed', video: '/images/widgets/speed.webm', preview: '/images/widgets/speed.png', bullets: [
+    'current speed in km/h or mph',
+    '<span class="hl-pro">(Pro)</span> average speed',
   ]},
-  { id: 'standings', name: 'Standings', tallPreview: true, preview: '/images/widgets/standings.png', bullets: [
-    'Position, car number, manufacturer logo, driver name, tyre compound',
-    'Practice/Qualifying: session best lap time per driver',
-    'Race: gap to leader, last lap, pit stop status',
-    '(Pro) Class standings with class colour and SoF',
-    '(Pro) Virtual Energy per driver',
+  { id: 'standings', name: 'Standings', tallPreview: true, video: '/images/widgets/standings.webm', preview: '/images/widgets/standings.png', bullets: [
+    'columns:<br>position, position change, emblem, number, driver name, tyre compound',
+    'practice/Qualifying: session best lap time',
+    'race: gap to leader, last lap, pit stop status',
+    '<span class="hl-pro">(Pro)</span> class standings with class colour and SoF',
+    '<span class="hl-pro">(Pro)</span> virtual Energy per driver',
   ]},
-  { id: 'start-lights', name: 'Start Lights', video: '/images/widgets/start_lights.webm', preview: '/images/widgets/start_lights.png', bullets: []},
-  { id: 'steering', name: 'Steering Wheel', preview: '/images/widgets/steering.png', bullets: [
-    'Visualisation of steering inputs',
-    '(Pro) Load your own texture: place <code>st_wheel.png</code> in <code>Documents/My Games/RRO/Wheels/</code> (square PNG with transparency)',
+  { id: 'start-lights', name: 'Start Lights', video: '/images/widgets/start_lights.webm',
+    preview: '/images/widgets/start_lights.png', bullets: ['reasonably sized']
+  },
+  { id: 'steering', name: 'Steering Wheel', video: '/images/widgets/steering.webm', preview: '/images/widgets/steering.png', bullets: [
+    'visualisation of steering inputs',
+    '<span class="hl-pro">(Pro)</span> load your own texture:<br>place <code>st_wheel.png</code> in <code>Documents/My Games/RRO/Wheels/</code> (square PNG with transparency)',
   ]},
-  { id: 'tyre-info', name: 'Tyre Info', preview: '/images/widgets/tyre_info.png', bullets: [
-    'Per tyre: pressure (kPa / psi), condition %, temperature numeric and colour-coded',
-    'Dirt overlay on temperature colour when tyre picks up dirt',
+  { id: 'tyre-info', name: 'Tyre Info', video: '/images/widgets/tyre_info.webm', preview: '/images/widgets/tyre_info.png', bullets: [
+    'per tyre:<br>pressure (kPa / psi), condition (%),<br>segment temperature (°C / °F)',
+    'dirt pick up',
   ]},
   { id: 'virtual-energy', name: 'Virtual Energy', preview: '/images/widgets/virtual_energy.png', bullets: [
-    'VE tank content as colour-coded bars and percentage',
-    'After 2 laps: projection appears — <strong>F+</strong> add fuel, <strong>F-</strong> remove fuel, <strong>✓</strong> on target',
-    'Do 2–3 consistent laps in practice to calibrate; treat as an approximation',
+    'VE tank content',
+    'after 2 laps, projection appears:<br><strong>F+</strong> add fuel, <strong>F-</strong> remove fuel, <strong>✓</strong> on target',
+    '(do 2–3 consistent laps in practice to calibrate; treat as an approximation)',
   ]},
   { id: 'water-spray', name: 'Water Spray', preview: '/images/widgets/water_spray.png', bullets: [
-    'Only visible in the RaceRoom Truck class',
-    'Brake cooling water remaining (Litres or Gallons)',
+    'brake cooling water remaining',
+    '*only used in RaceRoom Truck class',
   ]},
-  { id: 'wheel-info', name: 'Wheel Info', preview: '/images/widgets/wheel_info.png', bullets: [
-    'Tyre compound per wheel and laps in use per wheel',
-    '(Pro) Yellow indicator for wheel spin',
-    '(Pro) Blue indicator for wheel lock',
+  { id: 'wheel-info', name: 'Wheel Info', video: '/images/widgets/wheel_info.webm', preview: '/images/widgets/wheel_info.png', bullets: [
+    'tyre compound and laps in use per wheel',
+    '<span class="hl-pro">(Pro)</span> yellow indicator for wheel spin',
+    '<span class="hl-pro">(Pro)</span> blue indicator for wheel lock',
   ]},
   { id: 'settings-menu', name: 'Settings Menu', tallPreview: true, preview: '/images/widgets/settings_menu.png', bullets: [
-    'Enable proximity beep:<br>Turn the audible radar beep on/off',
-    'Beep frequency:<br>Set the pitch of the radar beep',
-    'Show tyre temperature text:<br>Turn temps being shown as numbers on/off',
-    'Units:<br>Switch between metric and imperial US units',
-    'Radar range:<br>How far away the radar detects opponents',
-    'Pedal graph interval:<br>How many seconds the input graph will project',
-    'Enable debug logging:<br>What it says, usually not required',
+    'enable proximity beep:<br>turn the audible radar beep on/off',
+    'beep frequency:<br>set the pitch of the radar beep',
+    'show temperature text:<br>turn temps being shown as numbers on/off',
+    'units:<br>Switch between metric and imperial US units',
+    'radar range:<br>how far away the radar detects opponents',
+    '<span class="hl-pro">(Pro)</span> pedal graph interval:<br>how many seconds the input graph will project',
+    'enable debug logging:<br>what it says, usually not required',
   ]},
 ]
 

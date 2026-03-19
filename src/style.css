@@ -158,10 +158,16 @@ a.badge:hover { filter: brightness(1.2); text-decoration: none; }
   font-size: 0.88rem;
 }
 .widget-card ul li { margin-bottom: 0.2rem; }
-.widget-card ul li strong { color: var(--text); }
 .widget-card code {
   font-family: monospace; font-size: 0.82rem;
   background: var(--bg-raised); border-radius: 3px; padding: 0.1rem 0.35rem;
+}
+.widget-card li {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+.hl-pro {
+  color: var(--purple);
 }
 
 .widget-preview-pane {
