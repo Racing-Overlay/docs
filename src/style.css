@@ -37,13 +37,19 @@ nav {
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
   padding: 0.75rem 1.5rem;
-  display: flex; align-items: center; gap: 2rem;
+  display: flex; align-items: center; flex-wrap: wrap;
+  gap: 0.75rem 2rem;
 }
 .nav-brand { font-weight: 800; font-size: 1.1rem; color: var(--text); letter-spacing: 1px; }
-.nav-links { display: flex; gap: 1.5rem; font-size: 0.9rem; }
+.nav-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-size: 0.9rem; align-items: center; }
 .nav-links a { color: var(--text-muted); }
+.nav-links .badge-free { color: var(--accent); }
+.nav-links .badge-pro { color: var(--purple); }
 .nav-links a:hover { color: var(--text); text-decoration: none; }
+.nav-links .badge-free:hover { color: var(--accent); }
+.nav-links .badge-pro:hover { color: var(--purple); }
 .nav-links .nav-pro { color: var(--purple); font-weight: 600; }
+.nav-download { display: flex; align-items: center; gap: 0.5rem; margin-left: 2rem; }
 
 /* ── Hero ── */
 .hero {
@@ -63,7 +69,7 @@ nav {
   align-self: center;
 }
 .badge {
-  padding: 0.3rem 0.9rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+  padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600;
   border: 1px solid var(--border);
   transition: filter 0.15s;
 }
@@ -109,7 +115,9 @@ a.badge:hover { filter: brightness(1.2); text-decoration: none; }
   border-radius: 4px;
   padding: 0.2rem 0.6rem;
   cursor: pointer;
-  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  transition: color 0.15s;
+  border-color: 0.15s;
+  background: 0.15s;
 }
 .widget-pill:hover {
   color: var(--text);
@@ -152,6 +160,12 @@ a.badge:hover { filter: brightness(1.2); text-decoration: none; }
 }
 .widget-header h3 { font-size: 1.05rem; font-weight: 700; }
 
+.tag-pro {
+  font-size: 0.7rem; font-weight: 700;
+  background: var(--pro-dim); color: var(--purple);
+  border: 1px solid var(--purple); border-radius: 4px; padding: 0.1rem 0.45rem;
+}
+
 .widget-card ul {
   padding-left: 1.2rem;
   color: var(--text-muted);
@@ -165,9 +179,6 @@ a.badge:hover { filter: brightness(1.2); text-decoration: none; }
 .widget-card li {
   color: var(--text-muted);
   font-size: 0.88rem;
-}
-.hl-pro {
-  color: var(--purple);
 }
 
 .widget-preview-pane {
@@ -218,4 +229,5 @@ footer {
 
 @media (max-width: 600px) {
   .widget-display { grid-template-columns: 1fr; }
+  .nav-download { margin-left: 0; } /* don't push to right when wrapped to own line */
 }

@@ -17,181 +17,186 @@ const baseUrl = import.meta.env.BASE_URL
 
 const widgets: Widget[] = [
   { id: 'abs-tc', name: 'ABS / TC Activity', video: '/images/widgets/abs_tc.webm', preview: '/images/widgets/abs_tc.png', bullets: [
-    'Dark grey font when assist is disabled',
-    'Selected level shown as a number',
-    'Activity highlighted in <strong>yellow</strong>',
+    'dark grey font when assist is disabled',
+    'selected level shown as a number',
+    'activity highlighted in <strong>yellow</strong>',
   ]},
   { id: 'battery', name: 'Battery', video: '/images/widgets/battery.webm', preview: '/images/widgets/battery.png', bullets: [
-    'Current battery state of charge',
-    '<strong>Blue</strong> = discharging, <strong>green</strong> = recharging, <strong>yellow</strong> = low',
-    'Shows discharge / regen rate when it changes',
+    'current battery state of charge',
+    '<strong>blue</strong> = discharging<br><strong>green</strong> = recharging<br><strong>yellow</strong> = low',
+    'shows discharge / regen rate when changed',
   ]},
   { id: 'brake-temps', name: 'Brake Temperatures', preview: '/images/widgets/brake_temps.png', bullets: [
-    'Brake temperature numeric and colour-coded (blue → dark red)',
-    'Units: °C or °F',
-    'Layout: left front — left rear — right rear — right front',
+    'brake temperature colours (blue → dark red)',
+    'text optional, units: °C or °F',
+    'layout:<br>left front — left rear — right rear — right front',
   ]},
   { id: 'car-settings', name: 'Car Settings', video: '/images/widgets/car_settings.webm', preview: '/images/widgets/car_settings.png', bullets: [
-    'Brake Balance',
-    'Traction Control percentage',
-    'Engine Map',
-    'Engine Brake',
+    'brake balance',
+    'traction control percentage',
+    'engine map',
+    'engine brake',
   ]},
   { id: 'car-temps', name: 'Car Temperatures', video: '/images/widgets/car_temps.webm', preview: '/images/widgets/car_temps.png', bullets: [
-    'Engine (e) and oil (o) temperature, numeric and colour-coded',
-    'Units: °C or °F',
+    'engine (e) and oil (o) temperature colours',
+    'units: °C or °F',
   ]},
   { id: 'current-lap', name: 'Current Lap Time', video: '/images/widgets/current_lap.webm', preview: '/images/widgets/current_lap.png', bullets: [
     '<strong>this:</strong> current lap time',
     '<strong>last:</strong> previous lap time',
-    'Time struck through in red if the lap was invalid',
+    'time struck through in red if the lap was invalid',
   ]},
   { id: 'custom-logo', name: 'Custom Logo', preview: '/images/widgets/custom_logo.png', pro: true, bullets: [
-    'Load your own logo: place <code>logo_1.png</code> in <code>Documents/My Games/RRO/Logos/</code>',
-    'PNG format, square aspect ratio recommended',
+    'load your own logo: place <code>logo_1.png</code> in <code>Documents/My Games/RRO/Logos/</code>',
+    'png format, square aspect ratio recommended',
   ]},
   { id: 'damage', name: 'Damage', preview: '/images/widgets/damage.png', bullets: [
-    'White bar per component group: Aero, Springs, Engine, Gears',
+    'white bar per component group: Aero, Springs, Engine, Gears',
   ]},
   { id: 'delta-bar', name: 'Delta Bar', video: '/images/widgets/delta_bar.webm', preview: '/images/widgets/delta_bar.png', bullets: [
-    'Delta to session best lap, numeric and as a colour-coded bar',
+    'delta to session best lap, numeric and as a colour-coded bar',
   ]},
   { id: 'drs', name: 'DRS', preview: '/images/widgets/drs.png', bullets: [
-    'Disabled when DRS is not available',
-    'Number of activations remaining shown in brackets',
-    'Activity indicated via colour code',
+    'disabled when DRS is not available',
+    'number of activations remaining shown in brackets',
+    'activity indicated via colour code',
   ]},
   { id: 'ffb', name: 'FFB Bar', pro: true, preview: '/images/widgets/ffb_bar.png', bullets: [
-    'Visualises the FFB magnitude',
-    'Tracks cuts above the upper threshold',
+    'visualises FFB magnitude',
+    'tracks cuts above the upper threshold',
   ]},
   { id: 'flags', name: 'Flags', video: '/images/widgets/flags.webm', preview: '/images/widgets/flags.png', bullets: [
-    'DigiFlag-style display of the currently shown flag',
+    'digiflag display of currently shown flag',
   ]},
   { id: 'flat-map', name: 'Flat Map', pro: true, preview: '/images/widgets/flat_map.png', bullets: [
-    'Represents the full track length with all drivers\' positions shown relatively',
-    'Colour-coded per class; number = position in class',
+    'represents the track length',
+    'all drivers\' positions shown relatively',
+    'Colour-coded per class',
+    'number = position in class',
   ]},
   { id: 'fps', name: 'FPS', preview: '/images/widgets/fps.png', bullets: [
-    'Current frames per second, updated every second',
+    'current frames per second',
+    'updated per second',
   ]},
   { id: 'fuel-calc', name: 'Fuel Calculator', pro: true, preview: '/images/widgets/fuel_calc.png', bullets: [
-    '<strong>Laps left:</strong> remaining fuel at current average consumption',
-    '<strong>Time left:</strong> remaining time at current avg (Hypercars: VE laps left)',
-    '<strong>Avg/lap:</strong> average consumption over last 20 laps',
-    '<strong>Last lap:</strong> fuel used last lap',
-    '<strong>Left at finish:</strong> projected fuel remaining at race end',
-    '<strong>To add:</strong> fuel needed to finish, including ~1 lap safety margin',
+    '<strong>laps left:</strong> remaining fuel at current average consumption',
+    '<strong>time left:</strong> remaining time at current avg (Hypercars: VE laps left)',
+    '<strong>avg/lap:</strong> average consumption over last 20 laps',
+    '<strong>last lap:</strong> fuel used last lap',
+    '<strong>left at finish:</strong> projected fuel remaining at race end',
+    '<strong>to add:</strong> fuel needed to finish, including ~1 lap safety margin',
   ]},
   { id: 'fuel-gauge', name: 'Fuel Gauge', preview: '/images/widgets/fuel_gauge.png', bullets: [
-    'Fuel remaining and total tank capacity',
-    'Units: Litres or Gallons',
+    'fuel remaining and total tank capacity',
+    'units: litres or gallons',
   ]},
   { id: 'gear', name: 'Gear', preview: '/images/widgets/gear.png', bullets: [
-    'Currently selected gear',
-    'Colour code for critical RPM',
+    'currently selected gear',
+    'colour code for critical rpm',
   ]},
   { id: 'headlights', name: 'Headlights', preview: '/images/widgets/headlights.png', bullets: [
-    'Hidden on cars without headlights',
-    '<strong>Grey</strong> = off, <strong>white</strong> = on, <strong>yellow</strong> = flashing',
+    'hidden on cars without headlights',
+    '<strong>grey</strong> = off<br><strong>white</strong> = on<br><strong>yellow</strong> = flashing',
   ]},
   { id: 'ignition', name: 'Ignition & Starter', preview: '/images/widgets/ignition.png', bullets: [
-    '<strong>Grey</strong> = off, <strong>red</strong> = starter on, <strong>flashing red</strong> = starting, <strong>white</strong> = running',
+    '<strong>grey</strong> = off<br><strong>red</strong> = starter on<br><strong>flashing red</strong> = starting<br><strong>white</strong> = running',
   ]},
   { id: 'incident', name: 'Incident Points', preview: '/images/widgets/incident.png', bullets: [
-    'Only visible in multiplayer sessions',
-    'Incident points accrued and the session limit',
+    'only visible in multiplayer sessions',
+    'incident points accrued and the session limit',
+    'number of cuts',
   ]},
   { id: 'input-graph', name: 'Input Graph', pro: true, preview: '/images/widgets/input_graph.png', bullets: [
-    'Throttle, brake and clutch inputs over time',
-    'Toggle interval: 5, 10 or 20 seconds',
+    'throttle, brake and clutch inputs over time',
+    'toggle interval in settings: 5, 10 or 20 seconds',
   ]},
   { id: 'lap-log', name: 'Lap Time Log', pro: true, preview: '/images/widgets/lap_log.png', bullets: [
-    'Last seven lap times with delta to previous lap',
-    'Personal best and session best laps highlighted',
-    'Invalid laps struck through',
+    'last seven lap times with delta to previous lap',
+    'personal best and session best laps highlighted',
+    'invalid laps struck red',
   ]},
-  { id: 'last-lap', name: 'Last Lap Time', preview: '/images/widgets/last_lap.png', bullets: [
+  { id: 'last-lap', name: 'Best Times', preview: '/images/widgets/last_lap.png', bullets: [
     '<strong>sb:</strong> your session best lap time',
     '<strong>pb:</strong> your all-time personal best',
   ]},
   { id: 'pedals', name: 'Pedals', preview: '/images/widgets/pedals.png', bullets: [
-    'Left to right: clutch, brake, throttle',
-    '<strong>White bar:</strong> input from controller device',
-    '<strong>Grey bar:</strong> input received by the car',
+    'left to right: clutch, brake, throttle',
+    '<strong>white bar:</strong> input from controller device',
+    '<strong>grey bar:</strong> input received by the car',
   ]},
   { id: 'penalties', name: 'Penalties', pro: true, preview: '/images/widgets/penalties.png', bullets: [
-    'Hidden when no penalties are pending',
-    '<strong>Red:</strong> Drive Through / Stop &amp; Go — number of laps to serve',
-    '<strong>Yellow:</strong> Slowdown — seconds to give back',
+    'hidden when no penalties are pending',
+    '<strong>yellow:</strong> slowdown (seconds to give back)',
+    '<strong>red:</strong> drive through / stop&amp;go (laps to serve)',
   ]},
   { id: 'pit-info', name: 'Pit Stop Info', preview: '/images/widgets/pit_info.png', bullets: [
-    'Enabled in the pit lane only (disabled by default)',
-    'Current and total pit stop time',
-    'Minimum stoppage time (if set)',
-    'Current action and scheduled task status',
+    'enabled in the pit lane only',
+    'current and total pit stop time',
+    'minimum stoppage time (if set)',
+    'current action and scheduled task status',
   ]},
   { id: 'pit-window', name: 'Pit Window', preview: '/images/widgets/pit_window.png', bullets: [
-    'Shown when mandatory stop exists, pit limiter is on, or stop is requested',
-    '<strong>Yellow</strong> = 1 min until window opens; <strong>green</strong> = window open',
-    'Number in brackets = laps/minutes the window stays open',
-    'Blinks when pit limiter is active; shows pit speed limit',
-    'Disappears once the mandatory stop has been served',
+    'shown when mandatory stop exists, pit limiter is on, or stop is requested',
+    '<strong>yellow</strong> = 1 min until window opens<br><strong>green</strong> = window open',
+    'Number in brackets = laps/minutes window open',
+    'shows pit speed limit on pit request',
+    'disappears once mandatory stop served',
   ]},
   { id: 'proximity', name: 'Proximity Warners', preview: '/images/widgets/proximity.png', bullets: [
-    'Grey bars at the left, right and bottom screen edges',
-    'Colour intensity increases the closer a car is on that side',
+    'bars at the left, right and bottom screen edges',
+    'colour intensity increases the closer a car is on that side',
   ]},
   { id: 'ptp', name: 'Push to Pass', preview: '/images/widgets/ptp.png', bullets: [
-    'Hidden when PTP is not available',
-    'Activations remaining in brackets',
-    'Activity colour-coded; countdown shown while active',
-    'Also acts as the Overtake button indicator in the FR-X22',
+    'activity colour-coded; countdown while active',
+    'remaining activations in brackets',
+    'acts as overtake button indicator in FR-X22',
+    'hidden when ptp is not available',
   ]},
   { id: 'race-control', name: 'Race Control', preview: '/images/widgets/race_control.png', bullets: [
-    'Penalty messages',
-    'Flag messages',
-    'Lap validity status',
+    'penalty messages',
+    'flag messages',
+    'lap validity status',
   ]},
   { id: 'radar', name: 'Radar', preview: '/images/widgets/radar.png', bullets: [
-    'Top-down view of surrounding cars and their relative orientation',
+    'top-down view of surrounding cars and their relative orientation',
   ]},
   { id: 'relative', name: 'Relative', preview: '/images/widgets/relative.png', bullets: [
-    'Gaps to P1 and the seven drivers closest to you',
-    '<span class="hl-pro">(Pro)</span> Ranked multiplayer rating and reputation',
-    '<span class="hl-pro">(Pro)</span> Class colour per driver',
+    'gaps the six drivers closest to you',
+    'lapped status',
+    '<span class="tag-pro">Pro</span> ranked multiplayer rating and reputation',
+    '<span class="tag-pro">Pro</span> class colour per driver',
   ]},
   { id: 'rpm', name: 'RPM', preview: '/images/widgets/rpm.png', bullets: [
-    'RPM bar with colour code for critical revolutions',
+    'rpm bar with colour code for critical revolutions',
   ]},
   { id: 'sectors', name: 'Sector Times', preview: '/images/widgets/sectors.png', bullets: [
-    'Own current times for Sectors 1, 2 and 3',
+    'own current times for track sectors',
     '<strong>white</strong> = normal<br><strong>green</strong> = own best<br><strong>pink</strong> = session best<br><strong>black</strong> = invalid',
   ]},
   { id: 'session-info', name: 'Session Info', preview: '/images/widgets/session_info.png', bullets: [
     'time of day',
     'session type, time remaining in session',
     'current lap and projected total laps',
-    'overall position, <span class="hl-pro">(Pro)</span> (position in class)',
+    'overall position, <span class="tag-pro">Pro</span> (position in class)',
     'session best lap time',
   ]},
   { id: 'speed', name: 'Speed', video: '/images/widgets/speed.webm', preview: '/images/widgets/speed.png', bullets: [
     'current speed in km/h or mph',
-    '<span class="hl-pro">(Pro)</span> average speed',
+    '<span class="tag-pro">Pro</span> average speed',
   ]},
   { id: 'standings', name: 'Standings', tallPreview: true, video: '/images/widgets/standings.webm', preview: '/images/widgets/standings.png', bullets: [
     'columns:<br>position, position change, emblem, number, driver name, tyre compound',
     'practice/Qualifying: session best lap time',
     'race: gap to leader, last lap, pit stop status',
-    '<span class="hl-pro">(Pro)</span> class standings with class colour and SoF',
-    '<span class="hl-pro">(Pro)</span> virtual Energy per driver',
+    '<span class="tag-pro">Pro</span> class standings with class colour and SoF',
+    '<span class="tag-pro">Pro</span> virtual Energy per driver',
   ]},
   { id: 'start-lights', name: 'Start Lights', video: '/images/widgets/start_lights.webm',
     preview: '/images/widgets/start_lights.png', bullets: ['reasonably sized']
   },
   { id: 'steering', name: 'Steering Wheel', video: '/images/widgets/steering.webm', preview: '/images/widgets/steering.png', bullets: [
     'visualisation of steering inputs',
-    '<span class="hl-pro">(Pro)</span> load your own texture:<br>place <code>st_wheel.png</code> in <code>Documents/My Games/RRO/Wheels/</code> (square PNG with transparency)',
+    '<span class="tag-pro">Pro</span> load your own texture:<br>place <code>st_wheel.png</code> in <code>Documents/My Games/RRO/Wheels/</code> (square PNG with transparency)',
   ]},
   { id: 'tyre-info', name: 'Tyre Info', video: '/images/widgets/tyre_info.webm', preview: '/images/widgets/tyre_info.png', bullets: [
     'per tyre:<br>pressure (kPa / psi), condition (%),<br>segment temperature (°C / °F)',
@@ -208,8 +213,8 @@ const widgets: Widget[] = [
   ]},
   { id: 'wheel-info', name: 'Wheel Info', video: '/images/widgets/wheel_info.webm', preview: '/images/widgets/wheel_info.png', bullets: [
     'tyre compound and laps in use per wheel',
-    '<span class="hl-pro">(Pro)</span> yellow indicator for wheel spin',
-    '<span class="hl-pro">(Pro)</span> blue indicator for wheel lock',
+    '<span class="tag-pro">Pro</span> yellow indicator for wheel spin',
+    '<span class="tag-pro">Pro</span> blue indicator for wheel lock',
   ]},
   { id: 'settings-menu', name: 'Settings Menu', tallPreview: true, preview: '/images/widgets/settings_menu.png', bullets: [
     'enable proximity beep:<br>turn the audible radar beep on/off',
@@ -217,7 +222,7 @@ const widgets: Widget[] = [
     'show temperature text:<br>turn temps being shown as numbers on/off',
     'units:<br>Switch between metric and imperial US units',
     'radar range:<br>how far away the radar detects opponents',
-    '<span class="hl-pro">(Pro)</span> pedal graph interval:<br>how many seconds the input graph will project',
+    '<span class="tag-pro">Pro</span> pedal graph interval:<br>how many seconds the input graph will project',
     'enable debug logging:<br>what it says, usually not required',
   ]},
 ]
@@ -235,9 +240,12 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
       <a href="#hotkeys">Hotkeys</a>
       <a href="#settings">Settings</a>
       <a href="#abbreviations">Abbreviations</a>
-      <a href="https://forum.kw-studios.com/index.php?threads/racing-overlay-0-9-6.20874/" target="_blank" rel="noopener noreferrer">Forum</a>
-      <a href="https://ko-fi.com/racingoverlay" target="_blank" rel="noopener noreferrer" class="nav-pro">Get Pro</a>
-    </div>
+      <div class="nav-download">
+        <span class="badges-label">Download:</span>
+        <a href="https://forum.kw-studios.com/index.php?threads/racing-overlay-0-9-6.20874/" target="_blank" rel="noopener noreferrer" class="badge badge-free">Free</a>
+        <a href="https://ko-fi.com/racingoverlay" target="_blank" rel="noopener noreferrer" class="badge badge-pro">Pro</a>
+        </div>
+      </div>
   </nav>
 
   <div class="page">
@@ -245,11 +253,11 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
     <section class="hero">
       <h1>Raceroom Racing Overlay</h1>
       <p class="tagline">clean, lightweight, highly customisable</p>
-      <div class="badges">
+      <!-- <div class="badges">
         <span class="badges-label">Download:</span>
         <a href="https://forum.kw-studios.com/index.php?threads/racing-overlay-0-9-6.20874/" target="_blank" rel="noopener noreferrer" class="badge badge-free">Free</a>
         <a href="https://ko-fi.com/racingoverlay" target="_blank" rel="noopener noreferrer" class="badge badge-pro">Pro</a>
-      </div>
+      </div> -->
     </section>
 
     <!-- Features -->
@@ -280,7 +288,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
         <div class="widget-card">
           <div class="widget-header">
             <h3>{{ activeWidget.name }}</h3>
-            <span v-if="activeWidget.pro" class="tag-pro">PRO</span>
+            <span v-if="activeWidget.pro" class="tag-pro">Pro</span>
           </div>
           <ul v-if="activeWidget.bullets && activeWidget.bullets.length">
             <li v-for="(b, i) in activeWidget.bullets" :key="i" v-html="b" />
@@ -358,7 +366,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
           <div class="widget-card">
             <div class="widget-header">
               <h3>{{ settingsWidget.name }}</h3>
-              <span v-if="settingsWidget.pro" class="tag-pro">PRO</span>
+              <span v-if="settingsWidget.pro" class="tag-pro">Pro</span>
             </div>
             <ul v-if="settingsWidget.bullets && settingsWidget.bullets.length">
               <li v-for="(b, i) in settingsWidget.bullets" :key="i" v-html="b" />
