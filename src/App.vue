@@ -265,7 +265,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
       <h2 class="section-title">Features</h2>
       <p>easy setup: install, run, done</p>
       <p>compatible: supports fullscreen and triple screen</p>
-      <p>adaptible: move, resize and disable any widget independently</p>
+      <p>adaptable: move, resize and disable any widget independently</p>
       <p>supreme performance: minimal footprint, runs at your game fps</p>
     </section>
 
