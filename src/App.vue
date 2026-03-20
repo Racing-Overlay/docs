@@ -26,7 +26,11 @@ const widgets: Widget[] = [
     '<strong>blue</strong> = discharging<br><strong>green</strong> = recharging<br><strong>yellow</strong> = low',
     'shows discharge / regen rate when changed',
   ]},
-  { id: 'brake-temps', name: 'Brake Temperatures', preview: '/images/widgets/brake_temps.png', bullets: [
+  { id: 'best-lap', name: 'Best Lap Times', preview: '/images/widgets/best_lap.png', bullets: [
+    '<strong>sb:</strong> your session best lap time',
+    '<strong>pb:</strong> your all-time personal best',
+  ]},
+  { id: 'brake-temps', name: 'Brake Temperatures', video: '/images/widgets/brake_temps.webm', preview: '/images/widgets/brake_temps.png', bullets: [
     'brake temperature colours (blue → dark red)',
     'text optional, units: °C or °F',
     'layout:<br>left front — left rear — right rear — right front',
@@ -50,19 +54,18 @@ const widgets: Widget[] = [
     'load your own logo: place <code>logo_1.png</code> in <code>Documents/My Games/RRO/Logos/</code>',
     'png format, square aspect ratio recommended',
   ]},
-  { id: 'damage', name: 'Damage', preview: '/images/widgets/damage.png', bullets: [
-    'white bar per component group: Aero, Springs, Engine, Gears',
+  { id: 'damage', name: 'Damage', video: '/images/widgets/damage.webm', preview: '/images/widgets/damage.png', bullets: [
+    'damage per component group:<br>aerodynamics<br>springs (suspension)<br> engine<br>gears (transmission)',
   ]},
   { id: 'delta-bar', name: 'Delta Bar', video: '/images/widgets/delta_bar.webm', preview: '/images/widgets/delta_bar.png', bullets: [
-    'delta to session best lap, numeric and as a colour-coded bar',
+    'delta to session best lap time',
   ]},
-  { id: 'drs', name: 'DRS', preview: '/images/widgets/drs.png', bullets: [
+  { id: 'drs', name: 'DRS', video: '/images/widgets/drs.webm', preview: '/images/widgets/drs.png', bullets: [
     'disabled when DRS is not available',
-    'number of activations remaining shown in brackets',
-    'activity indicated via colour code',
+    'activations left shown in brackets',
   ]},
-  { id: 'ffb', name: 'FFB Bar', pro: true, preview: '/images/widgets/ffb_bar.png', bullets: [
-    'visualises FFB magnitude',
+  { id: 'ffb', name: 'FFB Bar', pro: true, video: '/images/widgets/ffb.webm', preview: '/images/widgets/ffb.png', bullets: [
+    'FFB magnitude and maximum',
     'tracks cuts above the upper threshold',
   ]},
   { id: 'flags', name: 'Flags', video: '/images/widgets/flags.webm', preview: '/images/widgets/flags.png', bullets: [
@@ -74,31 +77,31 @@ const widgets: Widget[] = [
     'Colour-coded per class',
     'number = position in class',
   ]},
-  { id: 'fps', name: 'FPS', preview: '/images/widgets/fps.png', bullets: [
+  { id: 'fps', name: 'FPS', video: '/images/widgets/fps.webm', preview: '/images/widgets/fps.png', bullets: [
     'current frames per second',
     'updated per second',
   ]},
-  { id: 'fuel-calc', name: 'Fuel Calculator', pro: true, preview: '/images/widgets/fuel_calc.png', bullets: [
-    '<strong>laps left:</strong> remaining fuel at current average consumption',
-    '<strong>time left:</strong> remaining time at current avg (Hypercars: VE laps left)',
-    '<strong>avg/lap:</strong> average consumption over last 20 laps',
+  { id: 'fuel-calc', name: 'Fuel Calculator', pro: true, video: '/images/widgets/fuel_calc.webm', preview: '/images/widgets/fuel_calc.png', bullets: [
+    '<strong>laps left:</strong> laps left at current avg',
+    '<strong>time left:</strong> time left at current avg<br>(HY: VE laps left)',
+    '<strong>avg/lap:</strong> average consumption',
     '<strong>last lap:</strong> fuel used last lap',
-    '<strong>left at finish:</strong> projected fuel remaining at race end',
-    '<strong>to add:</strong> fuel needed to finish, including ~1 lap safety margin',
+    '<strong>left at finish:</strong> projected fuel left at race end',
+    '<strong>to add:</strong> fuel needed to finish',
   ]},
-  { id: 'fuel-gauge', name: 'Fuel Gauge', preview: '/images/widgets/fuel_gauge.png', bullets: [
+  { id: 'fuel-gauge', name: 'Fuel Gauge', video: '/images/widgets/fuel_gauge.webm', preview: '/images/widgets/fuel_gauge.png', bullets: [
     'fuel remaining and total tank capacity',
-    'units: litres or gallons',
+    'units: litres or US gallons',
   ]},
-  { id: 'gear', name: 'Gear', preview: '/images/widgets/gear.png', bullets: [
+  { id: 'gear', name: 'Gear', video: '/images/widgets/gear.webm', preview: '/images/widgets/gear.png', bullets: [
     'currently selected gear',
     'colour code for critical rpm',
   ]},
-  { id: 'headlights', name: 'Headlights', preview: '/images/widgets/headlights.png', bullets: [
+  { id: 'headlights', name: 'Headlights', video: '/images/widgets/headlights.webm', preview: '/images/widgets/headlights.png', bullets: [
     'hidden on cars without headlights',
     '<strong>grey</strong> = off<br><strong>white</strong> = on<br><strong>yellow</strong> = flashing',
   ]},
-  { id: 'ignition', name: 'Ignition & Starter', preview: '/images/widgets/ignition.png', bullets: [
+  { id: 'ignition', name: 'Ignition & Starter', video: '/images/widgets/ignition.webm', preview: '/images/widgets/ignition.png', bullets: [
     '<strong>grey</strong> = off<br><strong>red</strong> = starter on<br><strong>flashing red</strong> = starting<br><strong>white</strong> = running',
   ]},
   { id: 'incident', name: 'Incident Points', preview: '/images/widgets/incident.png', bullets: [
@@ -106,8 +109,8 @@ const widgets: Widget[] = [
     'incident points accrued and the session limit',
     'number of cuts',
   ]},
-  { id: 'input-graph', name: 'Input Graph', pro: true, preview: '/images/widgets/input_graph.png', bullets: [
-    'throttle, brake and clutch inputs over time',
+  { id: 'input-graph', name: 'Input Graph', pro: true, video: '/images/widgets/input_graph.webm', preview: '/images/widgets/input_graph.png', bullets: [
+    '<strong>white:</strong> clutch<br><strong>green:</strong> throttle<br><strong>red:</strong> brake',
     'toggle interval in settings: 5, 10 or 20 seconds',
   ]},
   { id: 'lap-log', name: 'Lap Time Log', pro: true, preview: '/images/widgets/lap_log.png', bullets: [
@@ -115,22 +118,17 @@ const widgets: Widget[] = [
     'personal best and session best laps highlighted',
     'invalid laps struck red',
   ]},
-  { id: 'last-lap', name: 'Best Times', preview: '/images/widgets/last_lap.png', bullets: [
-    '<strong>sb:</strong> your session best lap time',
-    '<strong>pb:</strong> your all-time personal best',
-  ]},
-  { id: 'pedals', name: 'Pedals', preview: '/images/widgets/pedals.png', bullets: [
+  { id: 'pedals', name: 'Pedals', video: '/images/widgets/pedals.webm', preview: '/images/widgets/pedals.png', bullets: [
     'left to right: clutch, brake, throttle',
     '<strong>white bar:</strong> input from controller device',
     '<strong>grey bar:</strong> input received by the car',
   ]},
-  { id: 'penalties', name: 'Penalties', pro: true, preview: '/images/widgets/penalties.png', bullets: [
+  { id: 'penalties', name: 'Penalties', pro: true, video: '/images/widgets/penalties.webm', preview: '/images/widgets/penalties.png', bullets: [
     'hidden when no penalties are pending',
     '<strong>yellow:</strong> slowdown (seconds to give back)',
     '<strong>red:</strong> drive through / stop&amp;go (laps to serve)',
   ]},
-  { id: 'pit-info', name: 'Pit Stop Info', preview: '/images/widgets/pit_info.png', bullets: [
-    'enabled in the pit lane only',
+  { id: 'pit-info', name: 'Pit Stop Info', video: '/images/widgets/pit_info.webm', preview: '/images/widgets/pit_info.png', bullets: [
     'current and total pit stop time',
     'minimum stoppage time (if set)',
     'current action and scheduled task status',
@@ -142,7 +140,7 @@ const widgets: Widget[] = [
     'shows pit speed limit on pit request',
     'disappears once mandatory stop served',
   ]},
-  { id: 'proximity', name: 'Proximity Warners', video: '/images/widgets/proximity.webm', preview: '/images/widgets/proximity.png', bullets: [
+  { id: 'proximity', name: 'Proximity Warners', pro: true, video: '/images/widgets/proximity.webm', preview: '/images/widgets/proximity.png', bullets: [
     'bars at the left, right and bottom screen edges',
     'colour intensity increases the closer a car is on that side',
   ]},
@@ -153,10 +151,10 @@ const widgets: Widget[] = [
     'hidden when ptp is not available',
     'acts as overtake button indicator in FR-X22',
   ]},
-  { id: 'race-control', name: 'Race Control', preview: '/images/widgets/race_control.png', bullets: [
-    'penalty messages',
+  { id: 'race-control', name: 'Race Control', video: '/images/widgets/race_control.webm', preview: '/images/widgets/race_control.png', bullets: [
+    'lap validity',
     'flag messages',
-    'lap validity status',
+    'penalty messages',
   ]},
   { id: 'radar', name: 'Radar', video: '/images/widgets/radar.webm', preview: '/images/widgets/radar.png', bullets: [
     'top-down view of surrounding cars and their relative orientation',
