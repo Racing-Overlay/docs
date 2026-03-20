@@ -135,30 +135,32 @@ const widgets: Widget[] = [
     'minimum stoppage time (if set)',
     'current action and scheduled task status',
   ]},
-  { id: 'pit-window', name: 'Pit Window', preview: '/images/widgets/pit_window.png', bullets: [
+  { id: 'pit-window', name: 'Pit Window', video: '/images/widgets/pit_window.webm', preview: '/images/widgets/pit_window.png', bullets: [
     'shown when mandatory stop exists, pit limiter is on, or stop is requested',
     '<strong>yellow</strong> = 1 min until window opens<br><strong>green</strong> = window open',
     'Number in brackets = laps/minutes window open',
     'shows pit speed limit on pit request',
     'disappears once mandatory stop served',
   ]},
-  { id: 'proximity', name: 'Proximity Warners', preview: '/images/widgets/proximity.png', bullets: [
+  { id: 'proximity', name: 'Proximity Warners', video: '/images/widgets/proximity.webm', preview: '/images/widgets/proximity.png', bullets: [
     'bars at the left, right and bottom screen edges',
     'colour intensity increases the closer a car is on that side',
   ]},
-  { id: 'ptp', name: 'Push to Pass', preview: '/images/widgets/ptp.png', bullets: [
+  { id: 'ptp', name: 'Push to Pass', video: '/images/widgets/ptp.webm', preview: '/images/widgets/ptp.png', bullets: [
     'activity colour-coded; countdown while active',
+    '<strong>blue:</strong> charging (LRT)<br><strong>green:</strong> ready to use<br><strong>yellow:</strong> active',
     'remaining activations in brackets',
-    'acts as overtake button indicator in FR-X22',
     'hidden when ptp is not available',
+    'acts as overtake button indicator in FR-X22',
   ]},
   { id: 'race-control', name: 'Race Control', preview: '/images/widgets/race_control.png', bullets: [
     'penalty messages',
     'flag messages',
     'lap validity status',
   ]},
-  { id: 'radar', name: 'Radar', preview: '/images/widgets/radar.png', bullets: [
+  { id: 'radar', name: 'Radar', video: '/images/widgets/radar.webm', preview: '/images/widgets/radar.png', bullets: [
     'top-down view of surrounding cars and their relative orientation',
+    'variable detection range (see settings menu)',
   ]},
   { id: 'relative', name: 'Relative', preview: '/images/widgets/relative.png', bullets: [
     'gaps the six drivers closest to you',
@@ -166,14 +168,14 @@ const widgets: Widget[] = [
     '<span class="tag-pro">Pro</span> ranked multiplayer rating and reputation',
     '<span class="tag-pro">Pro</span> class colour per driver',
   ]},
-  { id: 'rpm', name: 'RPM', preview: '/images/widgets/rpm.png', bullets: [
+  { id: 'rpm', name: 'RPM', video: '/images/widgets/rpm.webm', preview: '/images/widgets/rpm.png', bullets: [
     'rpm bar with colour code for critical revolutions',
   ]},
-  { id: 'sectors', name: 'Sector Times', preview: '/images/widgets/sectors.png', bullets: [
+  { id: 'sectors', name: 'Sector Times', video: '/images/widgets/sectors.webm', preview: '/images/widgets/sectors.png', bullets: [
     'own current times for track sectors',
     '<strong>white</strong> = normal<br><strong>green</strong> = own best<br><strong>pink</strong> = session best<br><strong>black</strong> = invalid',
   ]},
-  { id: 'session-info', name: 'Session Info', preview: '/images/widgets/session_info.png', bullets: [
+  { id: 'session-info', name: 'Session Info', video: '/images/widgets/session_info.webm', preview: '/images/widgets/session_info.png', bullets: [
     'time of day',
     'session type, time remaining in session',
     'current lap and projected total laps',
@@ -235,13 +237,13 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
   <nav>
     <span class="nav-brand">RRO</span>
     <div class="nav-links">
-      <a href="#widgets">Widgets</a>
-      <a href="#usage">Usage</a>
-      <a href="#hotkeys">Hotkeys</a>
-      <a href="#settings">Settings</a>
-      <a href="#abbreviations">Abbreviations</a>
+      <a href="#widgets">widgets</a>
+      <a href="#usage">usage</a>
+      <a href="#hotkeys">hotkeys</a>
+      <a href="#settings">settings</a>
+      <a href="#abbreviations">abbreviations</a>
       <div class="nav-download">
-        <span class="badges-label">Download:</span>
+        <span class="badges-label">download:</span>
         <a href="https://forum.kw-studios.com/index.php?threads/racing-overlay-0-9-6.20874/" target="_blank" rel="noopener noreferrer" class="badge badge-free">Free</a>
         <a href="https://ko-fi.com/racingoverlay" target="_blank" rel="noopener noreferrer" class="badge badge-pro">Pro</a>
         </div>
@@ -251,7 +253,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
   <div class="page">
     <!-- Hero -->
     <section class="hero">
-      <h1>Raceroom Racing Overlay</h1>
+      <h1 style="letter-spacing: 0.001rem;">Raceroom Racing Overlay</h1>
       <p class="tagline">clean, lightweight, highly customisable</p>
       <!-- <div class="badges">
         <span class="badges-label">Download:</span>
@@ -263,9 +265,10 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
     <!-- Features -->
     <section id="features" class="section">
       <h2 class="section-title">Features</h2>
-      <p>Supreme performance, runs at your game fps</p>
-      <p>Supports fullscreen and triple screen</p>
-      <p>No webhud, no fiddling, just install and run</p>
+      <p>easy setup: install, run, done</p>
+      <p>compatible: supports fullscreen and triple screen</p>
+      <p>adaptible: move, resize and disable any widget independently</p>
+      <p>supreme performance: minimal footprint, runs at your game fps</p>
     </section>
 
     <!-- Widgets -->
@@ -310,7 +313,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
             :alt="activeWidget.name + ' preview'"
             class="widget-preview-img"
           />
-          <div v-else class="widget-preview-empty">No preview available</div>
+          <div v-else class="widget-preview-empty">no preview available</div>
         </div>
       </div>
     </section>
@@ -328,22 +331,22 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
     <section id="hotkeys" class="section">
       <h2 class="section-title">Hotkeys</h2>
       <div class="hotkeys-grid">
-        <div class="hotkey-row"><kbd>Ctrl+Shift+S</kbd><span>Open settings menu</span></div>
-        <div class="hotkey-row"><kbd>Ctrl+Shift+M</kbd><span>Toggle edit mode (on track only)</span></div>
-        <div class="hotkey-row"><kbd>Ctrl+Shift+O</kbd><span>Cycle global background opacity</span></div>
-        <div class="hotkey-row"><kbd>O + Left-Click</kbd><span>Change single widget opacity</span></div>
-        <div class="hotkey-row"><kbd>Ctrl+Shift+K / L</kbd><span>Switch to previous / next layout</span></div>
-        <div class="hotkey-row"><kbd>Ctrl+Shift+Left-Click</kbd><span>Disable a widget</span></div>
-        <div class="hotkey-row"><kbd>Ctrl+Shift+X</kbd><span>Reset all widgets</span></div>
-        <div class="hotkey-row"><kbd>X + Left-Click</kbd><span>Reset single widget</span></div>
-        <div class="hotkey-row"><kbd>Ctrl+Shift+H</kbd><span>Backup toggle for edit mode</span></div>
+        <div class="hotkey-row"><kbd>Ctrl+Shift+S</kbd><span>open settings menu</span></div>
+        <div class="hotkey-row"><kbd>Ctrl+Shift+M</kbd><span>toggle edit mode (on track only)</span></div>
+        <div class="hotkey-row"><kbd>Ctrl+Shift+O</kbd><span>cycle global background opacity</span></div>
+        <div class="hotkey-row"><kbd>O + Left-Click</kbd><span>change single widget opacity</span></div>
+        <div class="hotkey-row"><kbd>Ctrl+Shift+K / L</kbd><span>switch to previous / next layout</span></div>
+        <div class="hotkey-row"><kbd>Ctrl+Shift+Left-Click</kbd><span>disable a widget</span></div>
+        <div class="hotkey-row"><kbd>Ctrl+Shift+X</kbd><span>reset all widgets</span></div>
+        <div class="hotkey-row"><kbd>X + Left-Click</kbd><span>reset single widget</span></div>
+        <div class="hotkey-row"><kbd>Ctrl+Shift+H</kbd><span>backup toggle for edit mode</span></div>
       </div>
       <p style="margin-top:1rem; color: var(--text-muted); font-size:0.88rem;">
-        Tip: Assign RaceRoom keybind <em>"HUD edit mode"</em> to
+        tip: assign Raceroom keybind <em>"move & resize hud elements"</em> to
         <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">M</kbd>
-        and <em>"HUD reset"</em> to
+        and <em>"reset hud elements"</em> to
         <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">X</kbd>
-        for quickest access.
+        for quickest access
       </p>
     </section>
 
@@ -352,13 +355,13 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
       <h2 class="section-title">Settings menu</h2>
 
         <p style="margin-bottom:1rem; color: var(--text-muted); font-size:0.88rem;">
-          Press
+          press
           <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Ctrl</kbd>
           +
           <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Shift</kbd>
           +
           <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">S</kbd>
-          anywhere to open the settings menu, also in the main menu.
+          anywhere to open the settings menu, also in main menu
         </p>
 
         <!-- Single card for settings menu -->
@@ -391,7 +394,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
       <h2 class="section-title">Abbreviations</h2>
       <table class="abbrev-table">
         <tbody>
-          <tr><td>°C</td><td>Degree Celsius</td></tr>
+          <tr><td>°C</td><td>Degree celsius</td></tr>
           <tr><td>°F</td><td>Degree Fahrenheit</td></tr>
           <tr><td>ABS</td><td>Anti-lock Braking System</td></tr>
           <tr><td>BB</td><td>Brake Balance</td></tr>
@@ -413,6 +416,6 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
   </div>
 
   <footer>
-    <p>© 2025 HdB — Raceroom Racing Overlay</p>
+    <p>© 2025 CG — Raceroom Racing Overlay</p>
   </footer>
 </template>
