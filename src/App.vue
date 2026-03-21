@@ -73,7 +73,7 @@ const widgets: Widget[] = [
   ]},
   { id: 'flat-map', name: 'Flat Map', pro: true, preview: '/images/widgets/flat_map.png', bullets: [
     'represents the track length',
-    'all drivers\' positions shown relatively',
+    'all drivers\' positions relatively',
     'Colour-coded per class',
     'number = position in class',
   ]},
@@ -161,10 +161,11 @@ const widgets: Widget[] = [
     'variable detection range (see settings menu)',
   ]},
   { id: 'relative', name: 'Relative', preview: '/images/widgets/relative.png', bullets: [
-    'gaps the six drivers closest to you',
-    'lapped status',
-    '<span class="tag-pro">Pro</span> ranked multiplayer rating and reputation',
-    '<span class="tag-pro">Pro</span> class colour per driver',
+    'gaps to the six drivers closest to you',
+    'columns: overall position, name, (rat/rep), delta',
+    'lapped status: blue = ahead, red = behind',
+    '<span class="tag-pro">Pro</span> driver class colour',
+    '<span class="tag-pro">Pro</span> in mp: rating and reputation',
   ]},
   { id: 'rpm', name: 'RPM', video: '/images/widgets/rpm.webm', preview: '/images/widgets/rpm.png', bullets: [
     'rpm bar with colour code for critical revolutions',
@@ -185,11 +186,12 @@ const widgets: Widget[] = [
     '<span class="tag-pro">Pro</span> average speed',
   ]},
   { id: 'standings', name: 'Standings', tallPreview: true, video: '/images/widgets/standings.webm', preview: '/images/widgets/standings.png', bullets: [
-    'columns:<br>position, position change, emblem, number, driver name, tyre compound',
-    'practice/Qualifying: session best lap time',
+    'columns:<br>position, position change, logo, number, driver name, time, tyre compound, pit info',
+    'practice/qualifying: session best lap time',
     'race: gap to leader, last lap, pit stop status',
-    '<span class="tag-pro">Pro</span> class standings with class colour and SoF',
-    '<span class="tag-pro">Pro</span> virtual Energy per driver',
+    '<span class="tag-pro">Pro</span> class standings with class colours',
+    '<span class="tag-pro">Pro</span> in mp: SoF per class',
+    '<span class="tag-pro">Pro</span> HY: VE per driver',
   ]},
   { id: 'start-lights', name: 'Start Lights', video: '/images/widgets/start_lights.webm',
     preview: '/images/widgets/start_lights.png', bullets: ['reasonably sized']
@@ -235,13 +237,13 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
   <nav>
     <span class="nav-brand">RRO</span>
     <div class="nav-links">
-      <a href="#widgets">widgets</a>
-      <a href="#usage">usage</a>
-      <a href="#hotkeys">hotkeys</a>
-      <a href="#settings">settings</a>
-      <a href="#abbreviations">abbreviations</a>
+      <a href="#widgets">Widgets</a>
+      <a href="#usage">Usage</a>
+      <a href="#hotkeys">Hotkeys</a>
+      <a href="#settings">Settings</a>
+      <a href="#abbreviations">Abbreviations</a>
       <div class="nav-download">
-        <span class="badges-label">download:</span>
+        <span class="badges-label">Download:</span>
         <a href="https://forum.kw-studios.com/index.php?threads/racing-overlay-0-9-6.20874/" target="_blank" rel="noopener noreferrer" class="badge badge-free">Free</a>
         <a href="https://ko-fi.com/racingoverlay" target="_blank" rel="noopener noreferrer" class="badge badge-pro">Pro</a>
         </div>
@@ -265,7 +267,6 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
       <h2 class="section-title">Features</h2>
       <p>easy setup: install, run, done</p>
       <p>compatible: supports fullscreen and triple screen</p>
-      <p>adaptable: move, resize and disable any widget independently</p>
       <p>supreme performance: minimal footprint, runs at your game fps</p>
     </section>
 
