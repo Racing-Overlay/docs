@@ -255,6 +255,7 @@ const changelog: ChangelogEntry[] = [
         'Added a settings menu (Ctrl+Shift+S) — removed redundant hotkeys',
         'Added proximity beep (audio radar)',
         'Made temperature text optional via settings',
+        'Added setting for coloured pedal bars',
         'Improved lap estimation for time-based sessions → more accurate fuel estimates',
         'Added discharge and brake regen rate (battery widget)',
         'Added all-time personal best tracking ("pb") — session best renamed to "sb"',
