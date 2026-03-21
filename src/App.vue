@@ -126,6 +126,7 @@ const widgets: Widget[] = [
     'left to right: clutch, brake, throttle',
     '<strong>white bar:</strong> input from controller device',
     '<strong>grey bar:</strong> input received by the car',
+    'enable colour-coding in settings menu',
   ]},
   { id: 'penalties', name: 'Penalties', pro: true, video: '/images/widgets/penalties.webm', preview: '/images/widgets/penalties.png', bullets: [
     'hidden when no penalties are pending',
@@ -229,6 +230,7 @@ const widgets: Widget[] = [
     'enable proximity beep:<br>turn the audible radar beep on/off',
     'beep frequency:<br>set the pitch of the radar beep',
     'show temperature text:<br>turn temps being shown as numbers on/off',
+    'colour-coded pedal bars:<br>turn bar colouring on/off',
     'units:<br>Switch between metric and imperial US units',
     'radar range:<br>how far away the radar detects opponents',
     '<span class="tag-pro">Pro</span> pedal graph interval:<br>how many seconds the input graph will project',
