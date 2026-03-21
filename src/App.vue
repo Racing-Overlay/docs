@@ -3,6 +3,9 @@ import { ref, computed } from 'vue'
 
 const activeWidgetId = ref('standings')
 
+// Hamburger menu for mobile
+const menuOpen = ref(false)
+
 interface Widget {
   id: string
   name: string
@@ -229,6 +232,128 @@ const widgets: Widget[] = [
   ]},
 ]
 
+interface ChangelogEntry {
+  version: string
+  label: string       // short pill label
+  pro?: boolean
+  sections: { heading?: string; items: string[] }[]
+}
+
+const activeVersionId = ref('0.9.7')
+
+const changelog: ChangelogEntry[] = [
+  {
+    version: '0.9.7', label: '0.9.7', pro: false,
+    sections: [
+      { heading: 'Beep Beep! Some important changes', items: [
+        'Added a settings menu (Ctrl+Shift+S) — removed redundant hotkeys',
+        'Added proximity beep (audio radar)',
+        'Made temperature text optional via settings',
+        'Improved lap estimation for time-based sessions → more accurate fuel estimates',
+        'Added discharge and brake regen rate (battery widget)',
+        'Added all-time personal best tracking ("pb") — session best renamed to "sb"',
+        'Tracking of invalid lap times and sector times',
+        'Smaller start lights',
+        'Improved EV support',
+        'Fixed standings info / pit box overlap',
+        'Fixed a potential resizing bug in strikethrough logic',
+        'Further performance optimisations',
+        'Updated shared memory support (3.5)',
+      ]},
+    ],
+  },
+  {
+    version: '0.9.6.1', label: '0.9.6.1', pro: true,
+    sections: [
+      { items: [
+        'added radar fade when no opponents in detection range',
+      ]},
+    ],
+  },
+  {
+    version: '0.9.6', label: '0.9.6', pro: true,
+    sections: [
+      { items: [
+        'added radar proximity highlighting',
+        'added FFB bar',
+        'removed unnecessary crosshair from radar',
+        'changed default widget placements a bit',
+      ]},
+    ],
+  },
+  {
+    version: '0.9.5', label: '0.9.5', pro: false,
+    sections: [
+      { items: [
+        'RRO now works in replay mode (some widgets need data unavailable in replays — create a dedicated replay layout)',
+        'Reset individual widgets: hold X then left-click the widget',
+        'Pit window widget shows pit speed limit on pit request',
+        'Fixed pit-open message firing repeatedly',
+        'Further performance optimisations',
+      ]},
+    ],
+  },
+  {
+    version: '0.9.3', label: '0.9.3', pro: false,
+    sections: [
+      { items: [
+        'Optimised app launch',
+        'Added overall driver count and strength of field to standings tower header',
+        'Per-widget opacity: in edit mode, hold O and left-click a widget to change its opacity',
+        'Global opacity hotkey (Ctrl+Shift+O) resets individual opacity settings',
+        'Standings tower is now resizable',
+        'Added desktop shortcut that launches RRO and RaceRoom together',
+        'Fixed RPM bar: removed smoothing',
+        'Fixed pedal bars: removed smoothing',
+        'Fixed brake balance: was showing rear bias, now shows front bias',
+      ]},
+      { heading: 'Troubleshooting', items: [
+        'App won\'t start: try running as administrator, or launch after the game',
+        'Widgets misaligned: in edit mode, right-click-drag to resize slightly — they will snap back to the grid',
+        'Afterburner / RTSS: start RRO first, then RTSS',
+      ]},
+    ],
+  },
+  {
+    version: '0.9.2', label: '0.9.2', pro: false,
+    sections: [
+      { items: [
+        'Added Pedal Input Graph widget',
+        'Enabled Fuel Calculator (incl. Virtual Energy)',
+        'Enabled Lap Time Log',
+        'Enabled Penalty mini widget',
+        'Enabled Custom Logo widget (see user guide)',
+      ]},
+      { heading: 'Pro-only features', items: [
+        'Standings: multiclass standings, strength of field',
+        'Relative: rated rating and reputation of nearby drivers',
+        'Speed: average speed',
+        'Tyre Info: wheel lock and spin indicators',
+        'Custom steering wheel texture (see user guide)',
+      ]},
+    ],
+  },
+  {
+    version: '0.9.1', label: '0.9.1', pro: false,
+    sections: [
+      { items: [
+        'Fixed triple screen support',
+        'Changed edit mode hotkey to Ctrl+Shift+M',
+        'Enabled Radar widget (range toggle: Ctrl+Shift+I)',
+        'Enabled FPS widget',
+        'Enabled Tyre Info widget',
+        'Fixed and updated Relative widget — now visible in practice and qualifying',
+        'Added laps-down logic to free Standings widget',
+        'Added notifications for edit mode toggle actions',
+        'Fixed Session Info text clipping',
+        'Further performance optimisations',
+      ]},
+    ],
+  },
+]
+
+const activeEntry = computed(() => changelog.find(e => e.version === activeVersionId.value)!)
+
 const activeWidget = computed(() => widgets.find(w => w.id === activeWidgetId.value)!)
 const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu')!)
 </script>
@@ -236,18 +361,22 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
 <template>
   <nav>
     <span class="nav-brand">RRO</span>
-    <div class="nav-links">
+    <button class="nav-burger" @click="menuOpen = !menuOpen" :class="{ open: menuOpen }" aria-label="Menu">
+      <span /><span /><span />
+    </button>
+    <div class="nav-links" :class="{ open: menuOpen }" @click="menuOpen = false">
       <a href="#widgets">Widgets</a>
       <a href="#usage">Usage</a>
       <a href="#hotkeys">Hotkeys</a>
       <a href="#settings">Settings</a>
+      <a href="#changelog">Changelog</a>
       <a href="#abbreviations">Abbreviations</a>
-      <div class="nav-download">
-        <span class="badges-label">Download:</span>
-        <a href="https://forum.kw-studios.com/index.php?threads/racing-overlay-0-9-6.20874/" target="_blank" rel="noopener noreferrer" class="badge badge-free">Free</a>
-        <a href="https://ko-fi.com/racingoverlay" target="_blank" rel="noopener noreferrer" class="badge badge-pro">Pro</a>
-        </div>
-      </div>
+    </div>
+    <div class="nav-download">
+      <span class="badges-label">Download:</span>
+      <a href="https://forum.kw-studios.com/index.php?threads/racing-overlay-0-9-6.20874/" target="_blank" rel="noopener noreferrer" class="badge badge-free">Free</a>
+      <a href="https://ko-fi.com/racingoverlay" target="_blank" rel="noopener noreferrer" class="badge badge-pro">Pro</a>
+    </div>
   </nav>
 
   <div class="page">
@@ -317,7 +446,6 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
       </div>
     </section>
 
-
     <!-- Usage -->
     <section id="usage" class="section">
       <h2 class="section-title">Getting Started</h2>
@@ -330,7 +458,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
     <section id="hotkeys" class="section">
       <h2 class="section-title">Hotkeys</h2>
       <div class="hotkeys-grid">
-        <div class="hotkey-row"><kbd>Ctrl+Shift+S</kbd><span>open settings menu</span></div>
+        <div class="hotkey-row"><kbd>Ctrl+Shift+S</kbd><span>open settings menu (anywhere)</span></div>
         <div class="hotkey-row"><kbd>Ctrl+Shift+M</kbd><span>toggle edit mode (on track only)</span></div>
         <div class="hotkey-row"><kbd>Ctrl+Shift+O</kbd><span>cycle global background opacity</span></div>
         <div class="hotkey-row"><kbd>O + Left-Click</kbd><span>change single widget opacity</span></div>
@@ -341,7 +469,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
         <div class="hotkey-row"><kbd>Ctrl+Shift+H</kbd><span>backup toggle for edit mode</span></div>
       </div>
       <p style="margin-top:1rem; color: var(--text-muted); font-size:0.88rem;">
-        tip: assign Raceroom keybind <em>"move & resize hud elements"</em> to
+        Tip: assign Raceroom keybind <em>"move & resize hud elements"</em> to
         <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">M</kbd>
         and <em>"reset hud elements"</em> to
         <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">X</kbd>
@@ -354,7 +482,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
       <h2 class="section-title">Settings menu</h2>
 
         <p style="margin-bottom:1rem; color: var(--text-muted); font-size:0.88rem;">
-          press
+          Press
           <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Ctrl</kbd>
           +
           <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Shift</kbd>
@@ -386,6 +514,36 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
             <div v-else class="widget-preview-empty">No preview available</div>
           </div>
         </div>
+    </section>
+
+    <!-- Changelog -->
+    <section id="changelog" class="section">
+      <h2 class="section-title">Changelog</h2>
+
+      <div class="widget-index">
+        <button
+        v-for="entry in changelog"
+        :key="entry.version"
+        class="widget-pill"
+        :class="{ active: activeVersionId === entry.version, pro: entry.pro }"
+        @click="activeVersionId = entry.version"
+        >{{ entry.label }}</button>
+      </div>
+
+      <div class="widget-card" style="max-width: 640px;">
+        <div class="widget-header">
+          <h3>Version {{ activeEntry.version }}</h3>
+          <span v-if="activeEntry.pro" class="tag-pro">Pro</span>
+        </div>
+        <template v-for="(section, i) in activeEntry.sections" :key="i">
+          <p v-if="section.heading" style="font-weight:600; margin: 0.75rem 0 0.25rem;">
+            {{ section.heading }}
+          </p>
+          <ul>
+            <li v-for="(item, j) in section.items" :key="j">{{ item }}</li>
+          </ul>
+        </template>
+      </div>
     </section>
 
     <!-- Abbreviations -->

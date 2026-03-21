@@ -37,19 +37,59 @@ nav {
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
   padding: 0.75rem 1.5rem;
-  display: flex; align-items: center; flex-wrap: wrap;
-  gap: 0.75rem 2rem;
+  display: flex; align-items: center;
+  gap: 0.5rem 1.5rem;
 }
+
 .nav-brand { font-weight: 800; font-size: 1.1rem; color: var(--text); letter-spacing: 1px; }
-.nav-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-size: 0.9rem; align-items: center; }
+
+.nav-links {
+  display: flex; flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.9rem; align-items: center;
+  flex: 1;  /* fills space between brand and download */
+}
 .nav-links a { color: var(--text-muted); }
-.nav-links .badge-free { color: var(--accent); }
-.nav-links .badge-pro { color: var(--purple); }
 .nav-links a:hover { color: var(--text); text-decoration: none; }
-.nav-links .badge-free:hover { color: var(--accent); }
-.nav-links .badge-pro:hover { color: var(--purple); }
-.nav-links .nav-pro { color: var(--purple); font-weight: 600; }
-.nav-download { display: flex; align-items: center; gap: 0.5rem; margin-left: 2rem; }
+
+.nav-download { display: flex; align-items: center; gap: 0.5rem; margin-left: auto; }
+
+/* hamburger — hidden on desktop */
+.nav-burger { display: none; }
+
+@media (max-width: 600px) {
+  .widget-display { grid-template-columns: 1fr; }
+
+  nav { flex-wrap: wrap; }
+
+  .nav-burger {
+    display: flex; flex-direction: column; justify-content: space-between;
+    width: 22px; height: 16px;
+    background: none; border: none; cursor: pointer; padding: 0;
+    margin-left: auto;   /* push burger to right, next to brand */
+  }
+  .nav-burger span {
+    display: block; height: 2px; width: 100%;
+    background: var(--text); border-radius: 2px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-burger.open span:nth-child(2) { opacity: 0; }
+  .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .nav-download { margin-left: 0; }  /* sits naturally after burger */
+
+  /* links hidden by default, shown when open */
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 0 0.25rem;
+  }
+  .nav-links.open { display: flex; }
+}
 
 /* ── Hero ── */
 .hero {
@@ -229,5 +269,4 @@ footer {
 
 @media (max-width: 600px) {
   .widget-display { grid-template-columns: 1fr; }
-  .nav-download { margin-left: 0; } /* don't push to right when wrapped to own line */
 }
