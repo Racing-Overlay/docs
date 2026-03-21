@@ -47,6 +47,7 @@ const widgets: Widget[] = [
   { id: 'car-temps', name: 'Car Temperatures', video: '/images/widgets/car_temps.webm', preview: '/images/widgets/car_temps.png', bullets: [
     'engine (e) and oil (o) temperature colours',
     'units: °C or °F',
+    'temperature text optional',
   ]},
   { id: 'current-lap', name: 'Current Lap Time', video: '/images/widgets/current_lap.webm', preview: '/images/widgets/current_lap.png', bullets: [
     '<strong>this:</strong> current lap time',
@@ -192,6 +193,8 @@ const widgets: Widget[] = [
     'columns:<br>position, position change, logo, number, driver name, time, tyre compound, pit info',
     'practice/qualifying: session best lap time',
     'race: gap to leader, last lap, pit stop status',
+    'yellow marked driver: session best time',
+    'pit info:<br><strong>dark grey:</strong> mandatory pit stop, not served<br><strong>blinking:</strong> currently serving pit stop<br><strong>light grey:</strong> pit stop served (number of stops)',
     '<span class="tag-pro">Pro</span> class standings with class colours',
     '<span class="tag-pro">Pro</span> in mp: SoF per class',
     '<span class="tag-pro">Pro</span> HY: VE per driver',
@@ -205,6 +208,7 @@ const widgets: Widget[] = [
   ]},
   { id: 'tyre-info', name: 'Tyre Info', video: '/images/widgets/tyre_info.webm', preview: '/images/widgets/tyre_info.png', bullets: [
     'per tyre:<br>pressure (kPa / psi), condition (%),<br>segment temperature (°C / °F)',
+    'temperature text optional',
     'dirt pick up',
   ]},
   { id: 'virtual-energy', name: 'Virtual Energy', preview: '/images/widgets/virtual_energy.png', bullets: [
@@ -257,6 +261,7 @@ const changelog: ChangelogEntry[] = [
         'Improved EV support',
         'Fixed standings info / pit box overlap',
         'Fixed a potential resizing bug in strikethrough logic',
+        'Remodeled threading architecture',
         'Further performance optimisations',
         'Updated shared memory support (3.5)',
       ]},
