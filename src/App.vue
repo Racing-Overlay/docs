@@ -382,7 +382,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
     </div>
     <div class="nav-download">
       <span class="badges-label">Download:</span>
-      <a href="https://forum.kw-studios.com/index.php?threads/racing-overlay-0-9-6.20874/" target="_blank" rel="noopener noreferrer" class="badge badge-free">Free</a>
+      <a href="https://forum.kw-studios.com/index.php?threads/racing-overlay.20874/" target="_blank" rel="noopener noreferrer" class="badge badge-free">Free</a>
       <a href="https://ko-fi.com/racingoverlay" target="_blank" rel="noopener noreferrer" class="badge badge-pro">Pro</a>
     </div>
   </nav>
@@ -392,11 +392,6 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
     <section class="hero">
       <h1 style="letter-spacing: 0.001rem;">Raceroom Racing Overlay</h1>
       <p class="tagline">clean, lightweight, highly customisable</p>
-      <!-- <div class="badges">
-        <span class="badges-label">Download:</span>
-        <a href="https://forum.kw-studios.com/index.php?threads/racing-overlay-0-9-6.20874/" target="_blank" rel="noopener noreferrer" class="badge badge-free">Free</a>
-        <a href="https://ko-fi.com/racingoverlay" target="_blank" rel="noopener noreferrer" class="badge badge-pro">Pro</a>
-      </div> -->
     </section>
 
     <!-- Features -->
@@ -404,6 +399,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
       <h2 class="section-title">Features</h2>
       <p>easy setup: install, run, done</p>
       <p>compatible: supports fullscreen and triple screen</p>
+      <p>adaptable: unlimited custom layouts</p>
       <p>supreme performance: minimal footprint, runs at your game fps</p>
     </section>
 

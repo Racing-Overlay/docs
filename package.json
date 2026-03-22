@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
-    "deploy": "gh-pages -d dist -r git@github.com:Racing-Overlay/docs.git",
+    "deploy": "vite build && gh-pages -d dist -r git@github.com:Racing-Overlay/docs.git",
     "lint": "run-s lint:*",
     "lint:oxlint": "oxlint . --fix",
     "lint:eslint": "eslint . --fix --cache",
