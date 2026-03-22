@@ -126,7 +126,7 @@ const widgets: Widget[] = [
     'left to right: clutch, brake, throttle',
     '<strong>white bar:</strong> input from controller device',
     '<strong>grey bar:</strong> input received by the car',
-    'optional colour-coding, set in settings menu',
+    'optional: coloured bars, matching input graph',
   ]},
   { id: 'penalties', name: 'Penalties', pro: true, video: '/images/widgets/penalties.webm', preview: '/images/widgets/penalties.png', bullets: [
     'hidden when no penalties are pending',
