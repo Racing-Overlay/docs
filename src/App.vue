@@ -47,13 +47,26 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
       <p class="tagline">clean, lightweight, highly customisable</p>
     </section>
 
+    <!-- Preview Video -->
+    <section class="section section--video">
+      <div class="video-embed">
+        <iframe
+          src="https://www.youtube.com/embed/mgww8AUrBkA"
+          title="RRO Preview"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        />
+      </div>
+    </section>
+
     <!-- Features -->
     <section id="features" class="section">
       <h2 class="section-title">Features</h2>
       <p>easy setup: install, run, done</p>
       <p>compatible: supports fullscreen and triple screen</p>
       <p>adaptable: unlimited custom layouts</p>
-      <p>supreme performance: minimal footprint, runs at your game fps</p>
+      <p>built from scratch: minimal footprint, runs at your game fps</p>
     </section>
 
     <!-- Widgets -->

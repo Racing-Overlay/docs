@@ -49,7 +49,7 @@ export const changelog: ChangelogEntry[] = [
     ],
   },
   {
-    version: '0.9.5', label: '0.9.5', pro: false,
+    version: '0.9.5', label: '0.9.5', pro: true,
     sections: [
       { items: [
         'RRO now works in replay mode (some widgets need data unavailable in replays — create a dedicated replay layout)',
