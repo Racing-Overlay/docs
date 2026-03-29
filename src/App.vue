@@ -210,7 +210,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
             {{ section.heading }}
           </p>
           <ul>
-            <li v-for="(item, j) in section.items" :key="j">{{ item }}</li>
+            <li v-for="(item, j) in section.items" :key="j" v-html="item" />
           </ul>
         </template>
       </div>

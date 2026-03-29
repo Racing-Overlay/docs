@@ -8,6 +8,23 @@ export interface ChangelogEntry {
 // Ordered list, newest entry has to be on top
 export const changelog: ChangelogEntry[] = [
   {
+    version: '0.9.8', label: '0.9.8', pro: false,
+    sections: [
+      { heading: '', items: [
+        '<span class="tag-pro">Pro</span> added setting to switch delta reference (session best or all-time best)',
+        '<span class="tag-pro">Pro</span> added suspension widget: four ride height bars and a central rake bar',
+        'standings tower: added per-driver penalty info',
+        'ptp widget: added countdown timer for ready to use state in LRT (5 seconds)',
+        'lap time log: added average of all laps (for consistency tracking)',
+        'lap time log: fixed sb and pb highlighting',
+        'current lap times: fixed showing time after session reset',
+        'race control: updated visuals for leaner look',
+        'race control: added distance to yellow and sector',
+        'race control: fixed flag messages firing repeatedly',
+      ]},
+    ],
+  },
+  {
     version: '0.9.7', label: '0.9.7', pro: false,
     sections: [
       { heading: 'Beep Beep! Some important changes', items: [
