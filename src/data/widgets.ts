@@ -110,6 +110,7 @@ export const widgets: Widget[] = [
   { id: 'lap-log', name: 'Lap Time Log', pro: true, preview: '/images/widgets/lap_log.png', bullets: [
     'last seven lap times with delta to previous lap',
     'personal best and session best laps highlighted',
+    'average of all laps',
     'invalid laps struck red',
   ]},
   { id: 'pedals', name: 'Pedals', video: '/images/widgets/pedals.webm', preview: '/images/widgets/pedals.png', bullets: [
@@ -184,6 +185,7 @@ export const widgets: Widget[] = [
     'columns:<br>position, position change, logo, number, driver name, time, tyre compound, pit info',
     'practice/qualifying: session best lap time',
     'race: gap to leader, last lap, pit stop status',
+    'per-driver penalty info<br>slowdowns as seconds to give back',
     'yellow marked driver: session best time',
     'pit info:<br><strong>dark grey:</strong> mandatory pit stop, not served<br><strong>blinking:</strong> currently serving pit stop<br><strong>light grey:</strong> pit stop served (number of stops)',
     '<span class="tag-pro">Pro</span> class standings with class colours',
@@ -196,6 +198,10 @@ export const widgets: Widget[] = [
   { id: 'steering', name: 'Steering Wheel', video: '/images/widgets/steering.webm', preview: '/images/widgets/steering.png', bullets: [
     'visualisation of steering inputs',
     '<span class="tag-pro">Pro</span> load your own texture:<br>place <code>st_wheel.png</code> in <code>Documents/My Games/RRO/Wheels/</code> (square PNG with transparency)',
+  ]},
+  { id: 'suspension', name: 'Suspension', pro: true, video: '/images/widgets/suspension.webm', preview: '/images/widgets/suspension.png', bullets: [
+    '4 bars for ride height at each wheel',
+    'centre bar for rake',
   ]},
   { id: 'tyre-info', name: 'Tyre Info', video: '/images/widgets/tyre_info.webm', preview: '/images/widgets/tyre_info.png', bullets: [
     'per tyre:<br>pressure (kPa / psi), condition (%),<br>segment temperature (°C / °F)',
@@ -224,6 +230,7 @@ export const widgets: Widget[] = [
     'units:<br>Switch between metric and imperial US units',
     'radar range:<br>how far away the radar detects opponents',
     '<span class="tag-pro">Pro</span> pedal graph interval:<br>how many seconds the input graph will project',
+    '<span class="tag-pro">Pro</span> delta reference:<br>all-time best or session-best as reference for deltas',
     'enable debug logging:<br>what it says, usually not required',
   ]},
 ]
