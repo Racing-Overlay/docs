@@ -51,7 +51,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
     <section class="section section--video">
       <div class="video-embed">
         <iframe
-          src="https://www.youtube.com/embed/mgww8AUrBkA"
+          src="https://www.youtube.com/embed/OX_HuF8zdHs"
           title="RRO Preview"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
