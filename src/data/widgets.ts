@@ -181,7 +181,7 @@ export const widgets: Widget[] = [
     'current speed in km/h or mph',
     '<span class="tag-pro">Pro</span> average speed',
   ]},
-  { id: 'standings', name: 'Standings', tallPreview: true, video: '/images/widgets/standings.webm', preview: '/images/widgets/standings.png', bullets: [
+  { id: 'standings', name: 'Standings', tallPreview: true, preview: '/images/widgets/standings.png', bullets: [
     'columns:<br>position, position change, logo, number, driver name, time, tyre compound, pit info',
     'practice/qualifying: session best lap time',
     'race: gap to leader, last lap, pit stop status',
