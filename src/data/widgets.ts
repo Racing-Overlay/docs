@@ -39,6 +39,12 @@ export const widgets: Widget[] = [
     'units: °C or °F',
     'temperature text optional',
   ]},
+  { id: 'cheat-sheet', name: 'Cheat Sheet', video: '/images/widgets/cheat_sheet.webm', preview: '/images/widgets/current_lap.png', bullets: [
+    'put cheatsheet.txt in Documents/My Games/RRO',
+    '<strong>text styles</strong><br>"# " -> header row<br>"---" -> separator line<br>"===" -> new page',
+    'character limit per line: 80',
+    '<span class="tag-pro">Pro</span> multi-page support<br>page toggle hotkey: Ctrl+Shift+W',
+  ]},
   { id: 'current-lap', name: 'Current Lap Time', video: '/images/widgets/current_lap.webm', preview: '/images/widgets/current_lap.png', bullets: [
     '<strong>this:</strong> current lap time',
     '<strong>last:</strong> previous lap time',
@@ -75,13 +81,13 @@ export const widgets: Widget[] = [
     'current frames per second',
     'updated per second',
   ]},
-  { id: 'fuel-calc', name: 'Fuel Calculator', pro: true, video: '/images/widgets/fuel_calc.webm', preview: '/images/widgets/fuel_calc.png', bullets: [
+  { id: 'fuel-calc', name: 'Fuel Calculator', video: '/images/widgets/fuel_calc.webm', preview: '/images/widgets/fuel_calc.png', bullets: [
     '<strong>laps left:</strong> laps left at current avg',
     '<strong>time left:</strong> time left at current avg<br>(HY: VE laps left)',
     '<strong>avg/lap:</strong> average consumption',
     '<strong>last lap:</strong> fuel used last lap',
-    '<strong>left at finish:</strong> projected fuel left at race end',
-    '<strong>to add:</strong> fuel needed to finish',
+    '<span class="tag-pro">Pro</span> <strong>left at finish:</strong> projected fuel left at race end',
+    '<span class="tag-pro">Pro</span> <strong>to add:</strong> fuel needed to finish',
   ]},
   { id: 'fuel-gauge', name: 'Fuel Gauge', video: '/images/widgets/fuel_gauge.webm', preview: '/images/widgets/fuel_gauge.png', bullets: [
     'fuel remaining and total tank capacity',
@@ -202,6 +208,12 @@ export const widgets: Widget[] = [
   { id: 'suspension', name: 'Suspension', pro: true, video: '/images/widgets/suspension.webm', preview: '/images/widgets/suspension.png', bullets: [
     '4 bars for ride height at each wheel',
     'centre bar for rake',
+  ]},
+  { id: 'tyre-analysis', name: 'Tyre Analysis', pro: true, preview: '/images/widgets/tyre_analysis.png', bullets: [
+    'per tyre:',
+    'compound, stint length, wear rate, laps left',
+    'temperature average/peak',
+    'pressure average/delta to start',
   ]},
   { id: 'tyre-info', name: 'Tyre Info', video: '/images/widgets/tyre_info.webm', preview: '/images/widgets/tyre_info.png', bullets: [
     'per tyre:<br>pressure (kPa / psi), condition (%),<br>segment temperature (°C / °F)',

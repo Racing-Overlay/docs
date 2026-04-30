@@ -8,6 +8,16 @@ export interface ChangelogEntry {
 // Ordered list, newest entry has to be on top
 export const changelog: ChangelogEntry[] = [
   {
+    version: '1.0.1', label: '1.0.1', pro: false,
+    sections: [
+      { heading: '', items: [
+        '<span class="tag-pro">Pro</span> <strong>tyre analysis</strong>:<br> wear, temperature and pressure analytics',
+        'added <strong>cheat sheet</strong> widget:<br>display important notes',
+        '<strong>fuel calculator</strong>:<br>made free',
+      ]},
+    ],
+  },
+  {
     version: '1.0.0', label: '1.0.0', pro: false,
     sections: [
       { heading: '', items: [

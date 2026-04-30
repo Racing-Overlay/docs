@@ -130,6 +130,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
       <div class="hotkeys-grid">
         <div class="hotkey-row"><kbd>Ctrl+Shift+S</kbd><span>open settings menu (anywhere)</span></div>
         <div class="hotkey-row"><kbd>Ctrl+Shift+M</kbd><span>toggle edit mode (on track only)</span></div>
+        <div class="hotkey-row"><kbd>Ctrl+Shift+W</kbd><span>flip cheat sheet page</span></div>
         <div class="hotkey-row"><kbd>Ctrl+Shift+O</kbd><span>cycle global background opacity</span></div>
         <div class="hotkey-row"><kbd>O + Left-Click</kbd><span>change single widget opacity</span></div>
         <div class="hotkey-row"><kbd>Ctrl+Shift+K / L</kbd><span>switch to previous / next layout</span></div>
