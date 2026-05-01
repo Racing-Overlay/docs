@@ -1,9 +1,30 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { widgets } from './data/widgets'
 import { changelog } from './data/changelog'
 
+// Widget linkage and defaulting
+const widgetSection = ref<HTMLElement | null>(null)
 const activeWidgetId = ref('standings')
+
+function selectWidget(id: string, scroll = false) {
+  activeWidgetId.value = id
+  const url = new URL(window.location.href)
+  url.searchParams.set('widget', id)
+  history.replaceState(null, '', url)
+  if (scroll) {
+    widgetSection.value?.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
+onMounted(() => {
+  const param = new URLSearchParams(window.location.search).get('widget')
+  if (param && widgets.some(w => w.id === param)) {
+    activeWidgetId.value = param
+    // Defer scroll so the page has painted
+    setTimeout(() => widgetSection.value?.scrollIntoView({ behavior: 'smooth' }), 100)
+  }
+})
 
 // Hamburger menu for mobile
 const menuOpen = ref(false)
@@ -70,7 +91,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
     </section>
 
     <!-- Widgets -->
-    <section id="widgets" class="section">
+    <section id="widgets" class="section" ref="widgetSection">
       <h2 class="section-title">Widgets</h2>
 
       <!-- Pill index -->
@@ -80,7 +101,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
           :key="w.id"
           class="widget-pill"
           :class="{ active: activeWidgetId === w.id, pro: w.pro }"
-          @click="activeWidgetId = w.id"
+          @click="selectWidget(w.id)"
         >{{ w.name }}</button>
       </div>
 

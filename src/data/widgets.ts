@@ -39,11 +39,11 @@ export const widgets: Widget[] = [
     'units: °C or °F',
     'temperature text optional',
   ]},
-  { id: 'cheat-sheet', name: 'Cheat Sheet', video: '/images/widgets/cheat_sheet.webm', preview: '/images/widgets/current_lap.png', bullets: [
-    'put cheatsheet.txt in Documents/My Games/RRO',
-    '<strong>text styles</strong><br>"# " -> header row<br>"---" -> separator line<br>"===" -> new page',
-    'character limit per line: 80',
-    '<span class="tag-pro">Pro</span> multi-page support<br>page toggle hotkey: Ctrl+Shift+W',
+  { id: 'cheat-sheet', name: 'Cheat Sheet', tallPreview: true, video: '/images/widgets/cheat_sheet.webm', preview: '/images/widgets/current_lap.png', bullets: [
+    'put cheatsheet.txt in <code>Documents/My Games/RRO</code>',
+    'page toggle hotkey: Ctrl+Shift+W',
+    '<span class="tag-pro">Pro</span> multi-page support',
+    "tip:<br>if context doesn't fit, toggle page to refresh",
   ]},
   { id: 'current-lap', name: 'Current Lap Time', video: '/images/widgets/current_lap.webm', preview: '/images/widgets/current_lap.png', bullets: [
     '<strong>this:</strong> current lap time',
@@ -51,7 +51,7 @@ export const widgets: Widget[] = [
     'time struck through in red if the lap was invalid',
   ]},
   { id: 'custom-logo', name: 'Custom Logo', preview: '/images/widgets/custom_logo.png', pro: true, bullets: [
-    'load your own logo: place <code>logo_1.png</code> in <code>Documents/My Games/RRO/Logos/</code>',
+    'load your own logo:<br>place <code>logo_1.png</code> in <code>Documents/My Games/RRO/Logos/</code>',
     'png format, square aspect ratio recommended',
   ]},
   { id: 'damage', name: 'Damage', video: '/images/widgets/damage.webm', preview: '/images/widgets/damage.png', bullets: [
@@ -59,6 +59,7 @@ export const widgets: Widget[] = [
   ]},
   { id: 'delta-bar', name: 'Delta Bar', video: '/images/widgets/delta_bar.webm', preview: '/images/widgets/delta_bar.png', bullets: [
     'delta to session best lap time',
+    '<span class="tag-pro">Pro</span> toggle delta reference in settings menu<br>session best or personal best',
   ]},
   { id: 'drs', name: 'DRS', video: '/images/widgets/drs.webm', preview: '/images/widgets/drs.png', bullets: [
     'disabled when DRS is not available',
@@ -83,7 +84,7 @@ export const widgets: Widget[] = [
   ]},
   { id: 'fuel-calc', name: 'Fuel Calculator', video: '/images/widgets/fuel_calc.webm', preview: '/images/widgets/fuel_calc.png', bullets: [
     '<strong>laps left:</strong> laps left at current avg',
-    '<strong>time left:</strong> time left at current avg<br>(HY: VE laps left)',
+    '<span class="tag-pro">Pro</span> <strong>time left:</strong> time left at current avg<br>(HY: VE laps left)',
     '<strong>avg/lap:</strong> average consumption',
     '<strong>last lap:</strong> fuel used last lap',
     '<span class="tag-pro">Pro</span> <strong>left at finish:</strong> projected fuel left at race end',
@@ -107,23 +108,24 @@ export const widgets: Widget[] = [
   { id: 'incident', name: 'Incident Points', preview: '/images/widgets/incident.png', bullets: [
     'only visible in multiplayer sessions',
     'incident points accrued and the session limit',
-    'number of cuts',
+    '<span class="tag-pro">Pro</span> number of cuts',
   ]},
-  { id: 'input-graph', name: 'Input Graph', pro: true, video: '/images/widgets/input_graph.webm', preview: '/images/widgets/input_graph.png', bullets: [
-    '<strong>white:</strong> clutch<br><strong>green:</strong> throttle<br><strong>red:</strong> brake',
-    'toggle interval in settings: 5, 10 or 20 seconds',
-  ]},
-  { id: 'lap-log', name: 'Lap Time Log', pro: true, preview: '/images/widgets/lap_log.png', bullets: [
+  { id: 'lap-log', name: 'Lap Time Log', preview: '/images/widgets/lap_log.png', bullets: [
     'last seven lap times with delta to previous lap',
     'personal best and session best laps highlighted',
-    'average of all laps',
     'invalid laps struck red',
+    '<span class="tag-pro">Pro</span> average of all laps',
+    '<span class="tag-pro">Pro</span> toggle delta reference in settings menu:<br>session best or personal best',
   ]},
   { id: 'pedals', name: 'Pedals', video: '/images/widgets/pedals.webm', preview: '/images/widgets/pedals.png', bullets: [
     'left to right: clutch, brake, throttle',
     '<strong>white bar:</strong> input from controller device',
     '<strong>grey bar:</strong> input received by the car',
-    'optional: coloured bars, matching input graph',
+    '<span class="tag-pro">Pro</span> coloured bars option, matching input graph',
+  ]},
+  { id: 'pedal-graph', name: 'Pedal Graph', video: '/images/widgets/input_graph.webm', preview: '/images/widgets/input_graph.png', bullets: [
+    '<strong>white:</strong> clutch<br><strong>green:</strong> throttle<br><strong>red:</strong> brake',
+    '<span class="tag-pro">Pro</span> toggle tracking interval (5, 10 or 20 seconds)',
   ]},
   { id: 'penalties', name: 'Penalties', pro: true, video: '/images/widgets/penalties.webm', preview: '/images/widgets/penalties.png', bullets: [
     'hidden when no penalties are pending',
@@ -153,14 +155,15 @@ export const widgets: Widget[] = [
     'hidden when ptp is not available',
     'acts as overtake button indicator in FR-X22',
   ]},
-  { id: 'race-control', name: 'Race Control', video: '/images/widgets/race_control.webm', preview: '/images/widgets/race_control.png', bullets: [
+  { id: 'race-control', name: 'Race Control', preview: '/images/widgets/race_control.png', bullets: [
     'lap validity',
     'flag messages',
+    'pit info',
     'penalty messages',
   ]},
   { id: 'radar', name: 'Radar', video: '/images/widgets/radar.webm', preview: '/images/widgets/radar.png', bullets: [
     'top-down view of surrounding cars and their relative orientation',
-    'variable detection range (see settings menu)',
+    '<span class="tag-pro">Pro</span> variable detection range<br>(see settings menu)',
   ]},
   { id: 'relative', name: 'Relative', preview: '/images/widgets/relative.png', bullets: [
     'gaps to the six drivers closest to you',
@@ -213,12 +216,17 @@ export const widgets: Widget[] = [
     'per tyre:',
     'compound, stint length, wear rate, laps left',
     'temperature average/peak',
-    'pressure average/delta to start',
+    'pressure average/delta to initial',
   ]},
   { id: 'tyre-info', name: 'Tyre Info', video: '/images/widgets/tyre_info.webm', preview: '/images/widgets/tyre_info.png', bullets: [
     'per tyre:<br>pressure (kPa / psi), condition (%),<br>segment temperature (°C / °F)',
     'temperature text optional',
     'dirt pick up',
+  ]},
+  { id: 'tyre-state', name: 'Tyre State', video: '/images/widgets/tyre_state.webm', preview: '/images/widgets/tyre_state.png', bullets: [
+    'tyre compound and laps in use per wheel',
+    '<span class="tag-pro">Pro</span> yellow indicator for wheel spin',
+    '<span class="tag-pro">Pro</span> blue indicator for wheel lock',
   ]},
   { id: 'virtual-energy', name: 'Virtual Energy', preview: '/images/widgets/virtual_energy.png', bullets: [
     'VE tank content',
@@ -229,20 +237,15 @@ export const widgets: Widget[] = [
     'brake cooling water remaining',
     '*only used in RaceRoom Truck class',
   ]},
-  { id: 'wheel-info', name: 'Wheel Info', video: '/images/widgets/wheel_info.webm', preview: '/images/widgets/wheel_info.png', bullets: [
-    'tyre compound and laps in use per wheel',
-    '<span class="tag-pro">Pro</span> yellow indicator for wheel spin',
-    '<span class="tag-pro">Pro</span> blue indicator for wheel lock',
-  ]},
   { id: 'settings-menu', name: 'Settings Menu', tallPreview: true, preview: '/images/widgets/settings_menu.png', bullets: [
     'enable proximity beep:<br>turn the audible radar beep on/off',
     'beep frequency:<br>set the pitch of the radar beep',
     'show temperature text:<br>turn temps being shown as numbers on/off',
-    'colour-coded pedal bars:<br>turn bar colouring on/off',
     'units:<br>Switch between metric and imperial US units',
-    'radar range:<br>how far away the radar detects opponents',
+    '<span class="tag-pro">Pro</span> colour-coded pedal bars:<br>turn bar colouring on/off',
     '<span class="tag-pro">Pro</span> pedal graph interval:<br>how many seconds the input graph will project',
     '<span class="tag-pro">Pro</span> delta reference:<br>all-time best or session-best as reference for deltas',
+    '<span class="tag-pro">Pro</span> radar range:<br>how far away the radar detects opponents',
     'enable debug logging:<br>what it says, usually not required',
   ]},
 ]
