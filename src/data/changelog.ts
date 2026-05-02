@@ -16,6 +16,8 @@ export const changelog: ChangelogEntry[] = [
         '<strong>fuel calculator</strong>:<br>made the widget free',
         '<strong>pedal input graph</strong>:<br>made the widget free',
         '<strong>lap time log</strong>:<br>made the widget free',
+        '<strong>edit mode</strong>:<br>added grid for easier alignment',
+        '<strong>misc</strong>:<br>various fixes, improvements and cleanup',
       ]},
     ],
   },
