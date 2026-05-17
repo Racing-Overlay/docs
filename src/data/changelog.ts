@@ -8,6 +8,20 @@ export interface ChangelogEntry {
 // Ordered list, newest entry has to be on top
 export const changelog: ChangelogEntry[] = [
   {
+    version: '1.2.0', label: '1.2.0', pro: false,
+    sections: [
+      { heading: '', items: [
+        'added <strong>track map</strong>:<br><span class="tag-pro">Pro</span> multiclass',
+        'made <strong>flat map</strong> widget free',
+        '<strong>tyre status</strong>:<br>added flat spot tracking',
+        '<strong>input graph</strong>:<br>improved visuals, fixed bug',
+        '<strong>damage widget</strong>:<br>made bars thinner, added blinking',
+        '<strong>sector times</strong>:<br>removed white highlight, added blinking',
+        '<strong>lap time log</strong>:<br><span class="tag-pro">Pro</span> added optimal lap time',
+      ]},
+    ],
+  },
+  {
     version: '1.1.0', label: '1.1.0', pro: false,
     sections: [
       { heading: '', items: [

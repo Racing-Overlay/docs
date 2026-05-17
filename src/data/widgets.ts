@@ -54,7 +54,7 @@ export const widgets: Widget[] = [
     'load your own logo:<br>place <code>logo_1.png</code> in <code>Documents/My Games/RRO/Logos/</code>',
     'png format, square aspect ratio recommended',
   ]},
-  { id: 'damage', name: 'Damage', video: '/images/widgets/damage.webm', preview: '/images/widgets/damage.png', bullets: [
+  { id: 'damage', name: 'Damage', preview: '/images/widgets/damage.png', bullets: [
     'damage per component group:<br>aerodynamics<br>springs (suspension)<br> engine<br>gears (transmission)',
   ]},
   { id: 'delta-bar', name: 'Delta Bar', video: '/images/widgets/delta_bar.webm', preview: '/images/widgets/delta_bar.png', bullets: [
@@ -72,11 +72,12 @@ export const widgets: Widget[] = [
   { id: 'flags', name: 'Flags', video: '/images/widgets/flags.webm', preview: '/images/widgets/flags.png', bullets: [
     'digiflag display of currently shown flag',
   ]},
-  { id: 'flat-map', name: 'Flat Map', pro: true, preview: '/images/widgets/flat_map.png', bullets: [
+  { id: 'flat-map', name: 'Flat Map', preview: '/images/widgets/flat_map.png', bullets: [
     'represents the track length',
     'all drivers\' positions relatively',
     'Colour-coded per class',
     'number = position in class',
+    '<span class="tag-pro">Pro</span> multiclass support',
   ]},
   { id: 'fps', name: 'FPS', video: '/images/widgets/fps.webm', preview: '/images/widgets/fps.png', bullets: [
     'current frames per second',
@@ -115,6 +116,7 @@ export const widgets: Widget[] = [
     'personal best and session best laps highlighted',
     'invalid laps struck red',
     '<span class="tag-pro">Pro</span> average of all laps',
+    '<span class="tag-pro">Pro</span> optimal lap time (best sectors)',
     '<span class="tag-pro">Pro</span> toggle delta reference in settings menu:<br>session best or personal best',
   ]},
   { id: 'pedals', name: 'Pedals', video: '/images/widgets/pedals.webm', preview: '/images/widgets/pedals.png', bullets: [
@@ -212,6 +214,10 @@ export const widgets: Widget[] = [
     '4 bars for ride height at each wheel',
     'centre bar for rake',
   ]},
+  { id: 'track-map', name: 'Track Map', preview: '/images/widgets/track_map.png', bullets: [
+    'per-driver position info on an accurate track layout map',
+    '<span class="tag-pro">Pro</span> multiclass support',
+  ]},
   { id: 'tyre-analysis', name: 'Tyre Analysis', pro: true, preview: '/images/widgets/tyre_analysis.png', bullets: [
     'per tyre:',
     'compound, stint length, wear rate, laps left',
@@ -224,9 +230,10 @@ export const widgets: Widget[] = [
     'dirt pick up',
   ]},
   { id: 'tyre-state', name: 'Tyre State', video: '/images/widgets/tyre_state.webm', preview: '/images/widgets/tyre_state.png', bullets: [
-    'tyre compound and laps in use per wheel',
-    '<span class="tag-pro">Pro</span> yellow indicator for wheel spin',
-    '<span class="tag-pro">Pro</span> blue indicator for wheel lock',
+    'tyre compound and stint length per wheel',
+    'flat spot indicator:<br>while tyre has flat spot, text turns red',
+    '<span class="tag-pro">Pro</span> purple indicator for wheel spin',
+    '<span class="tag-pro">Pro</span> orange indicator for wheel lock',
   ]},
   { id: 'virtual-energy', name: 'Virtual Energy', preview: '/images/widgets/virtual_energy.png', bullets: [
     'VE tank content',
