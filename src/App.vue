@@ -56,7 +56,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
     </div>
     <div class="nav-download">
       <span class="badges-label">Download:</span>
-      <a href="https://forum.kw-studios.com/index.php?threads/racing-overlay.20874/" target="_blank" rel="noopener noreferrer" class="badge badge-free">Free</a>
+      <a href="https://www.overtake.gg/downloads/racing-overlay.83941/" target="_blank" rel="noopener noreferrer" class="badge badge-free">Free</a>
       <a href="https://ko-fi.com/racingoverlay" target="_blank" rel="noopener noreferrer" class="badge badge-pro">Pro</a>
     </div>
   </nav>
