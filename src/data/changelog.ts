@@ -8,6 +8,20 @@ export interface ChangelogEntry {
 // Ordered list, newest entry has to be on top
 export const changelog: ChangelogEntry[] = [
   {
+    version: '1.3.0', label: '1.3.0', pro: true,
+    sections: [
+      { heading: '', items: [
+        '<span class="tag-pro">Pro</span> added <strong>ranked schedule:</strong><br> 4 upcoming ranked mp race start times',
+        'added <strong>engine widget:</strong><br>engine temperatures, settings and power output',
+        '<span class="tag-pro">Pro</span> <strong>standings tower:</strong><br>extended pit stop info<br>added number of laps since last stop and last stop standing time<br>added setting for pit info cycle interval',
+        '<span class="tag-pro">Pro</span> <strong>fuel calculator:</strong><br>added stint average and fuel saving target setting',
+        '<span class="tag-pro">Pro</span> <strong>relative widget:</strong><br>added decimal place to rating, replaced "k"',
+        'extended <strong>brakes widget:</strong><br>2x2 layout for temperatures<br>moved brake balance and TC value here',
+        'removed redundant <strong>car settings widget</strong>',
+      ]},
+    ],
+  },
+  {
     version: '1.2.0', label: '1.2.0', pro: false,
     sections: [
       { heading: '', items: [

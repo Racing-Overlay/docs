@@ -23,21 +23,11 @@ export const widgets: Widget[] = [
     '<strong>sb:</strong> your session best lap time',
     '<strong>pb:</strong> your all-time personal best',
   ]},
-  { id: 'brake-temps', name: 'Brake Temperatures', video: '/images/widgets/brake_temps.webm', preview: '/images/widgets/brake_temps.png', bullets: [
-    'brake temperature colours (blue → dark red)',
+  { id: 'brakes', name: 'Brakes', preview: '/images/widgets/brakes.png', bullets: [
+    '<strong>temperatures:</strong><br>temperature colours (blue → dark red)',
+    '<strong>BB:</strong> current brake balance setting',
+    '<strong>TC:</strong> current traction control setting',
     'text optional, units: °C or °F',
-    'layout:<br>left front — left rear — right rear — right front',
-  ]},
-  { id: 'car-settings', name: 'Car Settings', video: '/images/widgets/car_settings.webm', preview: '/images/widgets/car_settings.png', bullets: [
-    'brake balance',
-    'traction control percentage',
-    'engine map',
-    'engine brake',
-  ]},
-  { id: 'car-temps', name: 'Car Temperatures', video: '/images/widgets/car_temps.webm', preview: '/images/widgets/car_temps.png', bullets: [
-    'engine (e) and oil (o) temperature colours',
-    'units: °C or °F',
-    'temperature text optional',
   ]},
   { id: 'cheat-sheet', name: 'Cheat Sheet', tallPreview: true, video: '/images/widgets/cheat_sheet.webm', preview: '/images/widgets/current_lap.png', bullets: [
     'put cheatsheet.txt in <code>Documents/My Games/RRO</code>',
@@ -65,6 +55,12 @@ export const widgets: Widget[] = [
     'disabled when DRS is not available',
     'activations left shown in brackets',
   ]},
+  { id: 'engine', name: 'Engine', preview: '/images/widgets/engine.png', bullets: [
+    '<strong>temperatures:</strong><br>engine and oil temperatures (blue → dark red)',
+    '<strong>engine settings:</strong><br>engine map (em) and engine braking (eb)',
+    '<strong>current:</strong> current power output in horsepower',
+    '<span class="tag-pro">Pro</span> <strong>peak:</strong> peak session power output',
+  ]},
   { id: 'ffb', name: 'FFB Bar', pro: true, video: '/images/widgets/ffb.webm', preview: '/images/widgets/ffb.png', bullets: [
     'FFB magnitude and maximum',
     'tracks cuts above the upper threshold',
@@ -85,11 +81,13 @@ export const widgets: Widget[] = [
   ]},
   { id: 'fuel-calc', name: 'Fuel Calculator', video: '/images/widgets/fuel_calc.webm', preview: '/images/widgets/fuel_calc.png', bullets: [
     '<strong>laps left:</strong> laps left at current avg',
-    '<span class="tag-pro">Pro</span> <strong>time left:</strong> time left at current avg<br>(HY: VE laps left)',
-    '<strong>avg/lap:</strong> average consumption',
-    '<strong>last lap:</strong> fuel used last lap',
-    '<span class="tag-pro">Pro</span> <strong>left at finish:</strong> projected fuel left at race end',
-    '<span class="tag-pro">Pro</span> <strong>to add:</strong> fuel needed to finish',
+    '<strong>time left:</strong> time left at current avg<br>(HY: VE laps left)',
+    '<strong>o/a avg:</strong> overall average consumption',
+    '<strong>last lap:</strong> last lap fuel usage',
+    '<strong>left at finish:</strong> projected fuel left at race end',
+    '<strong>to add:</strong> fuel needed to finish',
+    '<span class="tag-pro">Pro</span> <strong>stint avg:</strong><br> average consumption since last stop',
+    '<span class="tag-pro">Pro</span> <strong>target avg:</strong><br> average to reach for lap offset (settings menu)',
   ]},
   { id: 'fuel-gauge', name: 'Fuel Gauge', video: '/images/widgets/fuel_gauge.webm', preview: '/images/widgets/fuel_gauge.png', bullets: [
     'fuel remaining and total tank capacity',
@@ -177,6 +175,11 @@ export const widgets: Widget[] = [
   { id: 'rpm', name: 'RPM', video: '/images/widgets/rpm.webm', preview: '/images/widgets/rpm.png', bullets: [
     'rpm bar with colour code for critical revolutions',
   ]},
+  { id: 'schedule', name: 'Ranked Schedule', pro: true, preview: '/images/widgets/schedule.png', bullets: [
+    'next 4 ranked mp race start times',
+    '<strong>grey</strong> = daily<br><strong>green</strong> = free daily (f2p)<br><strong>red</strong> = daily specials<br><strong>gold</strong> = weekly specials',
+    '<strong>grey pen</strong> = fixed setup<br><strong>white pen</strong> = open setup',
+  ]},
   { id: 'sectors', name: 'Sector Times', video: '/images/widgets/sectors.webm', preview: '/images/widgets/sectors.png', bullets: [
     'own current times for track sectors',
     '<strong>white</strong> = normal<br><strong>green</strong> = own best<br><strong>pink</strong> = session best<br><strong>black</strong> = invalid',
@@ -198,7 +201,7 @@ export const widgets: Widget[] = [
     'race: gap to leader, last lap, pit stop status',
     'per-driver penalty info<br>slowdowns as seconds to give back',
     'yellow marked driver: session best time',
-    'pit info:<br><strong>dark grey:</strong> mandatory pit stop, not served<br><strong>blinking:</strong> currently serving pit stop<br><strong>light grey:</strong> pit stop served (number of stops)',
+    'pit info:<br><span class="tag-pro">Pro</span> cycles through number of stops, stint length since last stop, last stop duration<br>cycle interval editable',
     '<span class="tag-pro">Pro</span> class standings with class colours',
     '<span class="tag-pro">Pro</span> in mp: SoF per class',
     '<span class="tag-pro">Pro</span> HY: VE per driver',
