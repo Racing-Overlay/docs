@@ -84,10 +84,10 @@ export const widgets: Widget[] = [
     '<strong>time left:</strong> time left at current avg<br>(HY: VE laps left)',
     '<strong>o/a avg:</strong> overall average consumption',
     '<strong>last lap:</strong> last lap fuel usage',
-    '<strong>left at finish:</strong> projected fuel left at race end',
-    '<strong>to add:</strong> fuel needed to finish',
     '<span class="tag-pro">Pro</span> <strong>stint avg:</strong><br> average consumption since last stop',
     '<span class="tag-pro">Pro</span> <strong>target avg:</strong><br> average to reach for lap offset (settings menu)',
+    '<span class="tag-pro">Pro</span> <strong>left at finish:</strong> projected fuel left at race end',
+    '<span class="tag-pro">Pro</span> <strong>to add:</strong> fuel needed to finish',
   ]},
   { id: 'fuel-gauge', name: 'Fuel Gauge', video: '/images/widgets/fuel_gauge.webm', preview: '/images/widgets/fuel_gauge.png', bullets: [
     'fuel remaining and total tank capacity',
@@ -256,6 +256,8 @@ export const widgets: Widget[] = [
     '<span class="tag-pro">Pro</span> pedal graph interval:<br>how many seconds the input graph will project',
     '<span class="tag-pro">Pro</span> delta reference:<br>all-time best or session-best as reference for deltas',
     '<span class="tag-pro">Pro</span> radar range:<br>how far away the radar detects opponents',
+    '<span class="tag-pro">Pro</span> fuel saving target:<br>number of laps to offset pitstop',
+    '<span class="tag-pro">Pro</span> pit info cycle interval:<br>interval between pit info cycles in seconds',
     'enable debug logging:<br>what it says, usually not required',
   ]},
 ]
