@@ -119,8 +119,8 @@ export const widgets: Widget[] = [
   ]},
   { id: 'pedals', name: 'Pedals', video: '/images/widgets/pedals.webm', preview: '/images/widgets/pedals.png', bullets: [
     'left to right: clutch, brake, throttle',
-    '<strong>white bar:</strong> input from controller device',
-    '<strong>grey bar:</strong> input received by the car',
+    '<strong>white bar/top number:</strong> input received by the car',
+    '<strong>grey bar/bottom number:</strong> input from controller',
     '<span class="tag-pro">Pro</span> coloured bars option, matching input graph',
   ]},
   { id: 'pedal-graph', name: 'Pedal Graph', video: '/images/widgets/input_graph.webm', preview: '/images/widgets/input_graph.png', bullets: [

@@ -8,15 +8,16 @@ export interface ChangelogEntry {
 // Ordered list, newest entry has to be on top
 export const changelog: ChangelogEntry[] = [
   {
-    version: '1.3.2', label: '1.3.2', pro: false,
+    version: '1.3.3', label: '1.3.3', pro: false,
     sections: [
       { heading: '', items: [
-        'made <strong>class-based standings tower free!</strong>',
+        'made <strong>class-based standings tower free</strong>',
         '<strong>standings tower:</strong><br>extended pit stop info<br>added number of laps since last stop and last stop standing time<br>added setting for pit info cycle interval',
         '<strong>fun with flags:</strong><br>added nationality flag in mp modes',
         '<strong>fun with fonts:</strong> settings menu offers a variety of alternate fonts',
         'added <strong>engine widget:</strong><br>engine temperatures, settings and power output',
         'extended <strong>brakes widget:</strong><br>2x2 layout for temperatures<br>moved brake balance and TC value here',
+        '<strong>pedals widget:</strong><br>changed display value<br>added secondary numeric value',
         'added new <strong>hotkey:</strong> Ctrl+Shift+T<br>Toggle the overlay on/off',
         'added new <strong>hotkey:</strong> Ctrl+Shift+R<br>Restart the overlay (takes a few seconds)',
         '<strong>fuel calculator:</strong><br><span class="tag-pro">Pro</span> added stint average and fuel saving target setting',
