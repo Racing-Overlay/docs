@@ -189,7 +189,7 @@ export const widgets: Widget[] = [
   ]},
   { id: 'sectors', name: 'Sector Times', video: '/images/widgets/sectors.webm', preview: '/images/widgets/sectors.png', bullets: [
     'own current times for track sectors',
-    '<strong>white</strong> = normal<br><strong>green</strong> = own best<br><strong>pink</strong> = session best<br><strong>black</strong> = invalid',
+    '<strong>white</strong> = normal<br><strong>green</strong> = own best<br><strong>pink</strong> = session best',
   ]},
   { id: 'session-info', name: 'Session Info', video: '/images/widgets/session_info.webm', preview: '/images/widgets/session_info.png', bullets: [
     'time of day',

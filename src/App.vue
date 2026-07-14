@@ -84,9 +84,11 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
       <!-- Features -->
       <section id="features" class="section">
         <h2 class="section-title">Features</h2>
+        <p>tracks your personal best lap times</p>
         <p>supports ultrawide, triple screen, fullscreen</p>
         <p>unlimited custom layouts</p>
-        <p>minimal performance footprint, runs at your game fps</p>
+        <p>minimal performance footprint</p>
+        <p>highly accurate, runs at your game fps</p>
       </section>
 
       <!-- Usage -->
