@@ -47,11 +47,11 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
       <span /><span /><span />
     </button>
     <div class="nav-links" :class="{ open: menuOpen }" @click="menuOpen = false">
-      <a href="#widgets">Widgets</a>
       <a href="#usage">Usage</a>
-      <a href="#hotkeys">Hotkeys</a>
       <a href="#settings">Settings</a>
+      <a href="#widgets">Widgets</a>
       <a href="#changelog">Changelog</a>
+      <a href="#hotkeys">Hotkeys</a>
       <a href="#abbreviations">Abbreviations</a>
     </div>
     <div class="nav-download">
@@ -77,22 +77,94 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
-        />
+          />
       </div>
     </section>
 
-    <!-- Features -->
-    <section id="features" class="section">
-      <h2 class="section-title">Features</h2>
-      <p>easy setup: install, run, done</p>
-      <p>compatible: supports fullscreen and triple screen</p>
-      <p>adaptable: unlimited custom layouts</p>
-      <p>built from scratch: minimal footprint, runs at your game fps</p>
-    </section>
+      <!-- Features -->
+      <section id="features" class="section">
+        <h2 class="section-title">Features</h2>
+        <p>supports ultrawide, triple screen, fullscreen</p>
+        <p>unlimited custom layouts</p>
+        <p>minimal performance footprint, runs at your game fps</p>
+      </section>
 
-    <!-- Widgets -->
-    <section id="widgets" class="section" ref="widgetSection">
-      <h2 class="section-title">Widgets</h2>
+      <!-- Usage -->
+      <section id="usage" class="section">
+        <h2 class="section-title">Getting Started</h2>
+        <p>- launch RRO with one of the shortcuts it created</p>
+        <p>- start a race session, go to track</p>
+        <p>
+          - press
+          <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Ctrl</kbd>
+          +
+          <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Shift</kbd>
+          +
+          <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">S</kbd>
+          to open the settings menu
+        </p>
+        <p>- to move widgets, click on the game window, move with left-click, change size with right-click</p>
+        <p>
+          - to go back to the menu, press
+          <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Ctrl</kbd>
+          +
+          <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Shift</kbd>
+          +
+          <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">S</kbd>
+          again
+        </p>
+        <p>- close menu to save layout</p>
+      </section>
+
+      <!-- Settings -->
+      <section id="settings" class="section">
+        <h2 class="section-title">Settings menu</h2>
+
+          <p style="margin-bottom:1rem; color: var(--text-muted); font-size:0.88rem;">
+            Press
+            <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Ctrl</kbd>
+            +
+            <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Shift</kbd>
+            +
+            <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">S</kbd>
+            anywhere to open the settings menu, also in main menu
+          </p>
+
+          <!-- Single card for settings menu -->
+          <div class="widget-display">
+            <div class="widget-card">
+              <div class="widget-header">
+                <h3>{{ settingsWidget.name }}</h3>
+                <span v-if="settingsWidget.pro" class="tag-pro">Pro</span>
+              </div>
+              <ul v-if="settingsWidget.bullets && settingsWidget.bullets.length">
+                <li v-for="(b, i) in settingsWidget.bullets" :key="i" v-html="b" />
+              </ul>
+              <p v-else style="color: var(--text-muted); font-size: 0.88rem;">No additional information.</p>
+            </div>
+            <div :class="['widget-preview-pane', { 'widget-preview-pane--tall': activeWidget.tallPreview }]">
+              <video
+                :class="['widget-preview-img', { 'widget-preview-tall-img': activeWidget.tallPreview }]"
+                v-if="activeWidget.video"
+                :src="baseUrl + activeWidget.video.replace(/^\//, '')"
+                class="widget-preview-img"
+                autoplay loop muted playsinline
+              />
+              <img
+                :class="['widget-preview-img', { 'widget-preview-tall-img': activeWidget.tallPreview }]"
+                v-else-if="activeWidget.preview"
+                :src="baseUrl + activeWidget.preview.replace(/^\//, '')"
+                :alt="activeWidget.name + ' preview'"
+                class="widget-preview-img"
+              />
+              <div v-else class="widget-preview-empty">no preview available</div>
+            </div>
+          </div>
+      </section>
+
+      <!-- Widgets -->
+      <section id="widgets" class="section" ref="widgetSection">
+        <h2 class="section-title">Widgets</h2>
 
       <!-- Pill index -->
       <div class="widget-index">
@@ -102,13 +174,13 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
           class="widget-pill"
           :class="{ active: activeWidgetId === w.id, pro: w.pro }"
           @click="selectWidget(w.id)"
-        >{{ w.name }}</button>
-      </div>
+          >{{ w.name }}</button>
+        </div>
 
-      <!-- Single active card -->
-      <div class="widget-display">
-        <div class="widget-card">
-          <div class="widget-header">
+        <!-- Single active card -->
+        <div class="widget-display">
+          <div class="widget-card">
+            <div class="widget-header">
             <h3>{{ activeWidget.name }}</h3>
             <span v-if="activeWidget.pro" class="tag-pro">Pro</span>
           </div>
@@ -135,79 +207,6 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
           <div v-else class="widget-preview-empty">no preview available</div>
         </div>
       </div>
-    </section>
-
-    <!-- Usage -->
-    <section id="usage" class="section">
-      <h2 class="section-title">Getting Started</h2>
-      <p>"RRO+RR_DX9" launches RRO and Raceroom in DX9 mode</p>
-      <p>"RRO+RR_DXVK" launches RRO and Raceroom in DXVK mode</p>
-      <p>"RRO" starts the RRO launcher, you have to start Raceroom yourself</p>
-    </section>
-
-    <!-- Hotkeys -->
-    <section id="hotkeys" class="section">
-      <h2 class="section-title">Hotkeys</h2>
-      <div class="hotkeys-grid">
-        <div class="hotkey-row"><kbd>Ctrl+Shift+S</kbd><span>open settings menu (anywhere)</span></div>
-        <div class="hotkey-row"><kbd>Ctrl+Shift+M</kbd><span>toggle edit mode (on track only)</span></div>
-        <div class="hotkey-row"><kbd>Ctrl+Shift+T</kbd><span>toggle hud on/off</span></div>
-        <div class="hotkey-row"><kbd>Ctrl+Shift+R</kbd><span>restart the overlay</span></div>
-        <div class="hotkey-row"><kbd>Ctrl+Shift+K/L</kbd><span>switch to previous / next layout</span></div>
-        <div class="hotkey-row"><kbd>Ctrl+Shift+W</kbd><span>flip cheat sheet page</span></div>
-        <div class="hotkey-row"><kbd>Ctrl+Shift+O</kbd><span>cycle global background opacity</span></div>
-        <div class="hotkey-row"><kbd>O + Left-Click</kbd><span>change single widget opacity</span></div>
-        <div class="hotkey-row"><kbd>Ctrl+Shift+X</kbd><span>reset all widgets</span></div>
-        <div class="hotkey-row"><kbd>X + Left-Click</kbd><span>reset single widget</span></div>
-        <div class="hotkey-row"><kbd>Ctrl+Shift+Left-Click</kbd><span>disable a widget</span></div>
-        <div class="hotkey-row"><kbd>Ctrl+Shift+H</kbd><span>backup toggle for edit mode</span></div>
-      </div>
-      <p style="margin-top:1rem; color: var(--text-muted); font-size:0.88rem;">
-        Tip: assign Raceroom keybind <em>"move & resize hud elements"</em> to
-        <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">M</kbd>
-        and <em>"reset hud elements"</em> to
-        <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">X</kbd>
-        for quickest access
-      </p>
-    </section>
-
-    <!-- Settings -->
-    <section id="settings" class="section">
-      <h2 class="section-title">Settings menu</h2>
-
-        <p style="margin-bottom:1rem; color: var(--text-muted); font-size:0.88rem;">
-          Press
-          <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Ctrl</kbd>
-          +
-          <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Shift</kbd>
-          +
-          <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">S</kbd>
-          anywhere to open the settings menu, also in main menu
-        </p>
-
-        <!-- Single card for settings menu -->
-        <div class="widget-display">
-          <div class="widget-card">
-            <div class="widget-header">
-              <h3>{{ settingsWidget.name }}</h3>
-              <span v-if="settingsWidget.pro" class="tag-pro">Pro</span>
-            </div>
-            <ul v-if="settingsWidget.bullets && settingsWidget.bullets.length">
-              <li v-for="(b, i) in settingsWidget.bullets" :key="i" v-html="b" />
-            </ul>
-            <p v-else style="color: var(--text-muted); font-size: 0.88rem;">No additional information.</p>
-          </div>
-          <div :class="['widget-preview-pane', { 'widget-preview-pane--tall': settingsWidget.tallPreview }]">
-            <img
-              :class="['widget-preview-img', { 'widget-preview-tall-img': settingsWidget.tallPreview }]"
-              v-if="settingsWidget.preview"
-              :src="baseUrl + settingsWidget.preview.replace(/^\//, '')"
-              :alt="settingsWidget.name + ' preview'"
-              class="widget-preview-img"
-            />
-            <div v-else class="widget-preview-empty">No preview available</div>
-          </div>
-        </div>
     </section>
 
     <!-- Changelog -->
@@ -238,6 +237,33 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
           </ul>
         </template>
       </div>
+    </section>
+
+    <!-- Hotkeys -->
+    <section id="hotkeys" class="section">
+      <h2 class="section-title">Hotkeys</h2>
+      <div class="hotkeys-grid">
+        <div class="hotkey-row"><kbd>Ctrl+Shift+S</kbd><span>open settings menu</span></div>
+        <div class="hotkey-row"><kbd>Ctrl+Shift+T</kbd><span>toggle hud on/off</span></div>
+        <div class="hotkey-row"><kbd>Ctrl+Shift+K/L</kbd><span>switch to previous / next layout</span></div>
+        <div class="hotkey-row"><kbd>Ctrl+Shift+G</kbd><span>flip analysis group page</span></div>
+        <div class="hotkey-row"><kbd>Ctrl+Shift+W</kbd><span>flip cheat sheet page</span></div>
+        <div class="hotkey-row"><kbd>Ctrl+Shift+O</kbd><span>cycle global background opacity</span></div>
+        <div class="hotkey-row"><kbd>O + Left-Click</kbd><span>change single widget opacity</span></div>
+        <div class="hotkey-row"><kbd>Ctrl+Shift+X</kbd><span>reset all widgets</span></div>
+        <div class="hotkey-row"><kbd>X + Left-Click</kbd><span>reset single widget</span></div>
+        <div class="hotkey-row"><kbd>Ctrl+Shift+Left-Click</kbd><span>disable a widget</span></div>
+        <div class="hotkey-row"><kbd>Ctrl+Shift+R</kbd><span>restart the overlay</span></div>
+        <div class="hotkey-row"><kbd>Ctrl+Shift+M</kbd><span>toggle edit mode (alternative)</span></div>
+        <!-- <div class="hotkey-row"><kbd>Ctrl+Shift+H</kbd><span>backup toggle for edit mode</span></div> -->
+      </div>
+      <p style="margin-top:1rem; color: var(--text-muted); font-size:0.88rem;">
+        Tip: assign Raceroom keybind <em>"move & resize hud elements"</em> to
+        <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">M</kbd>
+        and <em>"reset hud elements"</em> to
+        <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">X</kbd>
+        for quickest access
+      </p>
     </section>
 
     <!-- Abbreviations -->

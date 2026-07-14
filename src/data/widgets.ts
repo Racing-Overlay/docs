@@ -9,6 +9,12 @@ export interface Widget {
 }
 
 export const widgets: Widget[] = [
+  { id: 'analysis-group', name: 'Analysis Cluster', video: '/images/widgets/analysis_group.webm', preview: '/images/widgets/analysis_group.png', bullets: [
+    'multi-page cluster for several widgets',
+    'select widgets to group in settings menu',
+    'toggle with hotkey Ctrl+Shift+G',
+    'option to toggle automatically',
+  ]},
   { id: 'abs-tc', name: 'ABS / TC Activity', video: '/images/widgets/abs_tc.webm', preview: '/images/widgets/abs_tc.png', bullets: [
     'dark grey font when assist is disabled',
     'selected level shown as a number',
@@ -49,13 +55,13 @@ export const widgets: Widget[] = [
   ]},
   { id: 'delta-bar', name: 'Delta Bar', video: '/images/widgets/delta_bar.webm', preview: '/images/widgets/delta_bar.png', bullets: [
     'delta to session best lap time',
-    '<span class="tag-pro">Pro</span> toggle delta reference in settings menu<br>session best or personal best',
+    '<span class="tag-pro">Pro</span> delta reference option<br>- session best or personal best',
   ]},
   { id: 'drs', name: 'DRS', video: '/images/widgets/drs.webm', preview: '/images/widgets/drs.png', bullets: [
     'disabled when DRS is not available',
     'activations left shown in brackets',
   ]},
-  { id: 'engine', name: 'Engine', preview: '/images/widgets/engine.png', bullets: [
+  { id: 'engine', name: 'Engine', video: '/images/widgets/engine.webm', preview: '/images/widgets/engine.png', bullets: [
     '<strong>temperatures:</strong><br>engine and oil temperatures (blue → dark red)',
     '<strong>engine settings:</strong><br>engine map (em) and engine braking (eb)',
     '<strong>current:</strong> current power output in horsepower',
@@ -109,7 +115,7 @@ export const widgets: Widget[] = [
     'incident points accrued and the session limit',
     '<span class="tag-pro">Pro</span> number of cuts',
   ]},
-  { id: 'lap-log', name: 'Lap Time Log', preview: '/images/widgets/lap_log.png', bullets: [
+  { id: 'lap-log', name: 'Lap Time Log', video: '/images/widgets/lap_log.webm', preview: '/images/widgets/lap_log.png', bullets: [
     'last seven lap times with delta to previous lap',
     'personal best and session best laps highlighted',
     'invalid laps struck red',
@@ -176,8 +182,9 @@ export const widgets: Widget[] = [
     'rpm bar with colour code for critical revolutions',
   ]},
   { id: 'schedule', name: 'Ranked Schedule', pro: true, preview: '/images/widgets/schedule.png', bullets: [
-    'next 4 ranked mp race start times',
-    '<strong>grey</strong> = daily<br><strong>green</strong> = free daily (f2p)<br><strong>red</strong> = daily specials<br><strong>gold</strong> = weekly specials',
+    'next 4 ranked mp sprint races<br>- green = f2p combo',
+    'next ranked mp feature race',
+    'next ranked mp weekly race',
     '<strong>grey pen</strong> = fixed setup<br><strong>white pen</strong> = open setup',
   ]},
   { id: 'sectors', name: 'Sector Times', video: '/images/widgets/sectors.webm', preview: '/images/widgets/sectors.png', bullets: [
@@ -247,17 +254,16 @@ export const widgets: Widget[] = [
     'brake cooling water remaining',
     '*only used in RaceRoom Truck class',
   ]},
-  { id: 'settings-menu', name: 'Settings Menu', tallPreview: true, preview: '/images/widgets/settings_menu.png', bullets: [
-    'enable proximity beep:<br>turn the audible radar beep on/off',
-    'beep frequency:<br>set the pitch of the radar beep',
-    'show temperature text:<br>turn temps being shown as numbers on/off',
-    'units:<br>Switch between metric and imperial US units',
-    '<span class="tag-pro">Pro</span> colour-coded pedal bars:<br>turn bar colouring on/off',
-    '<span class="tag-pro">Pro</span> pedal graph interval:<br>how many seconds the input graph will project',
-    '<span class="tag-pro">Pro</span> delta reference:<br>all-time best or session-best as reference for deltas',
-    '<span class="tag-pro">Pro</span> radar range:<br>how far away the radar detects opponents',
-    '<span class="tag-pro">Pro</span> fuel saving target:<br>number of laps to offset pitstop',
-    '<span class="tag-pro">Pro</span> pit info cycle interval:<br>interval between pit info cycles in seconds',
-    'enable debug logging:<br>what it says, usually not required',
+  { id: 'settings-menu', name: 'Settings Menu', tallPreview: true, video: '/images/widgets/settings_menu.webm', preview: '/images/widgets/settings_menu.png', bullets: [
+    '<strong>Globals</strong><br>- reset all widget positions<br>- change the opacity of all widgets' +
+      '<br>- layout controls',
+    '<strong>Proximity Beep</strong><br>- turn the audible radar beep on/off<br>- set the pitch of the radar beep',
+    '<strong>Widgets</strong><br>- show temperatures as numbers on/off<br>- switch between metric and imperial US units' +
+    '<br>- select font family<br>- session or personal best for delta reference',
+    '<strong>Widget Grouping</strong><br>- enable to group the selected widgets<br>- autoflip flips pages every few seconds',
+    '<span class="tag-pro">Pro</span> <strong>Pro Group</strong><br>- turn colour-coded pedal bars on/off' +
+    '<br>- input graph interval in seconds<br>- radar detection range in metres' +
+    '<br>- interval for automatic cycles',
+    '<strong>Racing/Telemetry/Utility Tabs</strong><br>- turn individual widgets on/off<br>- adjust the opacity per widget',
   ]},
 ]
