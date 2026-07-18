@@ -259,11 +259,13 @@ export const widgets: Widget[] = [
       '<br>- layout controls',
     '<strong>Proximity Beep</strong><br>- turn the audible radar beep on/off<br>- set the pitch of the radar beep',
     '<strong>Widgets</strong><br>- show temperatures as numbers on/off<br>- switch between metric and imperial US units' +
-    '<br>- select font family<br>- session or personal best for delta reference',
+      '<br>- select font family<br>- session or personal best for delta reference',
     '<strong>Widget Grouping</strong><br>- enable to group the selected widgets<br>- autoflip flips pages every few seconds',
     '<span class="tag-pro">Pro</span> <strong>Pro Group</strong><br>- turn colour-coded pedal bars on/off' +
-    '<br>- input graph interval in seconds<br>- radar detection range in metres' +
-    '<br>- interval for automatic cycles',
+      '<br>- input graph interval in seconds<br>- radar detection range in metres' +
+      '<br>- interval for automatic cycles',
+    '<strong>Misc</strong><br>- include idealised condition laps in PB' +
+      '<br>- enable debug logging',
     '<strong>Racing/Telemetry/Utility Tabs</strong><br>- turn individual widgets on/off<br>- adjust the opacity per widget',
   ]},
 ]

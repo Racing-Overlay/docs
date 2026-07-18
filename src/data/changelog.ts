@@ -20,6 +20,7 @@ export const changelog: ChangelogEntry[] = [
         '<strong>standings tower:</strong><br>extended pit stop info<br>added number of laps since last stop and last stop standing time<br>added setting for pit info cycle interval',
         '<strong>fun with flags:</strong><br>added nationality flag in mp modes',
         '<strong>fun with fonts:</strong> settings menu offers a variety of alternate fonts',
+        '<strong>delta bar</strong><br>delta also on invalid laps now',
         '<strong>fuel calculator</strong><br>improved predictions for fuel and VE' +
           '<br><span class="tag-pro">Pro</span> added stint average and fuel saving target setting',
         'added <strong>engine widget:</strong><br>engine temperatures, settings and power output',

@@ -144,19 +144,19 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
               </ul>
               <p v-else style="color: var(--text-muted); font-size: 0.88rem;">No additional information.</p>
             </div>
-            <div :class="['widget-preview-pane', { 'widget-preview-pane--tall': activeWidget.tallPreview }]">
+            <div :class="['widget-preview-pane', { 'widget-preview-pane--tall': settingsWidget.tallPreview }]">
               <video
-                :class="['widget-preview-img', { 'widget-preview-tall-img': activeWidget.tallPreview }]"
-                v-if="activeWidget.video"
-                :src="baseUrl + activeWidget.video.replace(/^\//, '')"
+                :class="['widget-preview-img', { 'widget-preview-tall-img': settingsWidget.tallPreview }]"
+                v-if="settingsWidget.video"
+                :src="baseUrl + settingsWidget.video.replace(/^\//, '')"
                 class="widget-preview-img"
                 autoplay loop muted playsinline
               />
               <img
-                :class="['widget-preview-img', { 'widget-preview-tall-img': activeWidget.tallPreview }]"
-                v-else-if="activeWidget.preview"
-                :src="baseUrl + activeWidget.preview.replace(/^\//, '')"
-                :alt="activeWidget.name + ' preview'"
+                :class="['widget-preview-img', { 'widget-preview-tall-img': settingsWidget.tallPreview }]"
+                v-else-if="settingsWidget.preview"
+                :src="baseUrl + settingsWidget.preview.replace(/^\//, '')"
+                :alt="settingsWidget.name + ' preview'"
                 class="widget-preview-img"
               />
               <div v-else class="widget-preview-empty">no preview available</div>
