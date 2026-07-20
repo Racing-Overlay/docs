@@ -9,13 +9,13 @@ export interface Widget {
 }
 
 export const widgets: Widget[] = [
-  { id: 'analysis-group', name: 'Analysis Cluster', video: '/images/widgets/analysis_group.webm', preview: '/images/widgets/analysis_group.png', bullets: [
+  { id: 'analysis-group', name: 'Analysis Cluster', video: '/images/widgets/analysis_group.mp4', preview: '/images/widgets/analysis_group.png', bullets: [
     'multi-page cluster for several widgets',
     'select widgets to group in settings menu',
     'toggle with hotkey Ctrl+Shift+G',
     'option to toggle automatically',
   ]},
-  { id: 'abs-tc', name: 'ABS / TC Activity', video: '/images/widgets/abs_tc.webm', preview: '/images/widgets/abs_tc.png', bullets: [
+  { id: 'abs-tc', name: 'ABS / TC Activity', video: '/images/widgets/abs_tc.mp4', preview: '/images/widgets/abs_tc.png', bullets: [
     'dark grey font when assist is disabled',
     'selected level shown as a number',
     'activity highlighted in <strong>yellow</strong>',
@@ -53,7 +53,7 @@ export const widgets: Widget[] = [
   { id: 'damage', name: 'Damage', preview: '/images/widgets/damage.png', bullets: [
     'damage per component group:<br>aerodynamics<br>springs (suspension)<br> engine<br>gears (transmission)',
   ]},
-  { id: 'delta-bar', name: 'Delta Bar', video: '/images/widgets/delta_bar.webm', preview: '/images/widgets/delta_bar.png', bullets: [
+  { id: 'delta-bar', name: 'Delta Bar', video: '/images/widgets/delta_bar.mp4', preview: '/images/widgets/delta_bar.png', bullets: [
     'delta to session best lap time',
     '<span class="tag-pro">Pro</span> delta reference option<br>- session best or personal best',
   ]},
@@ -81,7 +81,7 @@ export const widgets: Widget[] = [
     'number = position in class',
     '<span class="tag-pro">Pro</span> multiclass support',
   ]},
-  { id: 'fps', name: 'FPS', video: '/images/widgets/fps.webm', preview: '/images/widgets/fps.png', bullets: [
+  { id: 'fps', name: 'FPS', video: '/images/widgets/fps.mp4', preview: '/images/widgets/fps.png', bullets: [
     'current frames per second',
     'updated per second',
   ]},
@@ -171,7 +171,7 @@ export const widgets: Widget[] = [
     'top-down view of surrounding cars and their relative orientation',
     '<span class="tag-pro">Pro</span> variable detection range<br>(see settings menu)',
   ]},
-  { id: 'relative', name: 'Relative', preview: '/images/widgets/relative.png', bullets: [
+  { id: 'relative', name: 'Relative', video: '/images/widgets/relative.mp4', preview: '/images/widgets/relative.png', bullets: [
     'gaps to the six drivers closest to you',
     'columns: overall position, name, (rat/rep), delta',
     'lapped status: blue = ahead, red = behind',
@@ -181,7 +181,7 @@ export const widgets: Widget[] = [
   { id: 'rpm', name: 'RPM', video: '/images/widgets/rpm.webm', preview: '/images/widgets/rpm.png', bullets: [
     'rpm bar with colour code for critical revolutions',
   ]},
-  { id: 'schedule', name: 'Ranked Schedule', pro: true, preview: '/images/widgets/schedule.png', bullets: [
+  { id: 'schedule', name: 'Ranked Schedule', pro: true, video: '/images/widgets/schedule.mp4', preview: '/images/widgets/schedule.png', bullets: [
     'next 4 ranked mp sprint races<br>- green = f2p combo',
     'next ranked mp feature race',
     'next ranked mp weekly race',
