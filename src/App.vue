@@ -94,7 +94,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
       <!-- Usage -->
       <section id="usage" class="section">
         <h2 class="section-title">Getting Started</h2>
-        <p>- launch RRO with one of the shortcuts it created</p>
+        <p>- launch RRO with one of its desktop shortcuts</p>
         <p>- start a race session, go to track</p>
         <p>
           - press

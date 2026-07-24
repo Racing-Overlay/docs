@@ -138,7 +138,7 @@ export const widgets: Widget[] = [
     '<strong>yellow:</strong> slowdown (seconds to give back)',
     '<strong>red:</strong> drive through / stop&amp;go (laps to serve)',
   ]},
-  { id: 'pit-info', name: 'Pit Stop Info', video: '/images/widgets/pit_info.webm', preview: '/images/widgets/pit_info.png', bullets: [
+  { id: 'pit-info', name: 'Pit Stop Info', video: '/images/widgets/pit_info.mp4', preview: '/images/widgets/pit_info.png', bullets: [
     'current and total pit stop time',
     'minimum stoppage time (if set)',
     'current action and scheduled task status',
