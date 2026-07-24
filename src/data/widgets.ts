@@ -20,7 +20,7 @@ export const widgets: Widget[] = [
     'selected level shown as a number',
     'activity highlighted in <strong>yellow</strong>',
   ]},
-  { id: 'battery', name: 'Battery', video: '/images/widgets/battery.webm', preview: '/images/widgets/battery.png', bullets: [
+  { id: 'battery', name: 'Battery', video: '/images/widgets/battery.mp4', preview: '/images/widgets/battery.png', bullets: [
     'current battery state of charge',
     '<strong>blue</strong> = discharging<br><strong>green</strong> = recharging<br><strong>yellow</strong> = low',
     'shows discharge / regen rate when changed',
@@ -29,7 +29,7 @@ export const widgets: Widget[] = [
     '<strong>sb:</strong> your session best lap time',
     '<strong>pb:</strong> your all-time personal best',
   ]},
-  { id: 'brakes', name: 'Brakes', preview: '/images/widgets/brakes.png', bullets: [
+  { id: 'brakes', name: 'Brakes', video: '/images/widgets/brakes.mp4', preview: '/images/widgets/brakes.png', bullets: [
     '<strong>temperatures:</strong><br>temperature colours (blue → dark red)',
     '<strong>BB:</strong> current brake balance setting',
     '<strong>TC:</strong> current traction control setting',
@@ -41,7 +41,7 @@ export const widgets: Widget[] = [
     '<span class="tag-pro">Pro</span> multi-page support',
     "tip:<br>if context doesn't fit, toggle page to refresh",
   ]},
-  { id: 'current-lap', name: 'Current Lap Time', video: '/images/widgets/current_lap.webm', preview: '/images/widgets/current_lap.png', bullets: [
+  { id: 'current-lap', name: 'Current Lap Time', preview: '/images/widgets/current_lap.png', bullets: [
     '<strong>this:</strong> current lap time',
     '<strong>last:</strong> previous lap time',
     'time struck through in red if the lap was invalid',
@@ -61,7 +61,7 @@ export const widgets: Widget[] = [
     'disabled when DRS is not available',
     'activations left shown in brackets',
   ]},
-  { id: 'engine', name: 'Engine', video: '/images/widgets/engine.webm', preview: '/images/widgets/engine.png', bullets: [
+  { id: 'engine', name: 'Engine', video: '/images/widgets/engine.mp4', preview: '/images/widgets/engine.png', bullets: [
     '<strong>temperatures:</strong><br>engine and oil temperatures (blue → dark red)',
     '<strong>engine settings:</strong><br>engine map (em) and engine braking (eb)',
     '<strong>current:</strong> current power output in horsepower',
@@ -71,7 +71,7 @@ export const widgets: Widget[] = [
     'FFB magnitude and maximum',
     'tracks cuts above the upper threshold',
   ]},
-  { id: 'flags', name: 'Flags', video: '/images/widgets/flags.webm', preview: '/images/widgets/flags.png', bullets: [
+  { id: 'flags', name: 'Flags', video: '/images/widgets/flags.mp4', preview: '/images/widgets/flags.png', bullets: [
     'digiflag display of currently shown flag',
   ]},
   { id: 'flat-map', name: 'Flat Map', preview: '/images/widgets/flat_map.png', bullets: [
@@ -85,7 +85,7 @@ export const widgets: Widget[] = [
     'current frames per second',
     'updated per second',
   ]},
-  { id: 'fuel-calc', name: 'Fuel Calculator', video: '/images/widgets/fuel_calc.webm', preview: '/images/widgets/fuel_calc.png', bullets: [
+  { id: 'fuel-calc', name: 'Fuel Calculator', preview: '/images/widgets/fuel_calc.png', bullets: [
     '<strong>laps left:</strong> laps left at current avg',
     '<strong>time left:</strong> time left at current avg<br>(HY: VE laps left)',
     '<strong>o/a avg:</strong> overall average consumption',
@@ -95,19 +95,19 @@ export const widgets: Widget[] = [
     '<span class="tag-pro">Pro</span> <strong>left at finish:</strong> projected fuel left at race end',
     '<span class="tag-pro">Pro</span> <strong>to add:</strong> fuel needed to finish',
   ]},
-  { id: 'fuel-gauge', name: 'Fuel Gauge', video: '/images/widgets/fuel_gauge.webm', preview: '/images/widgets/fuel_gauge.png', bullets: [
+  { id: 'fuel-gauge', name: 'Fuel Gauge', preview: '/images/widgets/fuel_gauge.png', bullets: [
     'fuel remaining and total tank capacity',
     'units: litres or US gallons',
   ]},
-  { id: 'gear', name: 'Gear', video: '/images/widgets/gear.webm', preview: '/images/widgets/gear.png', bullets: [
+  { id: 'gear', name: 'Gear', video: '/images/widgets/gear.mp4', preview: '/images/widgets/gear.png', bullets: [
     'currently selected gear',
     'colour code for critical rpm',
   ]},
-  { id: 'headlights', name: 'Headlights', video: '/images/widgets/headlights.webm', preview: '/images/widgets/headlights.png', bullets: [
+  { id: 'headlights', name: 'Headlights', video: '/images/widgets/headlights.mp4', preview: '/images/widgets/headlights.png', bullets: [
     'hidden on cars without headlights',
     '<strong>grey</strong> = off<br><strong>white</strong> = on<br><strong>yellow</strong> = flashing',
   ]},
-  { id: 'ignition', name: 'Ignition & Starter', video: '/images/widgets/ignition.webm', preview: '/images/widgets/ignition.png', bullets: [
+  { id: 'ignition', name: 'Ignition & Starter', video: '/images/widgets/ignition.mp4', preview: '/images/widgets/ignition.png', bullets: [
     '<strong>grey</strong> = off<br><strong>red</strong> = starter on<br><strong>flashing red</strong> = starting<br><strong>white</strong> = running',
   ]},
   { id: 'incident', name: 'Incident Points', preview: '/images/widgets/incident.png', bullets: [
@@ -115,7 +115,7 @@ export const widgets: Widget[] = [
     'incident points accrued and the session limit',
     '<span class="tag-pro">Pro</span> number of cuts',
   ]},
-  { id: 'lap-log', name: 'Lap Time Log', video: '/images/widgets/lap_log.webm', preview: '/images/widgets/lap_log.png', bullets: [
+  { id: 'lap-log', name: 'Lap Time Log', preview: '/images/widgets/lap_log.png', bullets: [
     'last seven lap times with delta to previous lap',
     'personal best and session best laps highlighted',
     'invalid laps struck red',
@@ -123,7 +123,7 @@ export const widgets: Widget[] = [
     '<span class="tag-pro">Pro</span> optimal lap time (best sectors)',
     '<span class="tag-pro">Pro</span> toggle delta reference in settings menu:<br>session best or personal best',
   ]},
-  { id: 'pedals', name: 'Pedals', video: '/images/widgets/pedals.webm', preview: '/images/widgets/pedals.png', bullets: [
+  { id: 'pedals', name: 'Pedals', video: '/images/widgets/pedals.mp4', preview: '/images/widgets/pedals.png', bullets: [
     'left to right: clutch, brake, throttle',
     '<strong>white bar/top number:</strong> input received by the car',
     '<strong>grey bar/bottom number:</strong> input from controller',
@@ -178,7 +178,7 @@ export const widgets: Widget[] = [
     '<span class="tag-pro">Pro</span> driver class colour',
     '<span class="tag-pro">Pro</span> in mp: rating and reputation',
   ]},
-  { id: 'rpm', name: 'RPM', video: '/images/widgets/rpm.webm', preview: '/images/widgets/rpm.png', bullets: [
+  { id: 'rpm', name: 'RPM', video: '/images/widgets/rpm.mp4', preview: '/images/widgets/rpm.png', bullets: [
     'rpm bar with colour code for critical revolutions',
   ]},
   { id: 'schedule', name: 'Ranked Schedule', pro: true, video: '/images/widgets/schedule.mp4', preview: '/images/widgets/schedule.png', bullets: [
@@ -229,10 +229,9 @@ export const widgets: Widget[] = [
     '<span class="tag-pro">Pro</span> multiclass support',
   ]},
   { id: 'tyre-analysis', name: 'Tyre Analysis', pro: true, preview: '/images/widgets/tyre_analysis.png', bullets: [
-    'per tyre:',
-    'compound, stint length, wear rate, laps left',
-    'temperature average/peak',
-    'pressure average/delta to initial',
+    'per tyre:<br>- compound (stint length)<br>- wear rate / laps left' +
+      '<br>- average temperature / peak temperature' +
+      '<br>- average pressure / delta to initial',
   ]},
   { id: 'tyre-info', name: 'Tyre Info', video: '/images/widgets/tyre_info.webm', preview: '/images/widgets/tyre_info.png', bullets: [
     'per tyre:<br>pressure (kPa / psi), condition (%),<br>segment temperature (°C / °F)',
@@ -260,6 +259,7 @@ export const widgets: Widget[] = [
     '<strong>Proximity Beep</strong><br>- turn the audible radar beep on/off<br>- set the pitch of the radar beep',
     '<strong>Widgets</strong><br>- show temperatures as numbers on/off<br>- switch between metric and imperial US units' +
       '<br>- select font family<br>- session or personal best for delta reference',
+    '<strong>"Warn when a faster car is closing in"</strong><br>- warning when fast car approaches',
     '<strong>Widget Grouping</strong><br>- enable to group the selected widgets<br>- autoflip flips pages every few seconds',
     '<span class="tag-pro">Pro</span> <strong>Pro Group</strong><br>- turn colour-coded pedal bars on/off' +
       '<br>- input graph interval in seconds<br>- radar detection range in metres' +
