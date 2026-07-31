@@ -8,7 +8,7 @@ export interface ChangelogEntry {
 // Ordered list, newest entry has to be on top
 export const changelog: ChangelogEntry[] = [
   {
-    version: '2.0.0', label: '2.0.0', pro: false,
+    version: '2.0.1', label: '2.0.1', pro: false,
     sections: [
       { heading: '', items: [
         'added <strong>personal best tracking</strong><br>incl. delta deference and fuel estimate',
@@ -16,21 +16,23 @@ export const changelog: ChangelogEntry[] = [
         'added <strong>analysis cluster widget</strong><br>group widgets into a multi-page flip widget',
         '<span class="tag-pro">Pro</span> added <strong>ranked schedule</strong><br>shows start times of upcoming ranked races',
         'made <strong>class-based standings tower free</strong><br>extended pit stop info<br>added number of laps since last stop and last stop standing time<br>added setting for pit info cycle interval',
-        '<strong>fun with flags:</strong><br>added nationality flags',
-        '<strong>fun with fonts:</strong><br>settings menu offers a variety of alternate fonts',
+        '<strong>fun with flags</strong><br>added nationality flags',
+        '<strong>fun with fonts</strong><br>settings menu offers a variety of alternate fonts',
         '<strong>delta bar</strong><br>delta also on invalid laps now',
+        '<strong>relative</strong><br>added penalties of drivers around you',
         '<strong>fuel calculator</strong><br>improved predictions for fuel and VE' +
           '<br><span class="tag-pro">Pro</span> added stint average and fuel saving target setting',
-        'added <strong>engine widget:</strong><br>engine temperatures, settings and power output',
-        'extended <strong>brakes widget:</strong><br>2x2 layout for temperatures<br>moved brake balance and TC value here',
+        'added <strong>engine widget</strong><br>engine temperatures, settings and power output',
+        'extended <strong>brakes widget</strong><br>2x2 layout for temperatures<br>moved brake balance and TC value here',
+        'added <strong>off track message</strong>',
         '<strong>pedals widget:</strong><br>changed display value<br>added secondary numeric value',
-        'added new <strong>hotkey:</strong> Ctrl+Shift+T<br>Toggle the overlay on/off',
-        'added new <strong>hotkey:</strong> Ctrl+Shift+R<br>Restart the overlay (takes a few seconds)',
+        'added new <strong>hotkey</strong> Ctrl+Shift+T<br>Toggle the overlay on/off',
+        'added new <strong>hotkey</strong> Ctrl+Shift+R<br>Restart the overlay (takes a few seconds)',
       ]},
     ],
   },
   {
-    version: '1.3.3', label: '1.3.3', pro: false,
+    version: '1.3.3', label: '1.3.3', pro: true,
     sections: [
       { heading: '', items: [
         'made <strong>class-based standings tower free</strong>',

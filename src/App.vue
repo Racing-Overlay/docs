@@ -2,6 +2,8 @@
 import { ref, computed, onMounted } from 'vue'
 import { widgets } from './data/widgets'
 import { changelog } from './data/changelog'
+import PreviewGallery from './components/PreviewGallery.vue'
+import VideoGallery from './components/VideoGallery.vue'
 
 // Widget linkage and defaulting
 const widgetSection = ref<HTMLElement | null>(null)
@@ -68,121 +70,114 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
       <p class="tagline">clean, lightweight, highly customisable</p>
     </section>
 
-    <!-- Preview Video -->
-    <section class="section section--video">
-      <div class="video-embed">
-        <iframe
-          src="https://www.youtube.com/embed/hnbsQHltzuk"
-          title="RRO Preview"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          />
-      </div>
+    <!-- Preview Gallery -->
+    <PreviewGallery />
+
+    <!-- Preview Videos -->
+    <VideoGallery />
+
+    <!-- Features -->
+    <section id="features" class="section">
+      <h2 class="section-title">Features</h2>
+      <p>tracks your personal best times and fuel use</p>
+      <p>supports ultrawide, triple screen, fullscreen</p>
+      <p>unlimited custom layouts</p>
+      <p>minimal performance footprint</p>
+      <p>highly accurate, runs at your game fps</p>
     </section>
 
-      <!-- Features -->
-      <section id="features" class="section">
-        <h2 class="section-title">Features</h2>
-        <p>tracks your personal best times and fuel use</p>
-        <p>supports ultrawide, triple screen, fullscreen</p>
-        <p>unlimited custom layouts</p>
-        <p>minimal performance footprint</p>
-        <p>highly accurate, runs at your game fps</p>
-      </section>
+    <!-- Usage -->
+    <section id="usage" class="section">
+      <h2 class="section-title">Getting Started</h2>
+      <p>- launch RRO with one of its desktop shortcuts</p>
+      <p>- start a race session, go to track</p>
+      <p>
+        - press
+        <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Ctrl</kbd>
+        +
+        <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Shift</kbd>
+        +
+        <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">S</kbd>
+        to open the settings menu
+      </p>
+      <p>- to move widgets, click on the game window, move with left-click, change size with right-click</p>
+      <p>
+        - to go back to the menu, press
+        <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Ctrl</kbd>
+        +
+        <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Shift</kbd>
+        +
+        <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">S</kbd>
+        again
+      </p>
+      <p>- close menu to save layout</p>
+    </section>
 
-      <!-- Usage -->
-      <section id="usage" class="section">
-        <h2 class="section-title">Getting Started</h2>
-        <p>- launch RRO with one of its desktop shortcuts</p>
-        <p>- start a race session, go to track</p>
-        <p>
-          - press
+    <!-- Settings -->
+    <section id="settings" class="section">
+      <h2 class="section-title">Settings menu</h2>
+
+        <p style="margin-bottom:1rem; color: var(--text-muted); font-size:0.88rem;">
+          Press
           <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Ctrl</kbd>
           +
           <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Shift</kbd>
           +
           <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">S</kbd>
-          to open the settings menu
+          anywhere to open the settings menu, also in main menu
         </p>
-        <p>- to move widgets, click on the game window, move with left-click, change size with right-click</p>
-        <p>
-          - to go back to the menu, press
-          <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Ctrl</kbd>
-          +
-          <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Shift</kbd>
-          +
-          <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">S</kbd>
-          again
-        </p>
-        <p>- close menu to save layout</p>
-      </section>
 
-      <!-- Settings -->
-      <section id="settings" class="section">
-        <h2 class="section-title">Settings menu</h2>
-
-          <p style="margin-bottom:1rem; color: var(--text-muted); font-size:0.88rem;">
-            Press
-            <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Ctrl</kbd>
-            +
-            <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Shift</kbd>
-            +
-            <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">S</kbd>
-            anywhere to open the settings menu, also in main menu
-          </p>
-
-          <!-- Single card for settings menu -->
-          <div class="widget-display">
-            <div class="widget-card">
-              <div class="widget-header">
-                <h3>{{ settingsWidget.name }}</h3>
-                <span v-if="settingsWidget.pro" class="tag-pro">Pro</span>
-              </div>
-              <ul v-if="settingsWidget.bullets && settingsWidget.bullets.length">
-                <li v-for="(b, i) in settingsWidget.bullets" :key="i" v-html="b" />
-              </ul>
-              <p v-else style="color: var(--text-muted); font-size: 0.88rem;">No additional information.</p>
-            </div>
-            <div :class="['widget-preview-pane', { 'widget-preview-pane--tall': settingsWidget.tallPreview }]">
-              <video
-                :class="['widget-preview-img', { 'widget-preview-tall-img': settingsWidget.tallPreview }]"
-                v-if="settingsWidget.video"
-                :src="baseUrl + settingsWidget.video.replace(/^\//, '')"
-                class="widget-preview-img"
-                autoplay loop muted playsinline
-              />
-              <img
-                :class="['widget-preview-img', { 'widget-preview-tall-img': settingsWidget.tallPreview }]"
-                v-else-if="settingsWidget.preview"
-                :src="baseUrl + settingsWidget.preview.replace(/^\//, '')"
-                :alt="settingsWidget.name + ' preview'"
-                class="widget-preview-img"
-              />
-              <div v-else class="widget-preview-empty">no preview available</div>
-            </div>
-          </div>
-      </section>
-
-      <!-- Widgets -->
-      <section id="widgets" class="section" ref="widgetSection">
-        <h2 class="section-title">Widgets</h2>
-
-      <!-- Pill index -->
-      <div class="widget-index">
-        <button
-          v-for="w in widgets"
-          :key="w.id"
-          class="widget-pill"
-          :class="{ active: activeWidgetId === w.id, pro: w.pro }"
-          @click="selectWidget(w.id)"
-          >{{ w.name }}</button>
-        </div>
-
-        <!-- Single active card -->
+        <!-- Single card for settings menu -->
         <div class="widget-display">
           <div class="widget-card">
             <div class="widget-header">
+              <h3>{{ settingsWidget.name }}</h3>
+              <span v-if="settingsWidget.pro" class="tag-pro">Pro</span>
+            </div>
+            <ul v-if="settingsWidget.bullets && settingsWidget.bullets.length">
+              <li v-for="(b, i) in settingsWidget.bullets" :key="i" v-html="b" />
+            </ul>
+            <p v-else style="color: var(--text-muted); font-size: 0.88rem;">No additional information.</p>
+          </div>
+          <div :class="['widget-preview-pane', { 'widget-preview-pane--tall': settingsWidget.tallPreview }]">
+            <video
+              :class="['widget-preview-img', { 'widget-preview-tall-img': settingsWidget.tallPreview }]"
+              v-if="settingsWidget.video"
+              :src="baseUrl + settingsWidget.video.replace(/^\//, '')"
+              class="widget-preview-img"
+              autoplay loop muted playsinline
+            />
+            <img
+              :class="['widget-preview-img', { 'widget-preview-tall-img': settingsWidget.tallPreview }]"
+              v-else-if="settingsWidget.preview"
+              :src="baseUrl + settingsWidget.preview.replace(/^\//, '')"
+              :alt="settingsWidget.name + ' preview'"
+              class="widget-preview-img"
+            />
+            <div v-else class="widget-preview-empty">no preview available</div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Widgets -->
+    <section id="widgets" class="section" ref="widgetSection">
+      <h2 class="section-title">Widgets</h2>
+
+    <!-- Pill index -->
+    <div class="widget-index">
+      <button
+        v-for="w in widgets"
+        :key="w.id"
+        class="widget-pill"
+        :class="{ active: activeWidgetId === w.id, pro: w.pro }"
+        @click="selectWidget(w.id)"
+        >{{ w.name }}</button>
+      </div>
+
+      <!-- Single active card -->
+      <div class="widget-display">
+        <div class="widget-card">
+          <div class="widget-header">
             <h3>{{ activeWidget.name }}</h3>
             <span v-if="activeWidget.pro" class="tag-pro">Pro</span>
           </div>

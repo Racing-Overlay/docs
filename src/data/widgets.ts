@@ -170,6 +170,7 @@ export const widgets: Widget[] = [
   { id: 'radar', name: 'Radar', video: '/images/widgets/radar.webm', preview: '/images/widgets/radar.png', bullets: [
     'top-down view of surrounding cars and their relative orientation',
     '<span class="tag-pro">Pro</span> variable detection range<br>(see settings menu)',
+    '<span class="tag-pro">Pro</span> class colours for opponent cars',
   ]},
   { id: 'relative', name: 'Relative', video: '/images/widgets/relative.mp4', preview: '/images/widgets/relative.png', bullets: [
     'gaps to the six drivers closest to you',
@@ -263,7 +264,7 @@ export const widgets: Widget[] = [
     '<strong>Widget Grouping</strong><br>- enable to group the selected widgets<br>- autoflip flips pages every few seconds',
     '<span class="tag-pro">Pro</span> <strong>Pro Group</strong><br>- turn colour-coded pedal bars on/off' +
       '<br>- input graph interval in seconds<br>- radar detection range in metres' +
-      '<br>- interval for automatic cycles',
+      '<br>- interval for automatic cycles<br>- Group tower by class or overall standings',
     '<strong>Misc</strong><br>- include idealised condition laps in PB' +
       '<br>- enable debug logging',
     '<strong>Racing/Telemetry/Utility Tabs</strong><br>- turn individual widgets on/off<br>- adjust the opacity per widget',
