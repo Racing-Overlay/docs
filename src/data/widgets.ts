@@ -174,10 +174,10 @@ export const widgets: Widget[] = [
   ]},
   { id: 'relative', name: 'Relative', video: '/images/widgets/relative.mp4', preview: '/images/widgets/relative.png', bullets: [
     'gaps to the six drivers closest to you',
-    'columns: overall position, name, (rat/rep), delta',
+    'columns: overall position, name, pending penalty, rat/rep, delta',
     'lapped status: blue = ahead, red = behind',
+    'in mp: rating and reputation',
     '<span class="tag-pro">Pro</span> driver class colour',
-    '<span class="tag-pro">Pro</span> in mp: rating and reputation',
   ]},
   { id: 'rpm', name: 'RPM', video: '/images/widgets/rpm.mp4', preview: '/images/widgets/rpm.png', bullets: [
     'rpm bar with colour code for critical revolutions',

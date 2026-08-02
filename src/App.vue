@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { widgets } from './data/widgets'
 import { changelog } from './data/changelog'
 import PreviewGallery from './components/PreviewGallery.vue'
@@ -19,13 +19,23 @@ function selectWidget(id: string, scroll = false) {
   }
 }
 
+function blockImageContextMenu(e: MouseEvent) {
+  if (e.target instanceof HTMLImageElement) {
+    e.preventDefault()
+  }
+}
+
 onMounted(() => {
   const param = new URLSearchParams(window.location.search).get('widget')
   if (param && widgets.some(w => w.id === param)) {
     activeWidgetId.value = param
-    // Defer scroll so the page has painted
     setTimeout(() => widgetSection.value?.scrollIntoView({ behavior: 'smooth' }), 100)
   }
+
+  document.addEventListener('contextmenu', blockImageContextMenu)
+})
+onUnmounted(() => {
+  document.removeEventListener('contextmenu', blockImageContextMenu)
 })
 
 // Hamburger menu for mobile
@@ -67,6 +77,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
     <!-- Hero -->
     <section class="hero">
       <h1 style="letter-spacing: 0.001rem;">Raceroom Racing Overlay</h1>
+      <p class="tagline">your perfect companion for Raceroom's HUD, adding in-depth data and live analysis</p>
       <p class="tagline">clean, lightweight, highly customisable</p>
     </section>
 
