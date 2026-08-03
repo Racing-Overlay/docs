@@ -19,6 +19,7 @@ export const changelog: ChangelogEntry[] = [
         'added <strong>rating and reputation in Free version</strong>',
         '<strong>fun with flags</strong><br>added nationality flags',
         '<strong>fun with fonts</strong><br>settings menu offers a variety of alternate fonts',
+        '<span class="tag-pro">Pro</span> added <strong>class colour picker</strong><br>adjust class colours',
         '<strong>delta bar</strong><br>delta also on invalid laps now',
         '<strong>relative</strong><br>added penalties of drivers around you',
         '<strong>fuel calculator</strong><br>improved predictions for fuel and VE' +

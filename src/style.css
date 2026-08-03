@@ -1,16 +1,16 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #1a1a1d;
-  --bg-card: #2d2d30;
-  --bg-raised: #3a3a3e;
+  --bg: #1b1b1b;
+  --bg-card: #242424;
+  --bg-raised: #232323;
   --text: #e8e8e8;
   --text-muted: #c3c3c3;
   --accent: #ffcc00;
   --accent-dim: rgba(255, 204, 0, 0.15);
   --purple: #be00be;
   --purple-dim: rgba(190, 0, 190, 0.15);
-  --border: #444;
+  --border: #282828;
   --radius: 3px;
 }
 
@@ -39,8 +39,8 @@ img {
 /* ── Top nav ── */
 nav {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(26,26,29,0.92);
-  backdrop-filter: blur(8px);
+  background: rgba(26,26,29,0.8);
+  backdrop-filter: blur(4px);
   border-bottom: 1px solid var(--border);
   padding: 0.75rem 1.5rem;
   display: flex; align-items: center;

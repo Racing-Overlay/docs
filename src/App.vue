@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import AppBackground from './components/AppBackground.vue'
 import { widgets } from './data/widgets'
 import { changelog } from './data/changelog'
 import PreviewGallery from './components/PreviewGallery.vue'
@@ -53,6 +54,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
 </script>
 
 <template>
+  <AppBackground />
   <nav>
     <span class="nav-brand">RRO</span>
     <button class="nav-burger" @click="menuOpen = !menuOpen" :class="{ open: menuOpen }" aria-label="Menu">
@@ -77,7 +79,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
     <!-- Hero -->
     <section class="hero">
       <h1 style="letter-spacing: 0.001rem;">Raceroom Racing Overlay</h1>
-      <p class="tagline">your perfect companion for Raceroom's HUD, adding in-depth data and live analysis</p>
+      <p class="tagline">your perfect companion hud, adding in-depth data and live analysis</p>
       <p class="tagline">clean, lightweight, highly customisable</p>
     </section>
 

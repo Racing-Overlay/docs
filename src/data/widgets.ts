@@ -268,5 +268,6 @@ export const widgets: Widget[] = [
     '<strong>Misc</strong><br>- include idealised condition laps in PB' +
       '<br>- enable debug logging',
     '<strong>Racing/Telemetry/Utility Tabs</strong><br>- turn individual widgets on/off<br>- adjust the opacity per widget',
+    '<span class="tag-pro">Pro</span> <strong>Class Colours Tab</strong><br>- adjust class colours',
   ]},
 ]
