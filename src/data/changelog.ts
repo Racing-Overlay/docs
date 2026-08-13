@@ -8,6 +8,19 @@ export interface ChangelogEntry {
 // Ordered list, newest entry has to be on top
 export const changelog: ChangelogEntry[] = [
   {
+    version: '2.0.2', label: '2.0.2', pro: false,
+    sections: [
+      { heading: '', items: [
+        '<span class="tag-pro">Pro</span> added <strong>vehicle dynamics widget</strong>' +
+          '<br>centre of gravity and load balance graphs',
+        '<strong>Input graph</strong>' +
+          '<br>added TC and ABS tracking',
+        'fixed rare bug in input graph (thanks to elnossa for bug report)',
+        'fixed off-track message bug (thanks to elnossa for bug report)',
+      ]},
+    ],
+  },
+  {
     version: '2.0.1', label: '2.0.1', pro: false,
     sections: [
       { heading: '', items: [
