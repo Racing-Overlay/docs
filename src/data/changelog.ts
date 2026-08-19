@@ -11,10 +11,12 @@ export const changelog: ChangelogEntry[] = [
     version: '2.0.2', label: '2.0.2', pro: false,
     sections: [
       { heading: '', items: [
-        '<span class="tag-pro">Pro</span> added <strong>vehicle dynamics widget</strong>' +
-          '<br>centre of gravity and load balance graphs',
         '<strong>Input graph</strong>' +
           '<br>added TC and ABS tracking',
+        'added <strong>rpm bar blink</strong> when pit limiter active',
+        '<span class="tag-pro">Pro</span> added <strong>vehicle dynamics widget</strong>' +
+          '<br>centre of gravity and load balance graphs',
+        '<span class="tag-pro">Pro</span> added class-based lap projection info',
         'fixed rare bug in input graph (thanks to elnossa for bug report)',
         'fixed off-track message bug (thanks to elnossa for bug report)',
       ]},

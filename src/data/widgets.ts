@@ -131,6 +131,7 @@ export const widgets: Widget[] = [
   ]},
   { id: 'pedal-graph', name: 'Pedal Graph', video: '/images/widgets/input_graph.webm', preview: '/images/widgets/input_graph.png', bullets: [
     '<strong>white:</strong> clutch<br><strong>green:</strong> throttle<br><strong>red:</strong> brake',
+    '<strong>yellow line top:</strong> TC active<br><strong>yellow line bottom:</strong> ABS active',
     '<span class="tag-pro">Pro</span> toggle tracking interval (5, 10 or 20 seconds)',
   ]},
   { id: 'penalties', name: 'Penalties', pro: true, video: '/images/widgets/penalties.webm', preview: '/images/widgets/penalties.png', bullets: [
@@ -195,7 +196,7 @@ export const widgets: Widget[] = [
   { id: 'session-info', name: 'Session Info', video: '/images/widgets/session_info.webm', preview: '/images/widgets/session_info.png', bullets: [
     'time of day',
     'session type, time remaining in session',
-    'current lap and projected total laps',
+    'current lap and total laps projection (<span class="tag-pro">Pro</span> class-based)',
     'overall position, <span class="tag-pro">Pro</span> (position in class)',
     'session best lap time',
   ]},

@@ -79,7 +79,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
     <!-- Hero -->
     <section class="hero">
       <h1 style="letter-spacing: 0.001rem;">Raceroom Racing Overlay</h1>
-      <p class="tagline">your perfect companion hud, adding in-depth data and live analysis</p>
+      <p class="tagline">Raceroom companion hud, adding in-depth data and live analysis</p>
       <p class="tagline">clean, lightweight, highly customisable</p>
     </section>
 
@@ -92,11 +92,12 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
     <!-- Features -->
     <section id="features" class="section">
       <h2 class="section-title">Features</h2>
-      <p>tracks your personal best times and fuel use</p>
+      <p>supreme performance, zero latency</p>
+      <p>lower footprint than any other hud (including in-game)</p>
       <p>supports ultrawide, triple screen, fullscreen</p>
-      <p>unlimited custom layouts</p>
-      <p>minimal performance footprint</p>
+      <p>tracks your personal best times and fuel use</p>
       <p>highly accurate, runs at your game fps</p>
+      <p>unlimited custom layouts</p>
     </section>
 
     <!-- Usage -->
