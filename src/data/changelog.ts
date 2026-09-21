@@ -8,7 +8,24 @@ export interface ChangelogEntry {
 // Ordered list, newest entry has to be on top
 export const changelog: ChangelogEntry[] = [
   {
-    version: '2.0.2', label: '2.0.2', pro: false,
+    version: '2.0.3', label: '2.0.3', pro: false,
+    sections: [
+      { heading: '', items: [
+        '<strong>Input graph</strong>' +
+          '<br>added TC and ABS tracking',
+        '<strong>Start lights</strong><br>added beep',
+        'added <strong>rpm bar blink</strong> when pit limiter active',
+        '<span class="tag-pro">Pro</span> added <strong>vehicle dynamics widget</strong>' +
+          '<br>centre of gravity and load balance graphs',
+        '<span class="tag-pro">Pro</span> added class-based lap projection info',
+        'improved battery widget regeneration detection',
+        'fixed rare bug in input graph (thanks to elnossa for bug report)',
+        'fixed off-track message bug (thanks to elnossa for bug report)',
+      ]},
+    ],
+  },
+  {
+    version: '2.0.2', label: '2.0.2', pro: true,
     sections: [
       { heading: '', items: [
         '<strong>Input graph</strong>' +

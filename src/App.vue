@@ -114,9 +114,9 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
         <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">S</kbd>
         to open the settings menu
       </p>
-      <p>- to move widgets, click on the game window, move with left-click, change size with right-click</p>
+      <p>- to move widgets, click the "edit mode" checkbox, move widgets with left-click, change size with right-click</p>
       <p>
-        - to go back to the menu, press
+        - to close settings menu, press
         <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Ctrl</kbd>
         +
         <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Shift</kbd>
@@ -124,7 +124,6 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
         <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">S</kbd>
         again
       </p>
-      <p>- close menu to save layout</p>
     </section>
 
     <!-- Settings -->
