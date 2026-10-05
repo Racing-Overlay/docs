@@ -8,12 +8,15 @@ export interface ChangelogEntry {
 // Ordered list, newest entry has to be on top
 export const changelog: ChangelogEntry[] = [
   {
-    version: '2.0.3', label: '2.0.3', pro: false,
+    version: '3.0.0', label: '3.0.0', pro: false,
     sections: [
       { heading: '', items: [
+        '<strong>native Vulkan port</strong><br>ultimate performance<br>start game in DXVK mode to use this',
+        '<strong>new settings menu</strong><br>shown in-game, no more extra window',
+        '<strong>sector times widget</strong><br>added overall best sector times tracking',
         '<strong>Input graph</strong>' +
-          '<br>added TC and ABS tracking',
-        '<strong>Start lights</strong><br>added beep',
+          '<br>added TC and ABS tracking as yellow lines',
+        '<strong>Start lights</strong><br>added beep signaling the start lights sequence',
         'added <strong>rpm bar blink</strong> when pit limiter active',
         '<span class="tag-pro">Pro</span> added <strong>vehicle dynamics widget</strong>' +
           '<br>centre of gravity and load balance graphs',
