@@ -191,7 +191,7 @@ export const widgets: Widget[] = [
   ]},
   { id: 'sectors', name: 'Sector Times', video: '/images/widgets/sectors.webm', preview: '/images/widgets/sectors.png', bullets: [
     'own current times for track sectors',
-    '<strong>white</strong> = normal<br><strong>green</strong> = own best<br><strong>pink</strong> = session best',
+    'session best or personal best sector times',
   ]},
   { id: 'session-info', name: 'Session Info', video: '/images/widgets/session_info.webm', preview: '/images/widgets/session_info.png', bullets: [
     'time of day',
@@ -231,12 +231,12 @@ export const widgets: Widget[] = [
     '<span class="tag-pro">Pro</span> multiclass support',
   ]},
   { id: 'tyre-analysis', name: 'Tyre Analysis', pro: true, preview: '/images/widgets/tyre_analysis.png', bullets: [
-    'per tyre:<br>- compound (stint length)<br>- wear rate / laps left' +
-      '<br>- average temperature / peak temperature' +
+    'per tyre:<br>- compound (stint length) condition (%)<br>- average wear rate' +
+      '<br>- average / peak temperature' +
       '<br>- average pressure / delta to initial',
   ]},
   { id: 'tyre-info', name: 'Tyre Info', video: '/images/widgets/tyre_info.webm', preview: '/images/widgets/tyre_info.png', bullets: [
-    'per tyre:<br>pressure (kPa / psi), condition (%),<br>segment temperature (°C / °F)',
+    'per tyre:<br>pressure (kPa / psi),<br>segment temperature (°C / °F)',
     'temperature text optional',
     'dirt pick up',
   ]},
@@ -245,6 +245,11 @@ export const widgets: Widget[] = [
     'flat spot indicator:<br>while tyre has flat spot, text turns red',
     '<span class="tag-pro">Pro</span> purple indicator for wheel spin',
     '<span class="tag-pro">Pro</span> orange indicator for wheel lock',
+  ]},
+  { id: 'vehicle-dynamics', name: 'Vehicle Dynamics', preview: '/images/widgets/vehicle_dynamics.png', bullets: [
+    '<strong>Left:</strong><br>G-meter',
+    '<strong>Right:</strong><br>Load balance<br>(orange square: centre of gravity)',
+    '(do 2–3 consistent laps in practice to calibrate; treat as an approximation)',
   ]},
   { id: 'virtual-energy', name: 'Virtual Energy', preview: '/images/widgets/virtual_energy.png', bullets: [
     'VE tank content',
@@ -256,19 +261,12 @@ export const widgets: Widget[] = [
     '*only used in RaceRoom Truck class',
   ]},
   { id: 'settings-menu', name: 'Settings Menu', tallPreview: true, video: '/images/widgets/settings_menu.webm', preview: '/images/widgets/settings_menu.png', bullets: [
-    '<strong>Globals</strong><br>- reset all widget positions<br>- change the opacity of all widgets' +
-      '<br>- layout controls',
-    '<strong>Proximity Beep</strong><br>- turn the audible radar beep on/off<br>- set the pitch of the radar beep',
-    '<strong>Widgets</strong><br>- show temperatures as numbers on/off<br>- switch between metric and imperial US units' +
-      '<br>- select font family<br>- session or personal best for delta reference',
-    '<strong>"Warn when a faster car is closing in"</strong><br>- warning when fast car approaches',
-    '<strong>Widget Grouping</strong><br>- enable to group the selected widgets<br>- autoflip flips pages every few seconds',
-    '<span class="tag-pro">Pro</span> <strong>Pro Group</strong><br>- turn colour-coded pedal bars on/off' +
-      '<br>- input graph interval in seconds<br>- radar detection range in metres' +
-      '<br>- interval for automatic cycles<br>- Group tower by class or overall standings',
-    '<strong>Misc</strong><br>- include idealised condition laps in PB' +
-      '<br>- enable debug logging',
-    '<strong>Racing/Telemetry/Utility Tabs</strong><br>- turn individual widgets on/off<br>- adjust the opacity per widget',
-    '<span class="tag-pro">Pro</span> <strong>Class Colours Tab</strong><br>- adjust class colours',
+    '<strong>General tab</strong><br>- General widget and behaviour settings',
+    '<strong>Racing/Telemetry/Utility Tabs</strong><br>- turn individual widgets on/off' +
+    '<br>- adjust per widget opacity<br>- reset individual widgets',
+    '<strong>Colours Tab</strong><br>- change widget background colour<br>- adjust class colours',
+    '<strong>Units tab</strong><br>- set units metric or imperial per widget',
+    '<strong>Layout controls</strong><br>- reset all widgets<br>- change opacity of all widgets' +
+     '<br>- change layout<br>- enter edit mode',
   ]},
 ]

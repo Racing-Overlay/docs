@@ -95,9 +95,17 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
       <p>supreme performance, zero latency</p>
       <p>lower footprint than any other hud (including in-game)</p>
       <p>supports ultrawide, triple screen, fullscreen</p>
-      <p>tracks your personal best times and fuel use</p>
       <p>highly accurate, runs at your game fps</p>
       <p>unlimited custom layouts</p>
+    </section>
+
+    <!-- tracking -->
+    <section id="tracking" class="section">
+      <h2 class="section-title">Data Tracking</h2>
+      <p>Data stored between gaming sessions:</p>
+      <p>- personal best lap time</p>
+      <p>- personal best sector times</p>
+      <p>- fuel and virtual energy usage</p>
     </section>
 
     <!-- Usage -->
@@ -137,7 +145,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
           <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">Shift</kbd>
           +
           <kbd style="font-family:monospace;background:var(--bg-raised);border:1px solid var(--border);border-radius:4px;padding:0.1rem 0.4rem;">S</kbd>
-          anywhere to open the settings menu, also in main menu
+          to open the settings menu
         </p>
 
         <!-- Single card for settings menu -->
@@ -303,6 +311,6 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
   </div>
 
   <footer>
-    <p>© 2025 CG — Raceroom Racing Overlay</p>
+    <p>© 2026 CG — Racing Overlay</p>
   </footer>
 </template>
