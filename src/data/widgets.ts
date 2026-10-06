@@ -26,8 +26,8 @@ export const widgets: Widget[] = [
     'shows discharge / regen rate when changed',
   ]},
   { id: 'best-lap', name: 'Best Lap Times', preview: '/images/widgets/best_lap.png', bullets: [
-    '<strong>sb:</strong> your session best lap time',
-    '<strong>pb:</strong> your all-time personal best',
+    '<strong>sb:</strong> your session best lap time (sb)',
+    '<strong>pb:</strong> your all-time personal best (pb)',
   ]},
   { id: 'brakes', name: 'Brakes', video: '/images/widgets/brakes.mp4', preview: '/images/widgets/brakes.png', bullets: [
     '<strong>temperatures:</strong><br>temperature colours (blue → dark red)',
@@ -44,7 +44,7 @@ export const widgets: Widget[] = [
   { id: 'current-lap', name: 'Current Lap Time', preview: '/images/widgets/current_lap.png', bullets: [
     '<strong>this:</strong> current lap time',
     '<strong>last:</strong> previous lap time',
-    'time struck through in red if the lap was invalid',
+    'red highlight if lap is/was invalid',
   ]},
   { id: 'custom-logo', name: 'Custom Logo', preview: '/images/widgets/custom_logo.png', pro: true, bullets: [
     'load your own logo:<br>place <code>logo_1.png</code> in <code>Documents/My Games/RRO/Logos/</code>',
@@ -123,6 +123,9 @@ export const widgets: Widget[] = [
     '<span class="tag-pro">Pro</span> optimal lap time (best sectors)',
     '<span class="tag-pro">Pro</span> toggle delta reference in settings menu:<br>session best or personal best',
   ]},
+  { id: 'notifications', name: 'Notifications', preview: '/images/widgets/notifications.png', bullets: [
+    'system messages regarding the hud and your inputs',
+  ]},
   { id: 'pedals', name: 'Pedals', video: '/images/widgets/pedals.mp4', preview: '/images/widgets/pedals.png', bullets: [
     'left to right: clutch, brake, throttle',
     '<strong>white bar/top number:</strong> input received by the car',
@@ -151,8 +154,8 @@ export const widgets: Widget[] = [
     'shows pit speed limit on pit request',
     'disappears once mandatory stop served',
   ]},
-  { id: 'proximity', name: 'Proximity Warners', pro: true, video: '/images/widgets/proximity.webm', preview: '/images/widgets/proximity.png', bullets: [
-    'bars at the left, right and bottom screen edges',
+  { id: 'proximity', name: 'Proximity Bars', pro: true, video: '/images/widgets/proximity.webm', preview: '/images/widgets/proximity.png', bullets: [
+    'bars at the left, right and bottom edges of the virtual mirror',
     'colour intensity increases the closer a car is on that side',
   ]},
   { id: 'ptp', name: 'Push to Pass', video: '/images/widgets/ptp.webm', preview: '/images/widgets/ptp.png', bullets: [
@@ -184,16 +187,16 @@ export const widgets: Widget[] = [
     'rpm bar with colour code for critical revolutions',
   ]},
   { id: 'schedule', name: 'Ranked Schedule', pro: true, video: '/images/widgets/schedule.mp4', preview: '/images/widgets/schedule.png', bullets: [
-    'next 4 ranked mp sprint races<br>- green = f2p combo',
+    'next 4 ranked mp sprint races<br>green = f2p combo',
     'next ranked mp feature race',
     'next ranked mp weekly race',
     '<strong>grey pen</strong> = fixed setup<br><strong>white pen</strong> = open setup',
   ]},
-  { id: 'sectors', name: 'Sector Times', video: '/images/widgets/sectors.webm', preview: '/images/widgets/sectors.png', bullets: [
+  { id: 'sectors', name: 'Sector Times', preview: '/images/widgets/sectors.png', bullets: [
     'own current times for track sectors',
     'session best or personal best sector times',
   ]},
-  { id: 'session-info', name: 'Session Info', video: '/images/widgets/session_info.webm', preview: '/images/widgets/session_info.png', bullets: [
+  { id: 'session-info', name: 'Session Info', preview: '/images/widgets/session_info.png', bullets: [
     'time of day',
     'session type, time remaining in session',
     'current lap and total laps projection (<span class="tag-pro">Pro</span> class-based)',
@@ -205,11 +208,9 @@ export const widgets: Widget[] = [
     '<span class="tag-pro">Pro</span> average speed',
   ]},
   { id: 'standings', name: 'Standings', tallPreview: true, preview: '/images/widgets/standings.png', bullets: [
-    'columns:<br>position, position change, logo, number, driver name, time, tyre compound, pit info',
-    'practice/qualifying: session best lap time',
-    'race: gap to leader, last lap, pit stop status',
-    'per-driver penalty info<br>slowdowns as seconds to give back',
-    'yellow marked driver: session best time',
+    '<strong>columns</strong>:<br>position, position change, logo/flag, driver name, gap/lap time, tyre compound, pit info',
+    '<strong>penalty info</strong><br>slowdowns as seconds to give back',
+    'yellow marked driver: best lap time',
     'pit info:<br>cycles through number of stops, stint length since last stop, last stop duration<br>cycle interval editable',
     'class standings with class colours',
     'in mp: SoF per class',
@@ -223,19 +224,17 @@ export const widgets: Widget[] = [
     '<span class="tag-pro">Pro</span> load your own texture:<br>place <code>st_wheel.png</code> in <code>Documents/My Games/RRO/Wheels/</code> (square PNG with transparency)',
   ]},
   { id: 'suspension', name: 'Suspension', pro: true, video: '/images/widgets/suspension.webm', preview: '/images/widgets/suspension.png', bullets: [
-    '4 bars for ride height at each wheel',
-    'centre bar for rake',
+    'ride height at each wheel plus rake',
   ]},
   { id: 'track-map', name: 'Track Map', preview: '/images/widgets/track_map.png', bullets: [
     'per-driver position info on an accurate track layout map',
     '<span class="tag-pro">Pro</span> multiclass support',
   ]},
   { id: 'tyre-analysis', name: 'Tyre Analysis', pro: true, preview: '/images/widgets/tyre_analysis.png', bullets: [
-    'per tyre:<br>- compound (stint length) condition (%)<br>- average wear rate' +
-      '<br>- average / peak temperature' +
-      '<br>- average pressure / delta to initial',
+    'per tyre:<br>- compound + (stint length) + condition in %<br>- average wear rate' +
+      '<br>- average / peak temperature<br>- average pressure / delta to initial',
   ]},
-  { id: 'tyre-info', name: 'Tyre Info', video: '/images/widgets/tyre_info.webm', preview: '/images/widgets/tyre_info.png', bullets: [
+  { id: 'tyre-info', name: 'Tyre Info', video: '/images/widgets/tyre_info.mp4', preview: '/images/widgets/tyre_info.png', bullets: [
     'per tyre:<br>pressure (kPa / psi),<br>segment temperature (°C / °F)',
     'temperature text optional',
     'dirt pick up',
@@ -243,13 +242,14 @@ export const widgets: Widget[] = [
   { id: 'tyre-state', name: 'Tyre State', video: '/images/widgets/tyre_state.webm', preview: '/images/widgets/tyre_state.png', bullets: [
     'tyre compound and stint length per wheel',
     'flat spot indicator:<br>while tyre has flat spot, text turns red',
+    'sideslip bar at the bottom',
     '<span class="tag-pro">Pro</span> purple indicator for wheel spin',
     '<span class="tag-pro">Pro</span> orange indicator for wheel lock',
   ]},
-  { id: 'vehicle-dynamics', name: 'Vehicle Dynamics', preview: '/images/widgets/vehicle_dynamics.png', bullets: [
+  { id: 'vehicle-dynamics', name: 'Vehicle Dynamics', pro: true, preview: '/images/widgets/vehicle_dynamics.png', bullets: [
     '<strong>Left:</strong><br>G-meter',
     '<strong>Right:</strong><br>Load balance<br>(orange square: centre of gravity)',
-    '(do 2–3 consistent laps in practice to calibrate; treat as an approximation)',
+    'fading history trace',
   ]},
   { id: 'virtual-energy', name: 'Virtual Energy', preview: '/images/widgets/virtual_energy.png', bullets: [
     'VE tank content',
@@ -260,7 +260,7 @@ export const widgets: Widget[] = [
     'brake cooling water remaining',
     '*only used in RaceRoom Truck class',
   ]},
-  { id: 'settings-menu', name: 'Settings Menu', tallPreview: true, video: '/images/widgets/settings_menu.webm', preview: '/images/widgets/settings_menu.png', bullets: [
+  { id: 'settings-menu', name: 'Settings Menu', tallPreview: true, preview: '/images/widgets/settings_menu.png', bullets: [
     '<strong>General tab</strong><br>- General widget and behaviour settings',
     '<strong>Racing/Telemetry/Utility Tabs</strong><br>- turn individual widgets on/off' +
     '<br>- adjust per widget opacity<br>- reset individual widgets',

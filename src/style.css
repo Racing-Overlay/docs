@@ -245,7 +245,7 @@ a.badge:hover { filter: brightness(1.2); text-decoration: none; }
 }
 .widget-preview-img,
 .widget-preview-video {
-  width: 100%;
+  width: 60%;
   height: auto;
   max-height: 200px;
   object-fit: contain;
