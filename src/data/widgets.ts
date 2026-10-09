@@ -132,7 +132,7 @@ export const widgets: Widget[] = [
     '<strong>grey bar/bottom number:</strong> input from controller',
     '<span class="tag-pro">Pro</span> coloured bars option, matching input graph',
   ]},
-  { id: 'pedal-graph', name: 'Pedal Graph', video: '/images/widgets/input_graph.webm', preview: '/images/widgets/input_graph.png', bullets: [
+  { id: 'pedal-graph', name: 'Pedal Graph', preview: '/images/widgets/input_graph.png', bullets: [
     '<strong>white:</strong> clutch<br><strong>green:</strong> throttle<br><strong>red:</strong> brake',
     '<strong>yellow line top:</strong> TC active<br><strong>yellow line bottom:</strong> ABS active',
     '<span class="tag-pro">Pro</span> toggle tracking interval (5, 10 or 20 seconds)',

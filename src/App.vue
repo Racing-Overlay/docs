@@ -80,7 +80,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
     <section class="hero">
       <h1 style="letter-spacing: 0.001rem;">Raceroom Racing Overlay</h1>
       <p class="tagline">Raceroom companion hud, adding in-depth data and live analysis</p>
-      <p class="tagline">clean, lightweight, highly customisable</p>
+      <p class="tagline">ultimate performance, highly customisable</p>
     </section>
 
     <!-- Preview Gallery -->
@@ -91,19 +91,21 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
 
     <!-- Features -->
     <section id="features" class="section">
-      <h2 class="section-title">Features</h2>
+      <h2 class="section-title">Unique Features</h2>
       <p>supreme performance, zero latency</p>
       <p>lower footprint than any other hud (including in-game)</p>
       <p>supports ultrawide, triple screen, fullscreen</p>
       <p>highly accurate, runs at your game fps</p>
+      <p>per-widget metric-imperial choice</p>
       <p>unlimited custom layouts</p>
+      <p>variable fonts</p>
     </section>
 
     <!-- tracking -->
     <section id="tracking" class="section">
       <h2 class="section-title">Data Tracking</h2>
-      <p>Data stored between gaming sessions:</p>
-      <p>- personal best lap time</p>
+      <p>Data stored between sessions:</p>
+      <p>- personal best lap times</p>
       <p>- personal best sector times</p>
       <p>- fuel and virtual energy usage</p>
     </section>
@@ -111,7 +113,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
     <!-- Usage -->
     <section id="usage" class="section">
       <h2 class="section-title">Getting Started</h2>
-      <p>- launch RRO with one of its desktop shortcuts</p>
+      <p>- launch RRO with one of its desktop shortcuts, dxvk preferred</p>
       <p>- start a race session, go to track</p>
       <p>
         - press
