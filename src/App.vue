@@ -105,8 +105,8 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
     <section id="tracking" class="section">
       <h2 class="section-title">Data Tracking</h2>
       <p>Data stored between sessions:</p>
-      <p>- personal best lap times</p>
-      <p>- personal best sector times</p>
+      <p>- all-time best lap times</p>
+      <p>- all-time best sector times</p>
       <p>- fuel and virtual energy usage</p>
     </section>
 

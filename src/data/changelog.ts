@@ -8,22 +8,26 @@ export interface ChangelogEntry {
 // Ordered list, newest entry has to be on top
 export const changelog: ChangelogEntry[] = [
   {
-    version: '3.0.0', label: '3.0.0', pro: false,
+    version: '3.0.1', label: '3.0.1', pro: false,
     sections: [
       { heading: '', items: [
         '<strong>native Vulkan port</strong><br>ultimate performance<br>start game in DXVK mode to use this',
         '<strong>new settings menu</strong><br>shown in-game, no more extra window',
-        '<strong>sector times widget</strong><br>added overall best sector times tracking',
+        '<strong>sector times widget</strong><br>added alltime best sector times tracking',
+        '<strong>fps widget</strong><br>added metrics including frametime, percentiles, stutter and more',
         '<strong>Input graph</strong>' +
           '<br>added TC and ABS tracking as yellow lines',
         '<strong>Start lights</strong><br>added beep signaling the start lights sequence',
+        'added sector number to digi flag yellow',
         'added <strong>rpm bar blink</strong> when pit limiter active',
-        '<span class="tag-pro">Pro</span> added <strong>vehicle dynamics widget</strong>' +
-          '<br>centre of gravity and load balance graphs',
-        '<span class="tag-pro">Pro</span> added class-based lap projection info',
+        'tower shows class-leader lap number and time',
         'improved battery widget regeneration detection',
         'fixed rare bug in input graph (thanks to elnossa for bug report)',
         'fixed off-track message bug (thanks to elnossa for bug report)',
+        '<span class="tag-pro">Pro</span> added <strong>vehicle dynamics widget</strong>' +
+          '<br>centre of gravity and load balance graphs',
+        '<span class="tag-pro">Pro</span> added tire dirt visual',
+        '<span class="tag-pro">Pro</span> added class-based lap projection info',
       ]},
     ],
   },

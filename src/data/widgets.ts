@@ -81,9 +81,11 @@ export const widgets: Widget[] = [
     'number = position in class',
     '<span class="tag-pro">Pro</span> multiclass support',
   ]},
-  { id: 'fps', name: 'FPS', video: '/images/widgets/fps.mp4', preview: '/images/widgets/fps.png', bullets: [
-    'current frames per second',
-    'updated per second',
+  { id: 'fps', name: 'FPS', preview: '/images/widgets/fps.png', bullets: [
+    '<strong>From left to right:</strong><br>- current frames per second' +
+      '<br>- avg frame time<br>- fps slowest 1% of frames<br>- fps slowest 0.1% of frames' +
+      '<br>- max = worst frame time, in ms<br>- stut = # of stutters, in brackets: stutters in overlay' +
+      '<br>- ovl = avg time per frame spent on overlay<br>- graph = max frame time per second',
   ]},
   { id: 'fuel-calc', name: 'Fuel Calculator', preview: '/images/widgets/fuel_calc.png', bullets: [
     '<strong>laps left:</strong> laps left at current avg',
