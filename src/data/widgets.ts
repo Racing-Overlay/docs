@@ -209,7 +209,7 @@ export const widgets: Widget[] = [
     'current speed in km/h or mph',
     '<span class="tag-pro">Pro</span> average speed',
   ]},
-  { id: 'standings', name: 'Standings', tallPreview: true, preview: '/images/widgets/standings.png', bullets: [
+  { id: 'standings', name: 'Standings', tallPreview: true, video: '/images/widgets/standings.mp4', bullets: [
     '<strong>columns</strong>:<br>position, position change, logo/flag, driver name, gap/lap time, tyre compound, pit info',
     '<strong>penalty info</strong><br>slowdowns as seconds to give back',
     'yellow marked driver: best lap time',
@@ -218,9 +218,12 @@ export const widgets: Widget[] = [
     'in mp: SoF per class',
     'HY: VE per driver',
   ]},
-  { id: 'start-lights', name: 'Start Lights', video: '/images/widgets/start_lights.webm',
-    preview: '/images/widgets/start_lights.png', bullets: ['reasonably sized']
-  },
+  { id: 'start-lights', name: 'Start Lights', video: '/images/widgets/start_lights.mp4',
+    preview: '/images/widgets/start_lights.png', bullets: [
+      'LED panel with start procedure info',
+      'Supports rolling starts',
+      'Reaction time for standings starts',
+    ]},
   { id: 'steering', name: 'Steering Wheel', video: '/images/widgets/steering.webm', preview: '/images/widgets/steering.png', bullets: [
     'visualisation of steering inputs',
     '<span class="tag-pro">Pro</span> load your own texture:<br>place <code>st_wheel.png</code> in <code>Documents/My Games/RRO/Wheels/</code> (square PNG with transparency)',

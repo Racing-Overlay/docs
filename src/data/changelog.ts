@@ -8,6 +8,33 @@ export interface ChangelogEntry {
 // Ordered list, newest entry has to be on top
 export const changelog: ChangelogEntry[] = [
   {
+    version: '4.0.0', label: '4.0.0', pro: false,
+    sections: [
+      { heading: '', items: [
+        '<strong>VR support</strong>added (dxvk only)',
+        '<strong>LED start lights panel</strong><br>(incl. rolling starts and reaction time)',
+        '<strong>standings tower</strong><br>added customsation settings',
+        'improved dx9 performance',
+        '<strong>country flags</strong> for all players in mp',
+        'fixed track map scaling',
+        'improved data fetching',
+        'class names of mixed performance classes now flip in standings',
+        'disabled hud in instant replay',
+        'adapted schedule widget for ranked series',
+      ]},
+    ],
+  },
+  {
+    version: '3.1.0', label: '3.1.0', pro: false,
+    sections: [
+      { heading: '', items: [
+        '<strong>standings tower</strong><br>added leaderboard mode',
+        '<strong>schedule widget</strong><br>adapted to new message type',
+        '<strong>race control</strong><br>adapted sector yellow distance to game changes',
+      ]},
+    ],
+  },
+  {
     version: '3.0.1', label: '3.0.1', pro: false,
     sections: [
       { heading: '', items: [

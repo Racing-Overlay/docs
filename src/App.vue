@@ -92,6 +92,7 @@ const settingsWidget = computed(() => widgets.find(w => w.id === 'settings-menu'
     <!-- Features -->
     <section id="features" class="section">
       <h2 class="section-title">Unique Features</h2>
+      <p>VR support (DXVK only)</p>
       <p>supreme performance, zero latency</p>
       <p>lower footprint than any other hud (including in-game)</p>
       <p>supports ultrawide, triple screen, fullscreen</p>

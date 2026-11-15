@@ -5,6 +5,7 @@ export interface VideoPreview {
 }
 
 export const videoPreviews: VideoPreview[] = [
-  { id: 'hnbsQHltzuk', title: '1.1.0 Preview' },
+  { id: 'uyTrb9ucBzk', title: '3.0.1 Preview' },
+  { id: 'y3-79ijT0xY', title: '4.0.0 VR Demo' },
   // add more: { id: '...', title: '...' }
 ]
